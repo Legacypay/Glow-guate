@@ -1,0 +1,5 @@
+/terms    /terms.html    200
+/privacy  /privacy.html  200
+/ruo-policy  /ruo-policy.html  200
+/batch/*  /index.html  200
+/*  /index.html  200
