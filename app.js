@@ -22,10 +22,10 @@
     es: {
       "nav.products": "Productos", "nav.coas": "Certificados", "nav.how": "Cómo comprar", "nav.learn": "Aprende", "nav.contact": "Contacto", "nav.cart": "Pedido",
       "hero.eyebrow": "Ahora en Guatemala",
-      "hero.title": "Péptidos verificados por laboratorio en EE.UU., <em>entregados en tu ciudad.</em>",
+      "hero.title": "Péptidos verificados por laboratorio en USA, <em>entregados en tu ciudad.</em>",
       "hero.lead": "Cada lote se analiza en un laboratorio independiente en Estados Unidos y publicamos el certificado. Pide en línea, paga por transferencia o tarjeta, y recoge o recibe en tu domicilio.",
       "hero.cta1": "Ver productos", "hero.cta2": "Ver certificados de análisis",
-      "trust.1": "Pureza ≥99% verificada en laboratorio de EE.UU.", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Transferencia bancaria o tarjeta",
+      "trust.1": "Pureza ≥99% verificada en laboratorio de USA", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Transferencia bancaria o tarjeta",
       "products.eyebrow": "Catálogo", "products.title": "Nuestros productos", "products.lead": "Toca cualquier producto para conocer para qué se usa, cómo funciona y ver su certificado de análisis.",
       "coas.eyebrow": "Calidad verificada", "coas.title": "Certificados de análisis (COA)", "coas.lead": "Cada lote se analiza por HPLC y espectrometría de masas en Freedom Diagnostics, un laboratorio independiente en Estados Unidos. Descarga el certificado de tu lote.",
       "coas.th.product": "Producto", "coas.th.lot": "Lote / Accesión", "coas.th.purity": "Pureza", "coas.th.date": "Fecha", "coas.th.file": "Certificado",
@@ -208,8 +208,12 @@
   function libItems() {
     const q = libQuery.trim().toLowerCase();
     return LIB.filter(x => (libType === "all" || x.type === libType) &&
-      (!q || (x.title + " " + (x.subtitle || "") + " " + (x.tags || []).join(" ")).toLowerCase().includes(q)));
+      (!q || (x.title + " " + (x.title_es || "") + " " + (x.subtitle || "") + " " + (x.subtitle_es || "") + " " + (x.tags || []).join(" ")).toLowerCase().includes(q)));
   }
+  const libTitle = (x) => ((lang === "es" && x.title_es) ? x.title_es : x.title);
+  const libSub = (x) => ((lang === "es" && x.html_es) ? (x.subtitle_es || "") : (x.subtitle || ""));
+  const libHtml = (x) => ((lang === "es" && x.html_es) ? x.html_es : x.html);
+  const englishOnly = (x) => lang === "es" && !x.html_es;
   function libCover(x) {
     if (x.type === "blog" && x.cover) return `<img src="${x.cover}" alt="" loading="lazy" />`;
     const p = x.productSlug ? bySlug(x.productSlug) : null;
@@ -224,23 +228,23 @@
     $("#libGrid").innerHTML = items.length ? items.map(x => `<button type="button" class="lib-card" data-action="read" data-slug="${x.slug}">
         <div class="cover">${libCover(x)}</div>
         <div class="body">
-          <div class="meta"><span class="type ${x.type}">${t("lib.type." + x.type)}</span>${x.date ? `<span>${esc(x.date)}</span>` : ""}${lang === "es" ? `<span class="lang">EN</span>` : ""}</div>
-          <h3>${esc(x.title)}</h3>
-          <p>${esc(x.subtitle || "")}</p>
+          <div class="meta"><span class="type ${x.type}">${t("lib.type." + x.type)}</span>${x.date ? `<span>${esc(x.date)}</span>` : ""}${englishOnly(x) ? `<span class="lang">EN</span>` : ""}</div>
+          <h3>${esc(libTitle(x))}</h3>
+          <p>${esc(libSub(x))}</p>
         </div>
       </button>`).join("") : `<div class="lib-empty">${t("lib.empty")}</div>`;
   }
   function openArticle(slug) {
     const x = LIB.find(i => i.slug === slug); if (!x) return;
     const p = x.productSlug ? bySlug(x.productSlug) : null;
-    const note = lang === "es" && t("lib.langnote") ? `<div class="lang-note">${ICON_INFO.replace("<svg", '<svg width="18" height="18"')}<span>${t("lib.langnote")}</span></div>` : "";
+    const note = englishOnly(x) && t("lib.langnote") ? `<div class="lang-note">${ICON_INFO.replace("<svg", '<svg width="18" height="18"')}<span>${t("lib.langnote")}</span></div>` : "";
     openModal(`<article class="article">
       <div class="meta"><span class="type">${t("lib.type." + x.type)}</span>${x.date ? `<span>${esc(x.date)}</span>` : ""}${x.author ? `<span>${t("lib.by")} ${esc(x.author)}</span>` : ""}</div>
-      <h1>${esc(x.title)}</h1>
-      ${x.subtitle ? `<p class="subtitle">${esc(x.subtitle)}</p>` : ""}
+      <h1>${esc(libTitle(x))}</h1>
+      ${libSub(x) ? `<p class="subtitle">${esc(libSub(x))}</p>` : ""}
       ${note}
       ${x.type === "blog" && x.cover ? `<div class="cover"><img src="${x.cover}" alt="" /></div>` : ""}
-      <div class="body">${x.html}</div>
+      <div class="body">${libHtml(x)}</div>
       <div class="actions">
         ${p ? `<button type="button" class="btn btn-primary" data-action="details" data-slug="${p.slug}">${t("lib.viewProduct")}: ${esc(prodName(p))} ${esc(p.strength)}</button>` : ""}
         <button type="button" class="btn btn-outline" data-action="back-to-library">${t("lib.back")}</button>

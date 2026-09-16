@@ -1,0 +1,132 @@
+{
+  "bpc-157": {
+    "sub": "Pentadecapéptido sintético",
+    "lead": "BPC-157 («Body Protection Compound-157») es un pentadecapéptido sintético: una cadena de 15 aminoácidos que corresponde a una secuencia parcial identificada en el jugo gástrico. Se suministra como polvo blanco liofilizado (secado por congelación) y estable.",
+    "bg": "En la literatura preclínica publicada, BPC-157 se estudia en el contexto de la citoprotección y las vías de angiogénesis, y como péptido de referencia en modelos de tejido y gastrointestinales."
+  },
+  "tb-500": {
+    "sub": "Región activa de la timosina β4",
+    "lead": "TB-500 es un péptido sintético que corresponde a la región activa de unión a actina de la timosina beta-4 (Tβ4), una proteína reguladora natural. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura preclínica publicada, los péptidos derivados de la Tβ4 se estudian en el contexto de la regulación de la actina y las vías de migración celular."
+  },
+  "ghk-cu": {
+    "sub": "Complejo de cobre y tripéptido · piel y matriz extracelular",
+    "lead": "GHK-Cu es el complejo de cobre(II) del tripéptido glicil-L-histidil-L-lisina (GHK), un péptido natural que se une al cobre. Se suministra como polvo liofilizado, con el característico tono azul del cobre unido.",
+    "bg": "En la literatura publicada, GHK-Cu se estudia en el contexto del transporte de cobre, la matriz extracelular y la investigación sobre piel y colágeno."
+  },
+  "glow-blend": {
+    "sub": "Co-formulación de tres componentes · fórmula combinada",
+    "lead": "GLOW es una co-formulación de tres componentes en un solo vial liofilizado, que combina péptidos complementarios utilizados en el estudio de la matriz extracelular y la señalización de mantenimiento de telómeros.",
+    "bg": "En la literatura publicada, las clases de componentes que lo integran se estudian en el contexto de la modulación de la matriz extracelular y las vías de mantenimiento de telómeros y longevidad celular."
+  },
+  "klow-blend": {
+    "sub": "Co-formulación de cuatro componentes (BPC-157 + TB-500 + KPV + GHK-Cu)",
+    "lead": "KLOW es una co-formulación de cuatro componentes que combina BPC-157, TB-500, KPV y GHK-Cu en un solo vial liofilizado.",
+    "bg": "En la literatura preclínica publicada, sus componentes individuales se estudian en reparación de tejidos, matriz extracelular y vías de señalización de melanocortina e inflamación."
+  },
+  "wolverine": {
+    "title": "Wolverine (BPC-157 + TB-500)",
+    "sub": "Co-formulación de dos componentes (BPC-157 + TB-500)",
+    "lead": "Wolverine es una co-formulación de dos componentes que combina BPC-157 (un pentadecapéptido sintético) y TB-500 (la región activa de la timosina beta-4) en un solo vial liofilizado.",
+    "bg": "En la literatura preclínica publicada, sus componentes individuales se estudian en el contexto de la citoprotección, la angiogénesis y la regulación de la actina y la migración celular."
+  },
+  "kpv": {
+    "sub": "Tripéptido C-terminal de la α-MSH (Lis-Pro-Val)",
+    "lead": "KPV es un tripéptido sintético (lisina-prolina-valina) que corresponde al fragmento C-terminal de la hormona estimulante de melanocitos alfa (α-MSH). Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, KPV se estudia en el contexto de la vía de la melanocortina y la señalización inflamatoria."
+  },
+  "mots-c": {
+    "sub": "Péptido de origen mitocondrial (16 aminoácidos) · metabolismo celular",
+    "lead": "MOTS-c es un péptido sintético de 16 aminoácidos de origen mitocondrial (MDP), codificado dentro del genoma mitocondrial. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, MOTS-c se estudia en el contexto de la señalización mitocondrial y las vías de regulación metabólica."
+  },
+  "nad-plus": {
+    "sub": "Coenzima nicotinamida adenina dinucleótido · energía celular",
+    "lead": "NAD+ (nicotinamida adenina dinucleótido) es una coenzima natural de tipo piridín-nucleótido, central en las reacciones redox de la célula. Es un cofactor de molécula pequeña —no un péptido— y se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, NAD+ se estudia en el contexto del metabolismo energético celular, el equilibrio redox y las vías de las sirtuinas."
+  },
+  "pt-141": {
+    "sub": "Heptapéptido cíclico de melanocortina (bremelanotida)",
+    "lead": "PT-141 (también conocido como bremelanotida) es un heptapéptido cíclico sintético y metabolito del melanotan II, que actúa como agonista de los receptores de melanocortina. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, PT-141 se estudia en el contexto de las vías de los receptores de melanocortina (por ejemplo, MC3R y MC4R)."
+  },
+  "selank": {
+    "sub": "Heptapéptido análogo de la tuftsina · neuropéptido",
+    "lead": "Selank es un heptapéptido sintético, un análogo estabilizado de la tuftsina, un tetrapéptido inmunomodulador endógeno. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, Selank se estudia en el contexto de los neuropéptidos, la expresión de BDNF y las vías de neuromodulación."
+  },
+  "semax": {
+    "sub": "Análogo heptapeptídico de ACTH(4–10) · neuropéptido",
+    "lead": "Semax es un heptapéptido sintético (Met-Glu-His-Phe-Pro-Gly-Pro), análogo de un fragmento de la hormona adrenocorticotropa (ACTH 4–10). Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, Semax se estudia en el contexto de los neuropéptidos y las vías de señalización neurotrófica."
+  },
+  "tesamorelin": {
+    "title": "Tesamorelina",
+    "sub": "Análogo estabilizado de GHRH (44 aminoácidos) · vía endocrina",
+    "lead": "La tesamorelina es un péptido sintético de 44 aminoácidos, análogo estabilizado de la hormona liberadora de hormona de crecimiento humana (GHRH). Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, los análogos de GHRH como la tesamorelina se investigan en el contexto del eje de la hormona de crecimiento y las vías de señalización metabólica."
+  },
+  "cjc-1295-ipamorelin": {
+    "sub": "Análogo de GHRH + secretagogo selectivo · eje de la hormona de crecimiento",
+    "lead": "Esta combinación une CJC-1295, un análogo sintético de la hormona liberadora de hormona de crecimiento (GHRH), con Ipamorelin, un pentapéptido secretagogo selectivo de hormona de crecimiento (GHRP). Ambos se suministran como polvos liofilizados y suelen estudiarse juntos.",
+    "bg": "En la literatura publicada, los análogos de GHRH y los secretagogos como estos se investigan en el contexto del eje de la hormona de crecimiento y las vías de señalización endocrina."
+  },
+  "glutathione": {
+    "title": "Glutatión",
+    "sub": "Tripéptido antioxidante (γ-Glu-Cis-Gli) · nivel celular",
+    "lead": "El glutatión es un tripéptido natural, γ-L-glutamil-L-cisteinil-glicina, y el principal antioxidante intracelular. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, el glutatión se estudia en el contexto del estrés oxidativo, el equilibrio redox y las vías de desintoxicación."
+  },
+  "5-amino-1mq": {
+    "sub": "Inhibidor de NNMT (molécula pequeña) · en cápsulas",
+    "lead": "5-Amino-1MQ (5-amino-1-metilquinolinio) es un compuesto de molécula pequeña estudiado como inhibidor selectivo de la nicotinamida N-metiltransferasa (NNMT). No es un péptido; se suministra en cápsulas.",
+    "bg": "En la literatura publicada, 5-Amino-1MQ se estudia en el contexto de la inhibición de NNMT y las vías de regulación metabólica."
+  },
+  "aod-9604": {
+    "sub": "Análogo del fragmento 176–191 de la hGH · vías metabólicas",
+    "lead": "AOD-9604 es un péptido sintético que corresponde al fragmento C-terminal (aminoácidos 176–191) de la hormona de crecimiento humana, con una modificación en el extremo N-terminal. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura preclínica publicada, AOD-9604 se estudia en el contexto del metabolismo de los lípidos y las vías de señalización metabólica."
+  },
+  "epithalon": {
+    "sub": "Tetrapéptido sintético (AEDG) · longevidad celular",
+    "lead": "Epithalon (también escrito Epitalon) es un tetrapéptido sintético, Ala-Glu-Asp-Gly (AEDG), análogo sintético del péptido pineal epitalamina. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, Epithalon se estudia en el contexto de la biología de los telómeros y las vías de longevidad celular."
+  },
+  "foxo4-dri": {
+    "sub": "Péptido D-retro-inverso · senescencia celular",
+    "lead": "FOXO4-DRI es un péptido sintético D-retro-inverso (DRI) diseñado para interferir en la interacción entre las proteínas FOXO4 y p53. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, FOXO4-DRI se estudia en el contexto de la senescencia celular y las vías de p53."
+  },
+  "methylene-blue": {
+    "title": "Azul de metileno",
+    "sub": "Compuesto fenotiazínico con actividad redox · en cápsulas",
+    "lead": "El azul de metileno (cloruro de metiltioninio) es un compuesto aromático heterocíclico de la familia de las fenotiazinas y un clásico colorante con actividad redox. Es una molécula pequeña —no un péptido— y se suministra en cápsulas.",
+    "bg": "En la literatura publicada, el azul de metileno se estudia en el contexto del transporte de electrones mitocondrial, el ciclo redox y la bioenergética celular."
+  },
+  "mk-677": {
+    "sub": "Secretagogo no peptídico de hormona de crecimiento (ibutamoren) · en cápsulas",
+    "lead": "MK-677 (también conocido como ibutamoren) es una molécula pequeña no peptídica que actúa como agonista del receptor de grelina (GHS-R) y secretagogo de hormona de crecimiento. Se suministra en cápsulas.",
+    "bg": "En la literatura publicada, MK-677 se estudia en el contexto del eje de la hormona de crecimiento y las vías del receptor de grelina."
+  },
+  "mt-ii": {
+    "sub": "Heptapéptido cíclico de melanocortina (melanotan II)",
+    "lead": "MT-II (melanotan II) es un análogo sintético cíclico de siete aminoácidos de la hormona estimulante de melanocitos alfa (α-MSH) y agonista no selectivo de los receptores de melanocortina. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, MT-II se estudia en el contexto de las vías de los receptores de melanocortina (por ejemplo, MC1R y MC4R)."
+  },
+  "slu-pp-332": {
+    "sub": "Agonista ERR de molécula pequeña · en cápsulas",
+    "lead": "SLU-PP-332 es un agonista sintético de molécula pequeña de los receptores relacionados con el estrógeno (ERRα/β/γ). No es un péptido; se suministra en cápsulas.",
+    "bg": "En la literatura publicada, SLU-PP-332 se estudia en el contexto de los receptores relacionados con el estrógeno (ERR), la biogénesis mitocondrial y las vías metabólicas."
+  },
+  "ss-31": {
+    "sub": "Tetrapéptido dirigido a la mitocondria",
+    "lead": "SS-31 es un tetrapéptido sintético capaz de atravesar la membrana celular que se asocia a la cardiolipina en la membrana mitocondrial interna. Se suministra como polvo liofilizado.",
+    "bg": "En la literatura publicada, SS-31 se estudia en el contexto de la función mitocondrial y las vías de bioenergética celular."
+  },
+  "tesofensine": {
+    "title": "Tesofensina",
+    "sub": "Inhibidor triple de la recaptación de monoaminas · en cápsulas",
+    "lead": "La tesofensina es una molécula pequeña que inhibe la recaptación de tres monoaminas: serotonina, noradrenalina y dopamina. No es un péptido; se suministra en cápsulas.",
+    "bg": "En la literatura publicada, la tesofensina se estudia en el contexto de la neurotransmisión monoaminérgica y las vías del sistema nervioso central."
+  }
+}

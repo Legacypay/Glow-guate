@@ -1,0 +1,34 @@
+{
+  "bpc-157-vs-tb-500": {
+    "title": "BPC-157 frente a TB-500",
+    "sub": "Comparación estructural y analítica"
+  },
+  "cjc-1295-ipamorelin-vs-tesamorelin": {
+    "title": "CJC-1295 / Ipamorelin frente a Tesamorelina",
+    "sub": "Comparación estructural y analítica"
+  },
+  "glow-blend-vs-klow-blend": {
+    "title": "GLOW frente a KLOW",
+    "sub": "Comparación de composición"
+  },
+  "mt-ii-vs-pt-141": {
+    "title": "MT-II frente a PT-141",
+    "sub": "Comparación estructural y analítica"
+  },
+  "semax-vs-selank": {
+    "title": "Semax frente a Selank",
+    "sub": "Comparación estructural y analítica"
+  },
+  "how-to-read-a-coa": {
+    "title": "Cómo leer un certificado de análisis",
+    "sub": "Pureza por HPLC, identidad por espectrometría de masas y verificación del lote"
+  },
+  "hplc-and-mass-spectrometry-purity": {
+    "title": "Cómo la HPLC y la espectrometría de masas verifican la pureza",
+    "sub": "Referencia de métodos analíticos"
+  },
+  "lyophilized-vials-vs-capsules": {
+    "title": "Viales liofilizados frente a cápsulas",
+    "sub": "Comparación de formatos"
+  }
+}

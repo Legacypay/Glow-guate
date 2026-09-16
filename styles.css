@@ -93,9 +93,11 @@ p { margin: 0; }
 .hero-copy h1 em { font-style: italic; color: var(--teal); }
 .hero-copy .lead { font-size: 1.1rem; color: var(--ink-2); max-width: 54ch; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; }
-.hero-art { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.hero-art img { aspect-ratio: 1024/812; object-fit: cover; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
-.hero-art img:nth-child(2) { transform: translateY(18px); }
+.hero-art { position: relative; display: grid; gap: clamp(18px, 3vw, 28px); justify-items: center; }
+.hero-logo { width: min(340px, 78%); height: auto; }
+.hero-vials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; }
+.hero-vials img { aspect-ratio: 1024/812; object-fit: cover; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+.hero-vials img:nth-child(2) { transform: translateY(18px); }
 @media (min-width: 900px) { .hero .wrap { grid-template-columns: 1.1fr .9fr; } }
 
 /* Trust strip */
