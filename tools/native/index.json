@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "como-reconstituir",
+    "type": "prep",
+    "productSlug": "agua-bacteriostatica",
+    "title": "How to reconstitute a lyophilized peptide",
+    "sub": "What you need, how much water to add, and the steps that protect the peptide.",
+    "title_es": "Cómo reconstituir un péptido liofilizado",
+    "sub_es": "Qué necesitas, cuánta agua añadir y los pasos que protegen el péptido."
+  },
+  {
+    "slug": "agua-bacteriostatica-vs-esteril",
+    "type": "prep",
+    "productSlug": "agua-bacteriostatica",
+    "title": "Bacteriostatic water vs sterile water",
+    "sub": "Why the preservative matters, and which one a multi-dose vial needs.",
+    "title_es": "Agua bacteriostática frente a agua estéril",
+    "sub_es": "Por qué importa el conservante y cuál necesita un vial de varias dosis."
+  },
+  {
+    "slug": "almacenamiento-y-conservacion",
+    "type": "prep",
+    "productSlug": null,
+    "title": "Storage and shelf life",
+    "sub": "How to store vials before and after reconstitution, and what shortens their life.",
+    "title_es": "Almacenamiento y conservación",
+    "sub_es": "Cómo conservar los viales antes y después de reconstituir, y qué acorta su vida útil."
+  }
+]

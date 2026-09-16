@@ -42,8 +42,8 @@
       "learn.c3.t": "¿Qué es el agua bacteriostática?", "learn.c3.d": "Agua estéril con un conservante suave que permite reconstituir el péptido y extraer varias dosis del mismo vial de forma segura. Recomendamos dos viales de agua por cada vial de péptido.",
       "learn.c4.t": "¿Necesito orientación?", "learn.c4.d": "Con tu pedido te compartimos una guía de uso y almacenamiento. Si tienes condiciones médicas o tomas medicamentos, consulta con tu profesional de salud antes de comenzar.",
       "lib.eyebrow": "Biblioteca", "lib.title": "Guías, comparativas y artículos", "lib.lead": "Todo lo que Glow Peptides ha publicado sobre cada compuesto, cómo se analiza y cómo leer un certificado. Toca un artículo para leerlo completo.",
-      "lib.search": "Buscar por compuesto o tema…", "lib.all": "Todo", "lib.guide": "Guías de compuestos", "lib.compare": "Comparativas", "lib.method": "Calidad y métodos", "lib.blog": "Blog",
-      "lib.type.guide": "Guía", "lib.type.compare": "Comparativa", "lib.type.method": "Calidad", "lib.type.blog": "Blog",
+      "lib.search": "Buscar por compuesto o tema…", "lib.all": "Todo", "lib.guide": "Guías de compuestos", "lib.compare": "Comparativas", "lib.method": "Calidad y métodos", "lib.prep": "Preparación y cuidado", "lib.blog": "Blog",
+      "lib.type.guide": "Guía", "lib.type.compare": "Comparativa", "lib.type.method": "Calidad", "lib.type.prep": "Preparación", "lib.type.blog": "Blog",
       "lib.empty": "No encontramos artículos con ese término.", "lib.langnote": "Este artículo está disponible en inglés. Si prefieres una explicación en español, escríbenos y con gusto te ayudamos.",
       "lib.read": "Leer artículo", "lib.viewProduct": "Ver producto", "lib.back": "Volver a la biblioteca", "lib.by": "Por", "lib.guideFor": "Guía completa de este compuesto →",
       "contact.eyebrow": "Contacto", "contact.title": "¿Tienes preguntas? Escríbenos.", "contact.lead": "Te ayudamos a elegir el producto correcto, confirmar disponibilidad o coordinar tu entrega.", "contact.email": "Enviar correo",
@@ -91,8 +91,8 @@
       "learn.c3.t": "What is bacteriostatic water?", "learn.c3.d": "Sterile water with a mild preservative that lets you reconstitute the peptide and draw several doses from the same vial safely. We recommend two water vials per peptide vial.",
       "learn.c4.t": "Do I need guidance?", "learn.c4.d": "We share a usage and storage guide with your order. If you have medical conditions or take medication, consult your healthcare professional before starting.",
       "lib.eyebrow": "Library", "lib.title": "Guides, comparisons and articles", "lib.lead": "Everything Glow Peptides has published about each compound, how it's tested and how to read a certificate. Tap an article to read it in full.",
-      "lib.search": "Search by compound or topic…", "lib.all": "All", "lib.guide": "Compound guides", "lib.compare": "Comparisons", "lib.method": "Quality & methods", "lib.blog": "Blog",
-      "lib.type.guide": "Guide", "lib.type.compare": "Comparison", "lib.type.method": "Quality", "lib.type.blog": "Blog",
+      "lib.search": "Search by compound or topic…", "lib.all": "All", "lib.guide": "Compound guides", "lib.compare": "Comparisons", "lib.method": "Quality & methods", "lib.prep": "Preparation & care", "lib.blog": "Blog",
+      "lib.type.guide": "Guide", "lib.type.compare": "Comparison", "lib.type.method": "Quality", "lib.type.prep": "Prep", "lib.type.blog": "Blog",
       "lib.empty": "No articles match that search.", "lib.langnote": "",
       "lib.read": "Read article", "lib.viewProduct": "View product", "lib.back": "Back to library", "lib.by": "By", "lib.guideFor": "Full guide to this compound →",
       "contact.eyebrow": "Contact", "contact.title": "Questions? Write to us.", "contact.lead": "We'll help you choose the right product, confirm availability or coordinate your delivery.", "contact.email": "Send email",
@@ -125,10 +125,12 @@
   let lang = (function () { try { return localStorage.getItem("gpgt_lang") || "es"; } catch (e) { return "es"; } })();
   let cart = (function () { try { return JSON.parse(localStorage.getItem("gpgt_cart") || "{}"); } catch (e) { return {}; } })();
   let activeCat = "all";
+  let currentView = null;
+  const VIEW_HASH = { inicio: "", coas: "#certificados", aprende: "#aprende" };
   let libType = "all";
   let libQuery = "";
   const LIB = Array.isArray(window.LIBRARY) ? window.LIBRARY : [];
-  const LIB_TYPES = ["all", "guide", "compare", "method", "blog"];
+  const LIB_TYPES = ["all", "guide", "compare", "method", "prep", "blog"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -218,7 +220,7 @@
     if (x.type === "blog" && x.cover) return `<img src="${x.cover}" alt="" loading="lazy" />`;
     const p = x.productSlug ? bySlug(x.productSlug) : null;
     if (p) return `<img class="vial" src="${p.img}" alt="" loading="lazy" />`;
-    const glyph = x.type === "compare" ? "⇄" : x.type === "method" ? "🔬" : "📄";
+    const glyph = x.type === "compare" ? "⇄" : x.type === "method" ? "🔬" : x.type === "prep" ? "🧪" : "📄";
     return `<span style="font-size:2rem;opacity:.5">${glyph}</span>`;
   }
   function renderLibrary() {
@@ -285,7 +287,7 @@
   function closeCart() { $("#cartDrawer").classList.remove("open"); $("#scrim").classList.remove("open"); $("#cartDrawer").setAttribute("aria-hidden", "true"); $("#cartBtn").setAttribute("aria-expanded", "false"); if (!$("#modal").classList.contains("open")) document.body.classList.remove("no-scroll"); }
 
   function openModal(html, wide) { const panel = $("#modalPanel"); panel.classList.toggle("wide", !!wide); panel.innerHTML = `<button type="button" class="icon-btn modal-close" data-action="close-modal" aria-label="${t("close")}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>` + html; $("#modal").classList.add("open"); document.body.classList.add("no-scroll"); panel.scrollTop = 0; }
-  function closeModal() { $("#modal").classList.remove("open"); if (!$("#cartDrawer").classList.contains("open")) document.body.classList.remove("no-scroll"); if (location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname + location.search); }
+  function closeModal(keepHash) { $("#modal").classList.remove("open"); if (!$("#cartDrawer").classList.contains("open")) document.body.classList.remove("no-scroll"); if (!keepHash && location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname + location.search + VIEW_HASH[currentView]); }
 
   function openProduct(slug) {
     const p = bySlug(slug); if (!p) return;
@@ -451,13 +453,13 @@
       if (a === "inc" && slug) { cart[slug] = (cart[slug] || 0) + 1; saveCart(); renderCart(); return; }
       if (a === "dec" && slug) { cart[slug] = Math.max(0, (cart[slug] || 0) - 1); if (!cart[slug]) delete cart[slug]; saveCart(); renderCart(); return; }
       if (a === "remove" && slug) { delete cart[slug]; saveCart(); renderCart(); return; }
-      if (a === "browse") { closeCart(); location.hash = "#productos"; return; }
+      if (a === "browse") { closeCart(); if (location.hash === "#productos") route(); else location.hash = "#productos"; return; }
       if (a === "close") { closeCart(); return; }
       if (a === "checkout") { openCheckout(); return; }
       if (a === "close-modal") { closeModal(); return; }
       if (a === "back-to-cart") { closeModal(); openCart(); return; }
       if (a === "read" && slug) { e.preventDefault(); openArticle(slug); return; }
-      if (a === "back-to-library") { closeModal(); document.getElementById("aprende").querySelector(".library").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+      if (a === "back-to-library") { closeModal(true); history.replaceState(null, "", location.pathname + location.search + "#aprende"); document.getElementById("aprende").querySelector(".library").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     }
 
     const media = e.target.closest(".card-media");
@@ -482,10 +484,33 @@
     if (e.target.id === "checkoutForm") { e.preventDefault(); submitOrder(e.target); }
   });
 
+  /* ---- view routing: home shows the products; certificates and the library are their own views ---- */
+  function viewOfHash(h) {
+    if (/^#\/aprende\//.test(h) || /^#aprende$/.test(h)) return "aprende";
+    if (/^#(coas|certificados)$/.test(h)) return "coas";
+    return "inicio";
+  }
+  function setView(v) {
+    if (currentView === v) return false;
+    currentView = v;
+    $$("[data-view]").forEach(el => { el.hidden = el.dataset.view !== v; });
+    $$(".nav a").forEach(a => {
+      const href = a.getAttribute("href");
+      const active = href === "#productos" ? v === "inicio" : viewOfHash(href) === v && href !== "#como-comprar" && href !== "#contacto";
+      a.setAttribute("aria-current", active ? "page" : "false");
+    });
+    return true;
+  }
   function route() {
+    const h = location.hash;
+    const changed = setView(viewOfHash(h));
     let m;
-    if ((m = location.hash.match(/^#\/p\/(.+)$/))) openProduct(m[1]);
-    else if ((m = location.hash.match(/^#\/aprende\/(.+)$/))) openArticle(m[1]);
+    if ((m = h.match(/^#\/p\/(.+)$/))) return openProduct(m[1]);
+    if ((m = h.match(/^#\/aprende\/(.+)$/))) return openArticle(m[1]);
+    if ($("#modal").classList.contains("open")) closeModal(true);
+    const el = h.length > 1 && !h.startsWith("#/") ? document.getElementById(h.slice(1)) : null;
+    if (el && !el.hidden) el.scrollIntoView({ behavior: changed ? "auto" : "smooth", block: "start" });
+    else window.scrollTo({ top: 0, behavior: changed ? "auto" : "smooth" });
   }
   window.addEventListener("hashchange", route);
 
