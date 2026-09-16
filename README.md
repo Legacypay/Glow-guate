@@ -1,20 +1,22 @@
-# Glow-guate
+# Glow Peptides GT
 
-Source for **glow-now.netlify.app** (Netlify project `glow-now`).
+Source for **glow-now.netlify.app** — the Glow Peptides Guatemala ordering site.
 
-## What this is
-Prebuilt static output (Vite `dist`) of the earlier Glow Labs Rx site.
-There is **no build step** — Netlify publishes this repo root as-is.
+Plain HTML/CSS/JS, no build step. Netlify publishes the repo root as-is;
+pushing to `main` deploys to production.
 
-- Netlify build command: *(none)*
-- Publish directory: `/`
-- Deploy branch: `main` — pushing to `main` deploys to production
+## Files
+- `index.html` — page shell, static sections, and the hidden Netlify form (`pedido-gt`) that registers the order fields
+- `app.js` — i18n (ES/EN), catalog rendering, cart, checkout, order submission. **`CONFIG` at the top** holds the contact email, WhatsApp number, GTQ exchange rate and pickup location.
+- `data.js` — the 19 products (bilingual copy, USD prices), COA index, categories
+- `styles.css` — styles
+- `coa/` — certificate PDFs (Freedom Diagnostics); `img/` — product renders
 
-## Notes
-- `leads/*.csv` is intentionally not in this repo (internal vendor and
-  price lists; this repo is public).
-- A hardcoded Slack incoming-webhook URL was stripped from
-  `assets/index-ChpwTKXb.js` before the first commit. It had been shipped
-  in public client-side JS and must be rotated in Slack.
-- The original app source is not here — only the built bundle. Editing
-  the SPA's behavior requires the original source.
+## Orders
+Submitting the checkout posts to Netlify Forms (`pedido-gt`). Submissions appear in
+Netlify → Forms and are emailed to the address configured in the site's form notifications.
+No payment is taken on-site: the order is confirmed by WhatsApp/email and paid by bank
+transfer or a card payment link.
+
+## Editing prices / products
+Edit `data.js`. `price` is USD; the quetzal figure shown is `price × CONFIG.fxRate`.
