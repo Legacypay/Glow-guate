@@ -141,6 +141,7 @@ p { margin: 0; }
 .coa-table th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
 .coa-table tr:last-child td { border-bottom: 0; }
 .coa-table .purity { font-weight: 700; color: var(--teal-dark); }
+.badge-current { display: inline-block; margin-left: 6px; background: var(--teal-soft); color: var(--teal-dark); font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; vertical-align: middle; }
 .coa-table a { font-weight: 600; text-decoration: none; }
 .table-scroll { overflow-x: auto; border-radius: var(--radius); }
 .coa-note { margin-top: 14px; font-size: .9rem; color: var(--ink-2); }

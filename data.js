@@ -15,21 +15,42 @@ window.CATEGORIES = [
 ];
 
 window.COAS = [
-  { id: "rt10",  product: "Retatrutide 10 mg",        lot: "2602060224", purity: "99.802%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/retatrutide-10mg-2602060224.pdf" },
-  { id: "te10",  product: "Tesamorelin 10 mg",        lot: "2602060229", purity: "99.311%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/tesamorelin-10mg-2602060229.pdf" },
-  { id: "gh50",  product: "GHK-Cu 50 mg",             lot: "2602060230", purity: "99.268%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/ghk-cu-50mg-2602060230.pdf" },
-  { id: "bc10",  product: "BPC-157 10 mg",            lot: "2602050102", purity: "99.149%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/bpc-157-10mg-2602050102.pdf" },
-  { id: "ms10",  product: "MOTS-c 10 mg",             lot: "2602050104", purity: "99.366%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/mots-c-10mg-2602050104.pdf" },
-  { id: "cjc",   product: "CJC-1295 / Ipamorelin",    lot: "2602050101", purity: "99.677%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/cjc-1295-ipamorelin-2602050101.pdf" },
-  { id: "gl70",  product: "GLOW Blend 70 mg",         lot: "2602030197", purity: "99.767%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-07", file: "coa/glow-blend-70mg-2602030197.pdf" },
-  { id: "nad500",product: "NAD+ 500 mg",              lot: "NAD500",     purity: "99.983%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02",    file: "coa/nad-plus-500mg.pdf" },
+  { id: "260323HPRT10", slug: "retatrutide-10mg", product: "Retatrutide 10 mg", lot: "260323HPRT10", purity: "99.838%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-03-27", file: "coa/retatrutide-10mg-260323hprt10.pdf", primary: true },
+  { id: "260203HP", slug: "retatrutide-10mg", product: "Retatrutide 10 mg", lot: "260203HP", purity: "99.802%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/retatrutide-10mg-260203hp.pdf", primary: false },
+  { id: "260202QLRT10", slug: "retatrutide-10mg", product: "Retatrutide 10 mg", lot: "260202QLRT10", purity: "99.551%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/retatrutide-10mg-260202qlrt10.pdf", primary: false },
+  { id: "260123ZJRT10", slug: "retatrutide-10mg", product: "Retatrutide 10 mg", lot: "260123ZJRT10", purity: "99.838%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-01-29", file: "coa/retatrutide-10mg-260123zjrt10.pdf", primary: false },
+  { id: "260323HPRT20", slug: "retatrutide-20mg", product: "Retatrutide 20 mg", lot: "260323HPRT20", purity: "99.906%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-03-27", file: "coa/retatrutide-20mg-260323hprt20.pdf", primary: true },
+  { id: "260203HPRT20", slug: "retatrutide-20mg", product: "Retatrutide 20 mg", lot: "260203HPRT20", purity: "99.784%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/retatrutide-20mg-260203hprt20.pdf", primary: false },
+  { id: "260202QLRT20", slug: "retatrutide-20mg", product: "Retatrutide 20 mg", lot: "260202QLRT20", purity: "99.725%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/retatrutide-20mg-260202qlrt20.pdf", primary: false },
+  { id: "260317HPTE10", slug: "tesamorelin-10mg", product: "Tesamorelin 10 mg", lot: "260317HPTE10", purity: "99.317%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-03-22", file: "coa/tesamorelin-10mg-260317hpte10.pdf", primary: true },
+  { id: "260203QLTE10", slug: "tesamorelin-10mg", product: "Tesamorelin 10 mg", lot: "260203QLTE10", purity: "99.311%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/tesamorelin-10mg-260203qlte10.pdf", primary: false },
+  { id: "260203QLGH50", slug: "ghk-cu-50mg", product: "GHK-Cu 50 mg", lot: "260203QLGH50", purity: "99.268%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-10", file: "coa/ghk-cu-50mg-260203qlgh50.pdf", primary: true },
+  { id: "260406-HP-BC10-4", slug: "bpc-157-10mg", product: "BPC-157 10 mg", lot: "260406-HP-BC10-4", purity: "99.487%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-11", file: "coa/bpc-157-10mg-260406-hp-bc10-4.pdf", primary: true },
+  { id: "260202QLBC10", slug: "bpc-157-10mg", product: "BPC-157 10 mg", lot: "260202QLBC10", purity: "99.149%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/bpc-157-10mg-260202qlbc10.pdf", primary: false },
+  { id: "260312HPTB10", slug: "tb-500-10mg", product: "TB-500 10 mg", lot: "260312HPTB10", purity: "99.31%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-03-17", file: "coa/tb-500-10mg-260312hptb10.pdf", primary: true },
+  { id: "260202QL", slug: "mots-c-10mg", product: "MOTS-c 10 mg", lot: "260202QL", purity: "99.366%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/mots-c-10mg-260202ql.pdf", primary: true },
+  { id: "260420HPMS40", slug: "mots-c-40mg", product: "MOTS-c 40 mg", lot: "260420HPMS40", purity: "99.53%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-23", file: "coa/mots-c-40mg-260420hpms40.pdf", primary: true },
+  { id: "260410HPCP10", slug: "cjc-1295-ipamorelin", product: "CJC-1295 / Ipamorelin", lot: "260410HPCP10", purity: "99.64%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-15", file: "coa/cjc-1295-ipamorelin-260410hpcp10.pdf", primary: true },
+  { id: "260202QLCP10", slug: "cjc-1295-ipamorelin", product: "CJC-1295 / Ipamorelin", lot: "260202QLCP10", purity: "99.677%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-09", file: "coa/cjc-1295-ipamorelin-260202qlcp10.pdf", primary: false },
+  { id: "260402HP-GL70", slug: "glow-blend-70mg", product: "GLOW Blend 70 mg", lot: "260402HP-GL70", purity: "99.651%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-02", file: "coa/glow-blend-70mg-260402hp-gl70.pdf", primary: true },
+  { id: "260130HPGL70", slug: "glow-blend-70mg", product: "GLOW Blend 70 mg", lot: "260130HPGL70", purity: "99.767%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-02-05", file: "coa/glow-blend-70mg-260130hpgl70.pdf", primary: false },
+  { id: "260320HPKL80", slug: "klow-blend-80mg", product: "KLOW Blend 80 mg", lot: "260320HPKL80", purity: "99.751%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-03-24", file: "coa/klow-blend-80mg-260320hpkl80.pdf", primary: true },
+  { id: "260410HPWV20", slug: "wolverine-20mg", product: "Wolverine 20 mg", lot: "260410HPWV20", purity: "99.27%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-23", file: "coa/wolverine-20mg-260410hpwv20.pdf", primary: true },
+  { id: "260421HPKP10", slug: "kpv-10mg", product: "KPV 10 mg", lot: "260421HPKP10", purity: "99.92%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-25", file: "coa/kpv-10mg-260421hpkp10.pdf", primary: true },
+  { id: "260416HPSK10", slug: "selank-10mg", product: "Selank 10 mg", lot: "260416HPSK10", purity: "99.71%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-23", file: "coa/selank-10mg-260416hpsk10.pdf", primary: true },
+  { id: "260416HPSX10", slug: "semax-10mg", product: "Semax 10 mg", lot: "260416HPSX10", purity: "99.74%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-23", file: "coa/semax-10mg-260416hpsx10.pdf", primary: true },
+  { id: "260413HPND500", slug: "nad-plus-500mg", product: "NAD+ 500 mg", lot: "260413HPND500", purity: "99.92%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-18", file: "coa/nad-plus-500mg-260413hpnd500.pdf", primary: true },
+  { id: "260123ZJND500", slug: "nad-plus-500mg", product: "NAD+ 500 mg", lot: "260123ZJND500", purity: "99.983%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-01-29", file: "coa/nad-plus-500mg-260123zjnd500.pdf", primary: false },
+  { id: "260722-HP-GT1500", slug: "glutathione-1500mg", product: "Glutathione 1500 mg", lot: "260722-HP-GT1500", purity: "99.81%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-08-04", file: "coa/glutathione-1500mg-260722-hp-gt1500.pdf", primary: true },
+  { id: "260410HPPT10", slug: "pt-141-10mg", product: "PT-141 10 mg", lot: "260410HPPT10", purity: "99.88%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-04-15", file: "coa/pt-141-10mg-260410hppt10.pdf", primary: true },
+  { id: "260807-HP-BAC10", slug: "agua-bacteriostatica", product: "Bacteriostatic Water 10 mL", lot: "260807-HP-BAC10", purity: "99.89%", lab: "Freedom Diagnostics (EE.UU.)", date: "2026-08-12", file: "coa/agua-bacteriostatica-260807-hp-bac10.pdf", primary: true },
 ];
 
 /* Each product: slug, name, strength, price (USD), img, cats[], coa (id|null),
    and bilingual copy: tagline, description, benefits[], how, know. */
 window.PRODUCTS = [
   {
-    slug: "retatrutide-10mg", name: "Retatrutide", strength: "10 mg", price: 137.49, img: "img/retatrutide.jpg", cats: ["metabolismo"], coa: "rt10", featured: true,
+    slug: "retatrutide-10mg", name: "Retatrutide", strength: "10 mg", price: 137.49, img: "img/retatrutide.jpg", cats: ["metabolismo"], coa: "260323HPRT10", featured: true,
     tagline:     { es: "Control de peso de nueva generación", en: "Next-generation weight management" },
     description: { es: "Retatrutide es un agonista triple (GLP-1, GIP y glucagón) — la generación más reciente de péptidos para el manejo del peso. En estudios clínicos de fase 2 produjo las mayores reducciones de peso corporal registradas hasta hoy para un fármaco de esta clase.",
                    en: "Retatrutide is a triple agonist (GLP-1, GIP and glucagon) — the newest generation of weight-management peptides. In phase-2 clinical studies it produced the largest body-weight reductions recorded to date for a drug in this class." },
@@ -41,7 +62,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water to reconstitute. Keep refrigerated once reconstituted." },
   },
   {
-    slug: "retatrutide-20mg", name: "Retatrutide", strength: "20 mg", price: 224.99, img: "img/retatrutide.jpg", cats: ["metabolismo"], coa: "rt10", featured: true,
+    slug: "retatrutide-20mg", name: "Retatrutide", strength: "20 mg", price: 224.99, img: "img/retatrutide.jpg", cats: ["metabolismo"], coa: "260323HPRT20", featured: true,
     tagline:     { es: "Presentación de 20 mg — mejor valor por mg", en: "20 mg vial — best value per mg" },
     description: { es: "La misma molécula que nuestro Retatrutide de 10 mg, en un vial de 20 mg para quienes ya conocen el compuesto y buscan mayor rendimiento por vial.",
                    en: "The same molecule as our 10 mg Retatrutide, in a 20 mg vial for those already familiar with the compound who want more per vial." },
@@ -53,7 +74,7 @@ window.PRODUCTS = [
                    en: "20 mg lyophilized vial. Requires bacteriostatic water to reconstitute. Keep refrigerated once reconstituted." },
   },
   {
-    slug: "tesamorelin-10mg", name: "Tesamorelin", strength: "10 mg", price: 106.24, img: "img/tesamorelin.jpg", cats: ["metabolismo", "crecimiento"], coa: "te10",
+    slug: "tesamorelin-10mg", name: "Tesamorelin", strength: "10 mg", price: 106.24, img: "img/tesamorelin.jpg", cats: ["metabolismo", "crecimiento"], coa: "260317HPTE10",
     tagline:     { es: "Reduce la grasa abdominal profunda", en: "Targets deep abdominal fat" },
     description: { es: "Tesamorelin es un análogo de la hormona liberadora de hormona de crecimiento (GHRH). Es el único péptido con aprobación regulatoria específicamente para reducir la grasa visceral abdominal — la grasa profunda alrededor de los órganos que más afecta la salud metabólica.",
                    en: "Tesamorelin is a growth-hormone-releasing hormone (GHRH) analog. It is the only peptide with regulatory approval specifically for reducing visceral abdominal fat — the deep fat around the organs that most affects metabolic health." },
@@ -65,7 +86,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "ghk-cu-50mg", name: "GHK-Cu", strength: "50 mg", price: 68.74, img: "img/ghkcu.jpg", cats: ["piel", "recuperacion"], coa: "gh50", featured: true,
+    slug: "ghk-cu-50mg", name: "GHK-Cu", strength: "50 mg", price: 68.74, img: "img/ghkcu.jpg", cats: ["piel", "recuperacion"], coa: "260203QLGH50", featured: true,
     tagline:     { es: "El péptido de cobre para piel, cabello y cicatrización", en: "The copper peptide for skin, hair and healing" },
     description: { es: "GHK-Cu es un péptido de cobre que se encuentra de forma natural en el cuerpo y disminuye con la edad. Es uno de los compuestos más estudiados en dermatología por su capacidad de renovar la piel, estimular colágeno y acelerar la cicatrización.",
                    en: "GHK-Cu is a copper peptide found naturally in the body that declines with age. It is one of the most studied compounds in dermatology for its ability to renew skin, stimulate collagen and speed healing." },
@@ -77,7 +98,7 @@ window.PRODUCTS = [
                    en: "50 mg lyophilized vial (the characteristic blue of copper). Used reconstituted or in topical preparations." },
   },
   {
-    slug: "bpc-157-10mg", name: "BPC-157", strength: "10 mg", price: 99.99, img: "img/bpc157.jpg", cats: ["recuperacion"], coa: "bc10", featured: true,
+    slug: "bpc-157-10mg", name: "BPC-157", strength: "10 mg", price: 99.99, img: "img/bpc157.jpg", cats: ["recuperacion"], coa: "260406-HP-BC10-4", featured: true,
     tagline:     { es: "Recuperación de lesiones, tendones e intestino", en: "Injury, tendon and gut recovery" },
     description: { es: "BPC-157 (Body Protection Compound) es un péptido derivado de una proteína protectora del jugo gástrico. Es el péptido de recuperación más popular del mundo por su efecto sobre tendones, ligamentos, músculo y el sistema digestivo.",
                    en: "BPC-157 (Body Protection Compound) is a peptide derived from a protective protein in gastric juice. It is the world's most popular recovery peptide for its effect on tendons, ligaments, muscle and the digestive system." },
@@ -89,7 +110,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "tb-500-10mg", name: "TB-500", strength: "10 mg", price: 137.49, img: "img/tb500.jpg", cats: ["recuperacion"], coa: null,
+    slug: "tb-500-10mg", name: "TB-500", strength: "10 mg", price: 137.49, img: "img/tb500.jpg", cats: ["recuperacion"], coa: "260312HPTB10",
     tagline:     { es: "Reparación de tejidos y flexibilidad", en: "Tissue repair and flexibility" },
     description: { es: "TB-500 es la versión sintética de la timosina beta-4, una proteína presente en casi todas las células humanas que dirige la reparación de tejidos. Se usa ampliamente para lesiones musculares, articulares y para acelerar la recuperación deportiva.",
                    en: "TB-500 is the synthetic version of thymosin beta-4, a protein present in nearly every human cell that directs tissue repair. Widely used for muscle and joint injuries and to speed athletic recovery." },
@@ -101,7 +122,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Often combined with BPC-157 (see Wolverine). Refrigerate once reconstituted." },
   },
   {
-    slug: "mots-c-10mg", name: "MOTS-c", strength: "10 mg", price: 81.24, img: "img/motsc.jpg", cats: ["metabolismo", "longevidad"], coa: "ms10",
+    slug: "mots-c-10mg", name: "MOTS-c", strength: "10 mg", price: 81.24, img: "img/motsc.jpg", cats: ["metabolismo", "longevidad"], coa: "260202QL",
     tagline:     { es: "El péptido mitocondrial del ejercicio", en: "The mitochondrial exercise peptide" },
     description: { es: "MOTS-c es un péptido producido por las mitocondrias que regula el metabolismo energético. Se le conoce como el “péptido del ejercicio” porque imita muchos de los efectos metabólicos de la actividad física.",
                    en: "MOTS-c is a peptide produced by the mitochondria that regulates energy metabolism. It is known as the “exercise peptide” because it mimics many of the metabolic effects of physical activity." },
@@ -113,7 +134,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "mots-c-40mg", name: "MOTS-c", strength: "40 mg", price: 174.99, img: "img/motsc.jpg", cats: ["metabolismo", "longevidad"], coa: "ms10",
+    slug: "mots-c-40mg", name: "MOTS-c", strength: "40 mg", price: 174.99, img: "img/motsc.jpg", cats: ["metabolismo", "longevidad"], coa: "260420HPMS40",
     tagline:     { es: "Presentación de 40 mg para uso continuo", en: "40 mg vial for ongoing use" },
     description: { es: "La misma molécula que nuestro MOTS-c de 10 mg, en un vial de 40 mg — cuatro veces el contenido a un mejor precio por miligramo.",
                    en: "The same molecule as our 10 mg MOTS-c, in a 40 mg vial — four times the content at a better price per milligram." },
@@ -125,7 +146,7 @@ window.PRODUCTS = [
                    en: "40 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "cjc-1295-ipamorelin", name: "CJC-1295 / Ipamorelin", strength: "5 mg + 5 mg", price: 99.99, img: "img/cjcipamorelin.jpg", cats: ["crecimiento", "recuperacion"], coa: "cjc",
+    slug: "cjc-1295-ipamorelin", name: "CJC-1295 / Ipamorelin", strength: "5 mg + 5 mg", price: 99.99, img: "img/cjcipamorelin.jpg", cats: ["crecimiento", "recuperacion"], coa: "260410HPCP10",
     tagline:     { es: "Hormona de crecimiento natural, mejor sueño y recuperación", en: "Natural growth hormone, better sleep and recovery" },
     description: { es: "La combinación clásica para elevar la hormona de crecimiento de forma natural: CJC-1295 prolonga la señal de liberación e Ipamorelin la dispara de forma limpia y selectiva, sin afectar el cortisol ni el apetito.",
                    en: "The classic combination for raising growth hormone naturally: CJC-1295 extends the release signal and Ipamorelin triggers it cleanly and selectively, without affecting cortisol or appetite." },
@@ -137,7 +158,7 @@ window.PRODUCTS = [
                    en: "Lyophilized vial with 5 mg of each peptide (10 mg total). Typically used at night. Refrigerate once reconstituted." },
   },
   {
-    slug: "glow-blend-70mg", name: "GLOW Blend", strength: "70 mg", price: 187.49, img: "img/glow.jpg", cats: ["piel", "recuperacion"], coa: "gl70", featured: true,
+    slug: "glow-blend-70mg", name: "GLOW Blend", strength: "70 mg", price: 187.49, img: "img/glow.jpg", cats: ["piel", "recuperacion"], coa: "260402HP-GL70", featured: true,
     blend: "BPC-157 10 mg · GHK-Cu 50 mg · TB-500 10 mg",
     tagline:     { es: "Nuestra fórmula insignia: piel, recuperación y rejuvenecimiento", en: "Our signature formula: skin, recovery and rejuvenation" },
     description: { es: "GLOW combina en un solo vial los tres péptidos de reparación más efectivos: BPC-157 y TB-500 para tejidos y GHK-Cu para la piel. Es la fórmula favorita para recuperación estética, post-procedimientos y rejuvenecimiento general.",
@@ -150,7 +171,7 @@ window.PRODUCTS = [
                    en: "70 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "klow-blend-80mg", name: "KLOW Blend", strength: "80 mg", price: 218.74, img: "img/klow.jpg", cats: ["piel", "recuperacion"], coa: null,
+    slug: "klow-blend-80mg", name: "KLOW Blend", strength: "80 mg", price: 218.74, img: "img/klow.jpg", cats: ["piel", "recuperacion"], coa: "260320HPKL80",
     blend: "BPC-157 10 mg · GHK-Cu 50 mg · TB-500 10 mg · KPV 10 mg",
     tagline:     { es: "GLOW + KPV: reparación con acción antiinflamatoria extra", en: "GLOW + KPV: repair with extra anti-inflammatory power" },
     description: { es: "KLOW toma la fórmula GLOW y le añade KPV, un péptido antiinflamatorio potente. Ideal para quienes buscan recuperación de piel y tejidos con inflamación, rojeces o problemas digestivos de fondo.",
@@ -163,7 +184,7 @@ window.PRODUCTS = [
                    en: "80 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "wolverine-20mg", name: "Wolverine", strength: "20 mg", price: 187.49, img: "img/wolverine.jpg", cats: ["recuperacion"], coa: null,
+    slug: "wolverine-20mg", name: "Wolverine", strength: "20 mg", price: 187.49, img: "img/wolverine.jpg", cats: ["recuperacion"], coa: "260410HPWV20",
     blend: "BPC-157 10 mg · TB-500 10 mg",
     tagline:     { es: "La combinación definitiva para lesiones", en: "The definitive injury combination" },
     description: { es: "Wolverine une BPC-157 y TB-500 — los dos péptidos de recuperación más usados — en un solo vial. Es la elección de atletas y personas con lesiones de tendones, ligamentos, músculo o articulaciones.",
@@ -176,7 +197,7 @@ window.PRODUCTS = [
                    en: "20 mg lyophilized vial (10 mg of each peptide). Refrigerate once reconstituted." },
   },
   {
-    slug: "kpv-10mg", name: "KPV", strength: "10 mg", price: 74.99, img: "img/kpv.jpg", cats: ["recuperacion", "piel"], coa: null,
+    slug: "kpv-10mg", name: "KPV", strength: "10 mg", price: 74.99, img: "img/kpv.jpg", cats: ["recuperacion", "piel"], coa: "260421HPKP10",
     tagline:     { es: "Antiinflamatorio natural para piel e intestino", en: "Natural anti-inflammatory for skin and gut" },
     description: { es: "KPV es un fragmento de la hormona alfa-MSH con una potente acción antiinflamatoria y antimicrobiana. Se usa para calmar la inflamación intestinal, afecciones de la piel y para apoyar la recuperación general.",
                    en: "KPV is a fragment of the hormone alpha-MSH with strong anti-inflammatory and antimicrobial action. Used to calm gut inflammation, skin conditions and to support overall recovery." },
@@ -188,7 +209,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Can be used reconstituted or in topical preparations." },
   },
   {
-    slug: "selank-10mg", name: "Selank", strength: "10 mg", price: 62.49, img: "img/selank.jpg", cats: ["cognicion"], coa: null,
+    slug: "selank-10mg", name: "Selank", strength: "10 mg", price: 62.49, img: "img/selank.jpg", cats: ["cognicion"], coa: "260416HPSK10",
     tagline:     { es: "Calma la ansiedad sin sedar", en: "Calms anxiety without sedation" },
     description: { es: "Selank es un péptido ansiolítico desarrollado en Rusia, donde es un medicamento aprobado. Reduce la ansiedad y el estrés mientras mejora la claridad mental — sin somnolencia, dependencia ni efecto de rebote.",
                    en: "Selank is an anxiolytic peptide developed in Russia, where it is an approved medicine. It reduces anxiety and stress while improving mental clarity — without drowsiness, dependence or rebound." },
@@ -200,7 +221,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Typically used as a nasal spray or reconstituted. Refrigerate once reconstituted." },
   },
   {
-    slug: "semax-10mg", name: "Semax", strength: "10 mg", price: 62.49, img: "img/semax.jpg", cats: ["cognicion"], coa: null,
+    slug: "semax-10mg", name: "Semax", strength: "10 mg", price: 62.49, img: "img/semax.jpg", cats: ["cognicion"], coa: "260416HPSX10",
     tagline:     { es: "Enfoque, memoria y protección cerebral", en: "Focus, memory and brain protection" },
     description: { es: "Semax es un péptido nootrópico aprobado como medicamento en Rusia para mejorar la función cognitiva y proteger el cerebro. Es la opción preferida para concentración, memoria y rendimiento mental sostenido.",
                    en: "Semax is a nootropic peptide approved as a medicine in Russia to improve cognitive function and protect the brain. It is the go-to option for concentration, memory and sustained mental performance." },
@@ -212,7 +233,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Typically used as a nasal spray or reconstituted. Refrigerate once reconstituted." },
   },
   {
-    slug: "nad-plus-500mg", name: "NAD+", strength: "500 mg", price: 124.99, img: "img/nad.jpg", cats: ["longevidad"], coa: "nad500", featured: true,
+    slug: "nad-plus-500mg", name: "NAD+", strength: "500 mg", price: 124.99, img: "img/nad.jpg", cats: ["longevidad"], coa: "260413HPND500", featured: true,
     tagline:     { es: "Energía celular y longevidad", en: "Cellular energy and longevity" },
     description: { es: "NAD+ es la coenzima esencial para producir energía en cada célula del cuerpo. Sus niveles caen hasta un 50% entre los 40 y los 60 años. Reponerlo es una de las estrategias antienvejecimiento más respaldadas por la ciencia.",
                    en: "NAD+ is the essential coenzyme for producing energy in every cell of the body. Levels drop by up to 50% between ages 40 and 60. Replenishing it is one of the most science-backed anti-aging strategies." },
@@ -224,7 +245,7 @@ window.PRODUCTS = [
                    en: "500 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "glutathione-1500mg", name: "Glutatión", nameEn: "Glutathione", strength: "1500 mg", price: 87.49, img: "img/glutathione.webp", cats: ["longevidad", "piel"], coa: null,
+    slug: "glutathione-1500mg", name: "Glutatión", nameEn: "Glutathione", strength: "1500 mg", price: 87.49, img: "img/glutathione.webp", cats: ["longevidad", "piel"], coa: "260722-HP-GT1500",
     tagline:     { es: "El antioxidante maestro: piel luminosa y desintoxicación", en: "The master antioxidant: glowing skin and detox" },
     description: { es: "El glutatión es el antioxidante más importante producido por el cuerpo. Protege las células del daño oxidativo, apoya la desintoxicación del hígado y es muy popular por su efecto aclarante y luminoso sobre la piel.",
                    en: "Glutathione is the most important antioxidant the body produces. It protects cells from oxidative damage, supports liver detoxification and is hugely popular for its brightening, luminous effect on skin." },
@@ -236,7 +257,7 @@ window.PRODUCTS = [
                    en: "1500 mg vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "pt-141-10mg", name: "PT-141", strength: "10 mg", price: 62.49, img: "img/pt141.jpg", cats: ["sexual"], coa: null,
+    slug: "pt-141-10mg", name: "PT-141", strength: "10 mg", price: 62.49, img: "img/pt141.jpg", cats: ["sexual"], coa: "260410HPPT10",
     tagline:     { es: "Deseo y respuesta sexual — para hombres y mujeres", en: "Desire and sexual response — for men and women" },
     description: { es: "PT-141 (bremelanotida) es el único péptido aprobado por la FDA para el deseo sexual bajo. A diferencia de otros tratamientos, actúa directamente en el cerebro sobre el deseo, no solo sobre la circulación, y funciona en hombres y mujeres.",
                    en: "PT-141 (bremelanotide) is the only FDA-approved peptide for low sexual desire. Unlike other treatments it acts directly in the brain on desire, not just on circulation, and works in both men and women." },
@@ -248,7 +269,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "agua-bacteriostatica", name: "Agua bacteriostática", nameEn: "Bacteriostatic Water", strength: "10 mL", price: 16.24, img: "img/bacwater.svg", cats: ["suministros"], coa: null,
+    slug: "agua-bacteriostatica", name: "Agua bacteriostática", nameEn: "Bacteriostatic Water", strength: "10 mL", price: 16.24, img: "img/bacwater.svg", cats: ["suministros"], coa: "260807-HP-BAC10",
     tagline:     { es: "Indispensable para reconstituir tus péptidos", en: "Essential for reconstituting your peptides" },
     description: { es: "Agua estéril con 0.9% de alcohol bencílico, el estándar para reconstituir péptidos liofilizados. El conservante permite extraer múltiples dosis del mismo vial de forma segura durante semanas.",
                    en: "Sterile water with 0.9% benzyl alcohol, the standard for reconstituting lyophilized peptides. The preservative allows multiple safe draws from the same vial over weeks." },

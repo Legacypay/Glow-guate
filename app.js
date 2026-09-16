@@ -30,7 +30,7 @@
       "coas.eyebrow": "Calidad verificada", "coas.title": "Certificados de análisis (COA)", "coas.lead": "Cada lote se analiza por HPLC y espectrometría de masas en Freedom Diagnostics, un laboratorio independiente en Estados Unidos. Descarga el certificado de tu lote.",
       "coas.th.product": "Producto", "coas.th.lot": "Lote / Accesión", "coas.th.purity": "Pureza", "coas.th.date": "Fecha", "coas.th.file": "Certificado",
       "coas.note": "¿No ves el lote de tu vial? Todos los lotes de Glow pueden buscarse por número en <a href=\"https://glowpeptides.com/quality\" target=\"_blank\" rel=\"noopener\">glowpeptides.com/quality</a>, o escríbenos y te enviamos el certificado.",
-      "coas.view": "Ver PDF",
+      "coas.view": "Ver PDF", "coas.current": "Lote actual",
       "how.eyebrow": "Simple y directo", "how.title": "Cómo comprar",
       "how.s1.t": "Arma tu pedido", "how.s1.d": "Agrega los productos que quieres y envía tu pedido con tus datos de contacto. No necesitas crear cuenta.",
       "how.s2.t": "Confirma y paga", "how.s2.d": "Te contactamos en menos de 24 horas para confirmar disponibilidad y enviarte los datos para pagar por transferencia bancaria o con tarjeta mediante un link de pago seguro.",
@@ -74,7 +74,7 @@
       "coas.eyebrow": "Verified quality", "coas.title": "Certificates of analysis (COA)", "coas.lead": "Every batch is tested by HPLC and mass spectrometry at Freedom Diagnostics, an independent US laboratory. Download the certificate for your batch.",
       "coas.th.product": "Product", "coas.th.lot": "Lot / Accession", "coas.th.purity": "Purity", "coas.th.date": "Date", "coas.th.file": "Certificate",
       "coas.note": "Don't see your vial's lot? Every Glow lot can be searched by number at <a href=\"https://glowpeptides.com/quality\" target=\"_blank\" rel=\"noopener\">glowpeptides.com/quality</a>, or message us and we'll send the certificate.",
-      "coas.view": "View PDF",
+      "coas.view": "View PDF", "coas.current": "Current lot",
       "how.eyebrow": "Simple and direct", "how.title": "How to buy",
       "how.s1.t": "Build your order", "how.s1.d": "Add the products you want and send your order with your contact details. No account needed.",
       "how.s2.t": "Confirm and pay", "how.s2.d": "We contact you within 24 hours to confirm availability and send payment details — bank transfer or card via a secure payment link.",
@@ -181,7 +181,7 @@
 
   function renderCoas() {
     $("#coaRows").innerHTML = COAS.map(c => `<tr>
-      <td><strong>${esc(c.product)}</strong></td>
+      <td><strong>${esc(c.product)}</strong>${c.primary ? ` <span class="badge-current">${t("coas.current")}</span>` : ""}</td>
       <td>${esc(c.lot)}</td>
       <td class="purity">${esc(c.purity)}</td>
       <td>${esc(c.date)}</td>
