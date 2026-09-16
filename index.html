@@ -51,7 +51,7 @@
     <div class="wrap">
       <div class="hero-copy">
         <span class="eyebrow" data-i18n="hero.eyebrow">Ahora en Guatemala</span>
-        <h1 data-i18n-html="hero.title">Péptidos de pureza verificada, <em>entregados en tu ciudad.</em></h1>
+        <h1 data-i18n-html="hero.title">Péptidos verificados por laboratorio en EE.UU., <em>entregados en tu ciudad.</em></h1>
         <p class="lead" data-i18n="hero.lead">Cada lote se analiza en un laboratorio independiente en Estados Unidos y publicamos el certificado. Pide en línea, paga por transferencia o tarjeta, y recoge o recibe en tu domicilio.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#productos" data-i18n="hero.cta1">Ver productos</a>
@@ -68,7 +68,7 @@
 
   <section class="trust" aria-label="Garantías">
     <div class="wrap">
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="trust.1">Pureza ≥99% verificada por laboratorio</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="trust.1">Pureza ≥99% verificada en laboratorio de EE.UU.</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><span data-i18n="trust.2">Certificado de análisis por lote</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h13v10H3z"/><path d="M16 10h4l1 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span data-i18n="trust.3">Entrega local o recogida</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span data-i18n="trust.4">Transferencia bancaria o tarjeta</span></div>
@@ -138,6 +138,18 @@
         <div class="learn-card"><h3 data-i18n="learn.c4.t">¿Necesito orientación?</h3><p data-i18n="learn.c4.d">Con tu pedido te compartimos una guía de uso y almacenamiento. Si tienes condiciones médicas o tomas medicamentos, consulta con tu profesional de salud antes de comenzar.</p></div>
       </div>
     </div>
+    <div class="wrap library">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="lib.eyebrow">Biblioteca</span>
+        <h2 data-i18n="lib.title">Guías, comparativas y artículos</h2>
+        <p data-i18n="lib.lead">Todo lo que Glow Peptides ha publicado sobre cada compuesto, cómo se analiza y cómo leer un certificado. Toca un artículo para leerlo completo.</p>
+      </div>
+      <div class="lib-controls">
+        <div class="chips" id="libChips" role="group" aria-label="Tipo de contenido"></div>
+        <input type="search" id="libSearch" class="lib-search" placeholder="Buscar…" data-i18n-placeholder="lib.search" autocomplete="off" />
+      </div>
+      <div class="lib-grid" id="libGrid"></div>
+    </div>
   </section>
 
   <section class="section" id="contacto">
@@ -204,6 +216,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data.js"></script>
+<script src="content.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

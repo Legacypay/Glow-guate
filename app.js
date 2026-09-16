@@ -22,10 +22,10 @@
     es: {
       "nav.products": "Productos", "nav.coas": "Certificados", "nav.how": "Cómo comprar", "nav.learn": "Aprende", "nav.contact": "Contacto", "nav.cart": "Pedido",
       "hero.eyebrow": "Ahora en Guatemala",
-      "hero.title": "Péptidos de pureza verificada, <em>entregados en tu ciudad.</em>",
+      "hero.title": "Péptidos verificados por laboratorio en EE.UU., <em>entregados en tu ciudad.</em>",
       "hero.lead": "Cada lote se analiza en un laboratorio independiente en Estados Unidos y publicamos el certificado. Pide en línea, paga por transferencia o tarjeta, y recoge o recibe en tu domicilio.",
       "hero.cta1": "Ver productos", "hero.cta2": "Ver certificados de análisis",
-      "trust.1": "Pureza ≥99% verificada por laboratorio", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Transferencia bancaria o tarjeta",
+      "trust.1": "Pureza ≥99% verificada en laboratorio de EE.UU.", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Transferencia bancaria o tarjeta",
       "products.eyebrow": "Catálogo", "products.title": "Nuestros productos", "products.lead": "Toca cualquier producto para conocer para qué se usa, cómo funciona y ver su certificado de análisis.",
       "coas.eyebrow": "Calidad verificada", "coas.title": "Certificados de análisis (COA)", "coas.lead": "Cada lote se analiza por HPLC y espectrometría de masas en Freedom Diagnostics, un laboratorio independiente en Estados Unidos. Descarga el certificado de tu lote.",
       "coas.th.product": "Producto", "coas.th.lot": "Lote / Accesión", "coas.th.purity": "Pureza", "coas.th.date": "Fecha", "coas.th.file": "Certificado",
@@ -41,6 +41,11 @@
       "learn.c2.t": "¿Cómo se almacenan?", "learn.c2.d": "Los viales liofilizados (en polvo) se conservan en refrigeración o congelación, protegidos de la luz. Una vez reconstituidos con agua bacteriostática, se mantienen refrigerados y se usan dentro de 4 semanas.",
       "learn.c3.t": "¿Qué es el agua bacteriostática?", "learn.c3.d": "Agua estéril con un conservante suave que permite reconstituir el péptido y extraer varias dosis del mismo vial de forma segura. Recomendamos dos viales de agua por cada vial de péptido.",
       "learn.c4.t": "¿Necesito orientación?", "learn.c4.d": "Con tu pedido te compartimos una guía de uso y almacenamiento. Si tienes condiciones médicas o tomas medicamentos, consulta con tu profesional de salud antes de comenzar.",
+      "lib.eyebrow": "Biblioteca", "lib.title": "Guías, comparativas y artículos", "lib.lead": "Todo lo que Glow Peptides ha publicado sobre cada compuesto, cómo se analiza y cómo leer un certificado. Toca un artículo para leerlo completo.",
+      "lib.search": "Buscar por compuesto o tema…", "lib.all": "Todo", "lib.guide": "Guías de compuestos", "lib.compare": "Comparativas", "lib.method": "Calidad y métodos", "lib.blog": "Blog",
+      "lib.type.guide": "Guía", "lib.type.compare": "Comparativa", "lib.type.method": "Calidad", "lib.type.blog": "Blog",
+      "lib.empty": "No encontramos artículos con ese término.", "lib.langnote": "Este artículo está disponible en inglés. Si prefieres una explicación en español, escríbenos y con gusto te ayudamos.",
+      "lib.read": "Leer artículo", "lib.viewProduct": "Ver producto", "lib.back": "Volver a la biblioteca", "lib.by": "Por", "lib.guideFor": "Guía completa de este compuesto →",
       "contact.eyebrow": "Contacto", "contact.title": "¿Tienes preguntas? Escríbenos.", "contact.lead": "Te ayudamos a elegir el producto correcto, confirmar disponibilidad o coordinar tu entrega.", "contact.email": "Enviar correo",
       "footer.loc": "Ciudad de Guatemala",
       "footer.disclaimer": "La información de este sitio es educativa y describe los usos y beneficios documentados de cada compuesto. No sustituye la orientación de un profesional de salud. Si tienes una condición médica, estás embarazada o tomas medicamentos, consulta antes de usar cualquier producto.",
@@ -66,10 +71,10 @@
     en: {
       "nav.products": "Products", "nav.coas": "Certificates", "nav.how": "How to buy", "nav.learn": "Learn", "nav.contact": "Contact", "nav.cart": "Order",
       "hero.eyebrow": "Now in Guatemala",
-      "hero.title": "Lab-verified peptides, <em>delivered in your city.</em>",
+      "hero.title": "USA lab-verified peptides, <em>delivered in your city.</em>",
       "hero.lead": "Every batch is tested by an independent laboratory in the United States and we publish the certificate. Order online, pay by bank transfer or card, and pick up or get it delivered.",
       "hero.cta1": "See products", "hero.cta2": "See certificates of analysis",
-      "trust.1": "≥99% purity, lab-verified", "trust.2": "Certificate of analysis per batch", "trust.3": "Local delivery or pickup", "trust.4": "Bank transfer or card",
+      "trust.1": "≥99% purity, USA lab-verified", "trust.2": "Certificate of analysis per batch", "trust.3": "Local delivery or pickup", "trust.4": "Bank transfer or card",
       "products.eyebrow": "Catalog", "products.title": "Our products", "products.lead": "Tap any product to learn what it's used for, how it works, and see its certificate of analysis.",
       "coas.eyebrow": "Verified quality", "coas.title": "Certificates of analysis (COA)", "coas.lead": "Every batch is tested by HPLC and mass spectrometry at Freedom Diagnostics, an independent US laboratory. Download the certificate for your batch.",
       "coas.th.product": "Product", "coas.th.lot": "Lot / Accession", "coas.th.purity": "Purity", "coas.th.date": "Date", "coas.th.file": "Certificate",
@@ -85,6 +90,11 @@
       "learn.c2.t": "How are they stored?", "learn.c2.d": "Lyophilized (powder) vials are kept refrigerated or frozen, away from light. Once reconstituted with bacteriostatic water, keep refrigerated and use within 4 weeks.",
       "learn.c3.t": "What is bacteriostatic water?", "learn.c3.d": "Sterile water with a mild preservative that lets you reconstitute the peptide and draw several doses from the same vial safely. We recommend two water vials per peptide vial.",
       "learn.c4.t": "Do I need guidance?", "learn.c4.d": "We share a usage and storage guide with your order. If you have medical conditions or take medication, consult your healthcare professional before starting.",
+      "lib.eyebrow": "Library", "lib.title": "Guides, comparisons and articles", "lib.lead": "Everything Glow Peptides has published about each compound, how it's tested and how to read a certificate. Tap an article to read it in full.",
+      "lib.search": "Search by compound or topic…", "lib.all": "All", "lib.guide": "Compound guides", "lib.compare": "Comparisons", "lib.method": "Quality & methods", "lib.blog": "Blog",
+      "lib.type.guide": "Guide", "lib.type.compare": "Comparison", "lib.type.method": "Quality", "lib.type.blog": "Blog",
+      "lib.empty": "No articles match that search.", "lib.langnote": "",
+      "lib.read": "Read article", "lib.viewProduct": "View product", "lib.back": "Back to library", "lib.by": "By", "lib.guideFor": "Full guide to this compound →",
       "contact.eyebrow": "Contact", "contact.title": "Questions? Write to us.", "contact.lead": "We'll help you choose the right product, confirm availability or coordinate your delivery.", "contact.email": "Send email",
       "footer.loc": "Guatemala City",
       "footer.disclaimer": "The information on this site is educational and describes the documented uses and benefits of each compound. It does not replace guidance from a healthcare professional. If you have a medical condition, are pregnant or take medication, consult before using any product.",
@@ -115,6 +125,10 @@
   let lang = (function () { try { return localStorage.getItem("gpgt_lang") || "es"; } catch (e) { return "es"; } })();
   let cart = (function () { try { return JSON.parse(localStorage.getItem("gpgt_cart") || "{}"); } catch (e) { return {}; } })();
   let activeCat = "all";
+  let libType = "all";
+  let libQuery = "";
+  const LIB = Array.isArray(window.LIBRARY) ? window.LIBRARY : [];
+  const LIB_TYPES = ["all", "guide", "compare", "method", "blog"];
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -142,6 +156,7 @@
     document.documentElement.lang = lang;
     $$("[data-i18n]").forEach(el => { el.textContent = t(el.getAttribute("data-i18n")); });
     $$("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
+    $$("[data-i18n-placeholder]").forEach(el => { el.placeholder = t(el.getAttribute("data-i18n-placeholder")); });
     $$(".lang-toggle button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     document.title = lang === "es" ? "Glow Peptides GT — Péptidos premium en Guatemala" : "Glow Peptides GT — Premium peptides in Guatemala";
     const mail = "mailto:" + CONFIG.contactEmail;
@@ -189,6 +204,51 @@
     </tr>`).join("");
   }
 
+  /* ---- Library (learn hub) ---- */
+  function libItems() {
+    const q = libQuery.trim().toLowerCase();
+    return LIB.filter(x => (libType === "all" || x.type === libType) &&
+      (!q || (x.title + " " + (x.subtitle || "") + " " + (x.tags || []).join(" ")).toLowerCase().includes(q)));
+  }
+  function libCover(x) {
+    if (x.type === "blog" && x.cover) return `<img src="${x.cover}" alt="" loading="lazy" />`;
+    const p = x.productSlug ? bySlug(x.productSlug) : null;
+    if (p) return `<img class="vial" src="${p.img}" alt="" loading="lazy" />`;
+    const glyph = x.type === "compare" ? "⇄" : x.type === "method" ? "🔬" : "📄";
+    return `<span style="font-size:2rem;opacity:.5">${glyph}</span>`;
+  }
+  function renderLibrary() {
+    const chips = $("#libChips"); if (!chips) return;
+    chips.innerHTML = LIB_TYPES.map(ty => `<button type="button" class="chip" data-libtype="${ty}" aria-pressed="${String(ty === libType)}">${t("lib." + ty)}${ty === "all" ? ` (${LIB.length})` : ` (${LIB.filter(x => x.type === ty).length})`}</button>`).join("");
+    const items = libItems();
+    $("#libGrid").innerHTML = items.length ? items.map(x => `<button type="button" class="lib-card" data-action="read" data-slug="${x.slug}">
+        <div class="cover">${libCover(x)}</div>
+        <div class="body">
+          <div class="meta"><span class="type ${x.type}">${t("lib.type." + x.type)}</span>${x.date ? `<span>${esc(x.date)}</span>` : ""}${lang === "es" ? `<span class="lang">EN</span>` : ""}</div>
+          <h3>${esc(x.title)}</h3>
+          <p>${esc(x.subtitle || "")}</p>
+        </div>
+      </button>`).join("") : `<div class="lib-empty">${t("lib.empty")}</div>`;
+  }
+  function openArticle(slug) {
+    const x = LIB.find(i => i.slug === slug); if (!x) return;
+    const p = x.productSlug ? bySlug(x.productSlug) : null;
+    const note = lang === "es" && t("lib.langnote") ? `<div class="lang-note">${ICON_INFO.replace("<svg", '<svg width="18" height="18"')}<span>${t("lib.langnote")}</span></div>` : "";
+    openModal(`<article class="article">
+      <div class="meta"><span class="type">${t("lib.type." + x.type)}</span>${x.date ? `<span>${esc(x.date)}</span>` : ""}${x.author ? `<span>${t("lib.by")} ${esc(x.author)}</span>` : ""}</div>
+      <h1>${esc(x.title)}</h1>
+      ${x.subtitle ? `<p class="subtitle">${esc(x.subtitle)}</p>` : ""}
+      ${note}
+      ${x.type === "blog" && x.cover ? `<div class="cover"><img src="${x.cover}" alt="" /></div>` : ""}
+      <div class="body">${x.html}</div>
+      <div class="actions">
+        ${p ? `<button type="button" class="btn btn-primary" data-action="details" data-slug="${p.slug}">${t("lib.viewProduct")}: ${esc(prodName(p))} ${esc(p.strength)}</button>` : ""}
+        <button type="button" class="btn btn-outline" data-action="back-to-library">${t("lib.back")}</button>
+      </div>
+    </article>`, true);
+    history.replaceState(null, "", "#/aprende/" + slug);
+  }
+
   function renderCart() {
     const items = cartItems();
     $("#cartCount").textContent = cartCount() || "";
@@ -220,7 +280,7 @@
   function openCart() { $("#cartDrawer").classList.add("open"); $("#scrim").classList.add("open"); $("#cartDrawer").setAttribute("aria-hidden", "false"); $("#cartBtn").setAttribute("aria-expanded", "true"); document.body.classList.add("no-scroll"); }
   function closeCart() { $("#cartDrawer").classList.remove("open"); $("#scrim").classList.remove("open"); $("#cartDrawer").setAttribute("aria-hidden", "true"); $("#cartBtn").setAttribute("aria-expanded", "false"); if (!$("#modal").classList.contains("open")) document.body.classList.remove("no-scroll"); }
 
-  function openModal(html) { $("#modalPanel").innerHTML = `<button type="button" class="icon-btn modal-close" data-action="close-modal" aria-label="${t("close")}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>` + html; $("#modal").classList.add("open"); document.body.classList.add("no-scroll"); $("#modalPanel").scrollTop = 0; }
+  function openModal(html, wide) { const panel = $("#modalPanel"); panel.classList.toggle("wide", !!wide); panel.innerHTML = `<button type="button" class="icon-btn modal-close" data-action="close-modal" aria-label="${t("close")}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>` + html; $("#modal").classList.add("open"); document.body.classList.add("no-scroll"); panel.scrollTop = 0; }
   function closeModal() { $("#modal").classList.remove("open"); if (!$("#cartDrawer").classList.contains("open")) document.body.classList.remove("no-scroll"); if (location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname + location.search); }
 
   function openProduct(slug) {
@@ -239,6 +299,7 @@
         <div class="pd-section"><h3>${t("pd.how")}</h3><p>${esc(L(p.how))}</p></div>
         <div class="pd-section"><h3>${t("pd.know")}</h3><p>${esc(L(p.know))}</p></div>
         <div class="pd-coa">${ICON_DOC}<span>${coa ? `${t("pd.coa")}: <strong>${esc(coa.lot)}</strong> · ${esc(coa.purity)} — <a href="${coa.file}" target="_blank" rel="noopener">${t("pd.coa.view")}</a>` : t("pd.coa.none")}</span></div>
+        ${(function () { const g = LIB.find(i => i.type === "guide" && i.productSlug === p.slug); return g ? `<a href="#/aprende/${g.slug}" class="btn btn-ghost" style="justify-content:flex-start;padding-left:0" data-action="read" data-slug="${g.slug}">${t("lib.guideFor")}</a>` : ""; })()}
         <div class="pd-buy">
           <div class="price"><span class="usd">${usd(p.price)}</span><span class="gtq">≈ ${gtq(p.price)} ${t("cart.approx")}</span></div>
           <button type="button" class="btn btn-primary btn-block" data-action="add" data-slug="${p.slug}">${t("pd.add")}</button>
@@ -359,15 +420,17 @@
 
   function addToCart(slug, qty) { cart[slug] = (cart[slug] || 0) + (qty || 1); saveCart(); renderCart(); toast(t("card.added")); }
 
-  function renderAll() { applyStatic(); renderChips(); renderGrid(); renderCoas(); renderCart(); }
+  function renderAll() { applyStatic(); renderChips(); renderGrid(); renderCoas(); renderLibrary(); renderCart(); }
 
   /* ------------------------------------------------------------------ */
   /* Events                                                              */
   /* ------------------------------------------------------------------ */
   document.addEventListener("click", (e) => {
     const langBtn = e.target.closest(".lang-toggle button");
-    if (langBtn) { lang = langBtn.dataset.lang; try { localStorage.setItem("gpgt_lang", lang); } catch (x) { } renderAll(); if ($("#modal").classList.contains("open")) { const m = location.hash.match(/^#\/p\/(.+)$/); if (m) openProduct(m[1]); else if (location.hash === "#/checkout") openCheckout(); } return; }
+    if (langBtn) { lang = langBtn.dataset.lang; try { localStorage.setItem("gpgt_lang", lang); } catch (x) { } renderAll(); if ($("#modal").classList.contains("open")) { if (location.hash === "#/checkout") openCheckout(); else route(); } return; }
 
+    const libChip = e.target.closest(".chip[data-libtype]");
+    if (libChip) { libType = libChip.dataset.libtype; renderLibrary(); return; }
     const chip = e.target.closest(".chip");
     if (chip) { activeCat = chip.dataset.cat; renderChips(); renderGrid(); return; }
 
@@ -389,6 +452,8 @@
       if (a === "checkout") { openCheckout(); return; }
       if (a === "close-modal") { closeModal(); return; }
       if (a === "back-to-cart") { closeModal(); openCart(); return; }
+      if (a === "read" && slug) { e.preventDefault(); openArticle(slug); return; }
+      if (a === "back-to-library") { closeModal(); document.getElementById("aprende").querySelector(".library").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     }
 
     const media = e.target.closest(".card-media");
@@ -405,20 +470,24 @@
   document.addEventListener("change", (e) => {
     if (e.target.name === "entrega") { const addr = $("#addrFields"); if (addr) addr.hidden = e.target.value !== "domicilio"; }
   });
+  document.addEventListener("input", (e) => {
+    if (e.target.id === "libSearch") { libQuery = e.target.value; renderLibrary(); }
+  });
 
   document.addEventListener("submit", (e) => {
     if (e.target.id === "checkoutForm") { e.preventDefault(); submitOrder(e.target); }
   });
 
-  window.addEventListener("hashchange", () => {
-    const m = location.hash.match(/^#\/p\/(.+)$/);
-    if (m) openProduct(m[1]);
-  });
+  function route() {
+    let m;
+    if ((m = location.hash.match(/^#\/p\/(.+)$/))) openProduct(m[1]);
+    else if ((m = location.hash.match(/^#\/aprende\/(.+)$/))) openArticle(m[1]);
+  }
+  window.addEventListener("hashchange", route);
 
   /* ------------------------------------------------------------------ */
   /* Boot                                                                */
   /* ------------------------------------------------------------------ */
   renderAll();
-  const m0 = location.hash.match(/^#\/p\/(.+)$/);
-  if (m0) openProduct(m0[1]);
+  route();
 })();

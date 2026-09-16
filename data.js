@@ -269,7 +269,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "agua-bacteriostatica", name: "Agua bacteriostática", nameEn: "Bacteriostatic Water", strength: "10 mL", price: 16.24, img: "img/bacwater.svg", cats: ["suministros"], coa: "260807-HP-BAC10",
+    slug: "agua-bacteriostatica", name: "Agua bacteriostática", nameEn: "Bacteriostatic Water", strength: "10 mL", price: 16.24, img: "img/bacwater.jpg", cats: ["suministros"], coa: "260807-HP-BAC10",
     tagline:     { es: "Indispensable para reconstituir tus péptidos", en: "Essential for reconstituting your peptides" },
     description: { es: "Agua estéril con 0.9% de alcohol bencílico, el estándar para reconstituir péptidos liofilizados. El conservante permite extraer múltiples dosis del mismo vial de forma segura durante semanas.",
                    en: "Sterile water with 0.9% benzyl alcohol, the standard for reconstituting lyophilized peptides. The preservative allows multiple safe draws from the same vial over weeks." },
