@@ -6,8 +6,8 @@
   /* CONFIG — the only things that should need editing day to day        */
   /* ------------------------------------------------------------------ */
   const CONFIG = {
-    contactEmail: "info@glowpeptides.com",   // where orders + contact go (temporary)
-    whatsapp: "",                            // E.164 digits, no "+", e.g. "50255551234". Empty = hide WhatsApp buttons.
+    contactEmail: "macriarenas@glowguate.com", // where contact + order replies go
+    whatsapp: "50255279444",                   // E.164 digits, no "+" (+502 5527 9444)
     fxRate: 7.75,                            // GTQ per USD, used for the approximate quetzal price
     pickupLocation: { es: "Ciudad de Guatemala", en: "Guatemala City" },
     formName: "pedido-gt",
