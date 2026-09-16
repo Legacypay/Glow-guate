@@ -30,5 +30,29 @@
   "lyophilized-vials-vs-capsules": {
     "title": "Viales liofilizados frente a cápsulas",
     "sub": "Comparación de formatos"
+  },
+  "certificates-of-analysis-explained-how-to-read-coa": {
+    "title": "Certificados de análisis: cómo leer un COA y por qué importa",
+    "sub": "Cómo interpretar un certificado de análisis: datos de pureza por HPLC, confirmación por espectrometría de masas y resultados de endotoxinas."
+  },
+  "third-party-testing-independent-verification-peptides": {
+    "title": "Análisis de laboratorio independiente: por qué importa la verificación externa",
+    "sub": "Por qué el análisis independiente es esencial en péptidos de calidad, y en qué se diferencia del control interno."
+  },
+  "peptide-synthesis-solid-phase-liquid-phase-purity": {
+    "title": "Métodos de síntesis de péptidos: fase sólida frente a fase líquida",
+    "sub": "Cómo se fabrican los péptidos, las diferencias entre SPPS y LPPS, y cómo el método de síntesis influye en la pureza y la calidad del producto final."
+  },
+  "research-peptide-quality-factors-laboratories": {
+    "title": "Calidad de un péptido: 7 factores que conviene evaluar",
+    "sub": "Pureza, verificación independiente, endotoxinas, solubilidad, almacenamiento, método de síntesis y consistencia entre lotes."
+  },
+  "cjc-1295-with-without-dac": {
+    "title": "CJC-1295 con y sin DAC: cuál es la diferencia",
+    "sub": "CJC-1295 con DAC y sin DAC son compuestos químicamente distintos, no dos calidades de un mismo producto. Qué es el complejo de afinidad al fármaco, por qué las dos formas difieren en masa molecular y cómo lo confirma la espectrometría de masas."
+  },
+  "ghk-cu-peptide-names-copper-tripeptide-1": {
+    "title": "GHK-Cu, GHK Cu y cobre tripéptido-1: un compuesto, varios nombres",
+    "sub": "GHK-Cu, GHK Cu, GHK cobre y cobre tripéptido-1 nombran el mismo tripéptido unido a cobre. De dónde viene cada convención, cómo se confirma la identidad y qué reporta el certificado de un lote."
   }
 }

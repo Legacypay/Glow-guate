@@ -320,3 +320,13 @@ p { margin: 0; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+
+/* Imported-article FAQ accordions (details/summary) */
+.article .body details { border-bottom: 1px solid var(--line); padding: 14px 0; margin: 0; }
+.article .body details summary { cursor: pointer; font-weight: 600; font-size: 1rem; line-height: 1.5; list-style: none; position: relative; padding-right: 36px; color: var(--ink); }
+.article .body details summary:hover { color: var(--teal-dark); }
+.article .body details summary::-webkit-details-marker { display: none; }
+.article .body details summary::after { content: "+"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; line-height: 1; color: var(--teal); }
+.article .body details[open] summary::after { content: "−"; }
+.article .body details p { margin: 12px 0 0; color: var(--ink-2); }
+.article .body hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }

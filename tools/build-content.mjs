@@ -57,10 +57,10 @@ function removeElements(html, openRe) {
 // Guatemala storefront (different regulatory framing, per the owner). Remove the sentences
 // that exist only to state that framing, but KEEP the sentence naming what the compound is
 // studied for — that is the educational content.
-const RUO_SENTENCE = /\s*[^.!?<>]*\b(research use only|RUO\b|not (?:approved )?for human|human or veterinary use|in[- ]vitro(?: diagnostic| research| and cosmetic)?|for laboratory research|laboratory research use|intended for research|research purposes|research setting|for research)\b[^.!?<>]*[.!?]/gi;
+const RUO_SENTENCE = /\s*[^.!?<>]*\b(research[\s-]use[\s-]only|\bRUO\b|not (?:approved )?for human|human or veterinary use|for laboratory research|laboratory research use|intended for research|research purposes only|for research use)\b[^.!?<>]*[.!?]/gi;
 function deRuo(html) {
   let out = html
-    .replace(/\s*Glow Peptides supplies[^.<>]*\./gi, '')
+    .replace(/\s*Glow Peptides supplies[^<>]*?\.(?!\d)/gi, '')
     .replace(/\s+using in[- ]vitro[^.<>]*(?=\.)/gi, '')
     .replace(/\s*(?:\(e\.g\.\s*)?It is not a therapeutic product and is\s*(?:<strong>)?\s*not for human or veterinary use\s*(?:<\/strong>)?\s*\.?/gi, '')
     .replace(/\s+for laboratory use\b/gi, '')
@@ -76,8 +76,35 @@ function deRuo(html) {
     .replace(/research peptides?/gi, (m) => (m.toLowerCase().endsWith('s') ? 'peptides' : 'peptide'))
     .replace(/\bresearchers\b/gi, 'users')
     .replace(/<h2[^>]*>\s*Research context\s*<\/h2>/i, '<h2>Background</h2>');
+  out = out.replace(/<(p|li)\b[^>]*>(?:(?!<\/?\1\b)[\s\S])*?distribution-in-vitro-diagnostic-products-labeled-research-use-only[\s\S]*?<\/\1>/gi, '');
+  out = out.replace(/<h2\b[^>]*>(?:(?!<\/h2>)[\s\S])*research[\s-]use[\s-]only(?:(?!<\/h2>)[\s\S])*<\/h2>[\s\S]*?(?=<h2\b|$)/gi, '');
+  out = out.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
   out = out.replace(/<(p|li)[^>]*>\s*<\/\1>/g, '');
   return out;
+}
+
+// micromark core does not implement GFM tables; convert pipe tables to HTML before parsing.
+function mdTables(md) {
+  const lines = String(md).split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i++) {
+    const isRow = (l) => /^\s*\|.*\|\s*$/.test(l || '');
+    const isSep = (l) => /^\s*\|[\s:|-]+\|\s*$/.test(l || '');
+    if (isRow(lines[i]) && isSep(lines[i + 1])) {
+      const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+      const head = cells(lines[i]);
+      let j = i + 2;
+      const body = [];
+      while (isRow(lines[j]) && !isSep(lines[j])) { body.push(cells(lines[j])); j++; }
+      out.push(
+        '<table class="cmp"><tr>' + head.map((c) => `<th>${c}</th>`).join('') + '</tr>' +
+        body.map((r) => '<tr>' + r.map((c) => `<td>${c.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</td>`).join('') + '</tr>').join('') +
+        '</table>'
+      );
+      i = j - 1;
+    } else out.push(lines[i]);
+  }
+  return out.join('\n');
 }
 
 // Plain-text variant for excerpts / subtitles.
@@ -173,7 +200,7 @@ function blogPosts() {
     .filter((p) => p.is_published !== false)
     .sort((a, b) => String(b.published_at || '').localeCompare(String(a.published_at || '')));
   return posts.map((p) => {
-    const html = rewriteLinks(deRuo(micromark(p.content || '').replace(/\s+/g, ' ')));
+    const html = rewriteLinks(deRuo(micromark(mdTables(p.content || ''), { allowDangerousHtml: true }).replace(/\s+/g, ' ')));
     const cover = ['webp', 'jpg', 'png'].map((e) => `img/blog/${p.slug}.${e}`).find((f) => existsSync(join(here, '..', f))) || null;
     const item = {
       id: p.slug, type: 'blog', slug: p.slug, title: p.title, subtitle: cleanText(p.excerpt || ''), html, cover,
