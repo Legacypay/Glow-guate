@@ -63,7 +63,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water to reconstitute. Keep refrigerated once reconstituted." },
   },
   {
-    slug: "retatrutide-20mg", name: "Retatrutide", strength: "20 mg", price: 233.99, img: "img/retatrutide.jpg", cats: ["metabolismo"], coa: "260323HPRT20", featured: true,
+    slug: "retatrutide-20mg", name: "Retatrutide", strength: "20 mg", price: 233.99, img: "img/retatrutide-20mg.jpg", cats: ["metabolismo"], coa: "260323HPRT20", featured: true,
     tagline:     { es: "Presentación de 20 mg — mejor valor por mg", en: "20 mg vial — best value per mg" },
     description: { es: "La misma molécula que nuestro Retatrutide de 10 mg, en un vial de 20 mg para quienes ya conocen el compuesto y buscan mayor rendimiento por vial.",
                    en: "The same molecule as our 10 mg Retatrutide, in a 20 mg vial for those already familiar with the compound who want more per vial." },
@@ -135,7 +135,7 @@ window.PRODUCTS = [
                    en: "10 mg lyophilized vial. Requires bacteriostatic water. Refrigerate once reconstituted." },
   },
   {
-    slug: "mots-c-40mg", name: "MOTS-c", strength: "40 mg", price: 181.99, img: "img/motsc.jpg", cats: ["metabolismo", "longevidad"], coa: "260420HPMS40",
+    slug: "mots-c-40mg", name: "MOTS-c", strength: "40 mg", price: 181.99, img: "img/motsc-40mg.jpg", cats: ["metabolismo", "longevidad"], coa: "260420HPMS40",
     tagline:     { es: "Presentación de 40 mg para uso continuo", en: "40 mg vial for ongoing use" },
     description: { es: "La misma molécula que nuestro MOTS-c de 10 mg, en un vial de 40 mg — cuatro veces el contenido a un mejor precio por miligramo.",
                    en: "The same molecule as our 10 mg MOTS-c, in a 40 mg vial — four times the content at a better price per milligram." },
