@@ -1,0 +1,8 @@
+# The published site lives in site/ so that node_modules (needed by the admin
+# functions) and the tools/ sources never get deployed.
+[build]
+  publish = "site"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"

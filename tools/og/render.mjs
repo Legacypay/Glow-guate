@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const src = 'file://' + resolve(join(here, 'social-preview.html'));
-const out = resolve(join(here, '..', '..', 'img', 'og-image.png'));
+const out = resolve(join(here, '..', '..', 'site', 'img', 'og-image.png'));
 
 execFileSync(CHROME, [
   '--headless=new', '--disable-gpu', '--hide-scrollbars', '--no-sandbox',
