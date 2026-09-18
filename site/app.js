@@ -414,8 +414,27 @@
       const isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
       if (isLocal) { await new Promise(r => setTimeout(r, 500)); }
       else {
-        const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() });
-        if (!res.ok) throw new Error("HTTP " + res.status);
+        // The function stores the order for the admin centre and forwards it to the
+        // Netlify form so the email alerts still fire. If it is unavailable we post
+        // the form directly, so an order is never lost to a function outage.
+        const payload = {
+          num, nombre: data.get("nombre"), telefono: data.get("telefono"), correo: data.get("correo"),
+          entrega: body.get("entrega"), direccion: body.get("direccion"), municipio: body.get("municipio"),
+          departamento: body.get("departamento"), pago: body.get("pago"), notas: body.get("notas"),
+          idioma: lang, totalUsd: total, totalQ: cartTotalQ(),
+          items: items.map(({ p, qty }) => ({ slug: p.slug, name: p.name, strength: p.strength, qty, usd: p.price, gtq: qUnit(p.price) })),
+        };
+        let stored = false;
+        try {
+          const r = await fetch("/.netlify/functions/order", {
+            method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ order: payload }),
+          });
+          stored = r.ok;
+        } catch (e) { stored = false; }
+        if (!stored) {
+          const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+        }
       }
       const paidQ = cartTotalQ();
       cart = {}; saveCart(); renderCart();

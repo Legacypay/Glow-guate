@@ -1,0 +1,9 @@
+{
+  "name": "glow-gt",
+  "private": true,
+  "type": "module",
+  "description": "Glow Peptides GT — storefront (site/) and admin functions (netlify/functions/)",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
