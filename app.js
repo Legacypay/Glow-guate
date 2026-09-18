@@ -8,9 +8,17 @@
   const CONFIG = {
     contactEmail: "macriarenas@glowguate.com", // where contact + order replies go
     whatsapp: "50255279444",                   // E.164 digits, no "+" (+502 5527 9444)
-    fxRate: 7.75,                            // GTQ per USD, used for the approximate quetzal price
+    fxRate: 7.75,                              // GTQ per USD — see the note under bank below
     pickupLocation: { es: "Ciudad de Guatemala", en: "Guatemala City" },
     formName: "pedido-gt",
+    // Customers pay by bank transfer in quetzales, so fxRate below is REAL MONEY:
+    // it sets the exact Q amount each order is transferred at, not a rough estimate.
+    bank: {
+      name: "Banco Industrial",
+      type: { es: "Cuenta monetaria (quetzales)", en: "Checking account (quetzales)" },
+      number: "0000244970",
+      holder: "María Cristina Beatriz Arenas Echeverría",
+    },
   };
 
   const DEPARTAMENTOS = ["Guatemala", "Sacatepéquez", "Chimaltenango", "Escuintla", "Santa Rosa", "Sololá", "Totonicapán", "Quetzaltenango", "Suchitepéquez", "Retalhuleu", "San Marcos", "Huehuetenango", "Quiché", "Baja Verapaz", "Alta Verapaz", "Petén", "Izabal", "Zacapa", "Chiquimula", "Jalapa", "Jutiapa", "El Progreso"];
@@ -23,9 +31,9 @@
       "nav.products": "Productos", "nav.coas": "Certificados", "nav.how": "Cómo comprar", "nav.learn": "Aprende", "nav.contact": "Contacto", "nav.cart": "Pedido",
       "hero.eyebrow": "Ahora en Guatemala",
       "hero.title": "Péptidos verificados por laboratorio en USA, <em>entregados en tu ciudad.</em>",
-      "hero.lead": "Cada lote se analiza en un laboratorio independiente en Estados Unidos y publicamos el certificado. Pide en línea, paga por transferencia o tarjeta, y recoge o recibe en tu domicilio.",
+      "hero.lead": "Cada lote se analiza en un laboratorio independiente en Estados Unidos y publicamos el certificado. Pide en línea, paga por transferencia bancaria, y recoge o recibe en tu domicilio.",
       "hero.cta1": "Ver productos", "hero.cta2": "Ver certificados de análisis",
-      "trust.1": "Pureza ≥99% verificada en laboratorio de USA", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Transferencia bancaria o tarjeta",
+      "trust.1": "Pureza ≥99% verificada en laboratorio de USA", "trust.2": "Certificado de análisis por lote", "trust.3": "Entrega local o recogida", "trust.4": "Pago por transferencia bancaria",
       "products.eyebrow": "Catálogo", "products.title": "Nuestros productos", "products.lead": "Toca cualquier producto para conocer para qué se usa, cómo funciona y ver su certificado de análisis.",
       "coas.eyebrow": "Calidad verificada", "coas.title": "Certificados de análisis (COA)", "coas.lead": "Cada lote se analiza por HPLC y espectrometría de masas en Freedom Diagnostics, un laboratorio independiente en Estados Unidos. Descarga el certificado de tu lote.",
       "coas.th.product": "Producto", "coas.th.lot": "Lote / Accesión", "coas.th.purity": "Pureza", "coas.th.date": "Fecha", "coas.th.file": "Certificado",
@@ -33,8 +41,11 @@
       "coas.view": "Ver PDF", "coas.current": "Lote actual",
       "how.eyebrow": "Simple y directo", "how.title": "Cómo comprar",
       "how.s1.t": "Arma tu pedido", "how.s1.d": "Agrega los productos que quieres y envía tu pedido con tus datos de contacto. No necesitas crear cuenta.",
-      "how.s2.t": "Confirma y paga", "how.s2.d": "Te contactamos en menos de 24 horas para confirmar disponibilidad y enviarte los datos para pagar por transferencia bancaria o con tarjeta mediante un link de pago seguro.",
-      "how.s3.t": "Recoge o recibe", "how.s3.d": "Elige recoger tu pedido en nuestro punto de entrega o recibirlo en tu domicilio. Coordinamos día y hora contigo.",
+      "how.s2.t": "Paga por transferencia", "how.s2.d": "Al enviar tu pedido verás de inmediato los datos de nuestra cuenta de Banco Industrial y el monto exacto en quetzales. Transfiere usando tu número de pedido como referencia.",
+      "how.s3.t": "Envía tu comprobante", "how.s3.d": "Mándanos el comprobante por WhatsApp, confirmamos tu pedido y coordinamos si lo recoges o te lo entregamos a domicilio.",
+      "bank.title": "Datos para tu transferencia", "bank.amount": "Transfiere exactamente", "bank.bank": "Banco", "bank.type": "Tipo de cuenta", "bank.number": "Número de cuenta", "bank.holder": "A nombre de", "bank.ref": "Referencia",
+      "bank.after": "Cuando hayas transferido, envíanos el comprobante por WhatsApp o correo y confirmamos tu pedido.",
+      "bank.copy": "Copiar datos", "bank.copied": "Datos copiados",
       "learn.eyebrow": "Aprende", "learn.title": "¿Qué son los péptidos?",
       "learn.lead": "Los péptidos son cadenas cortas de aminoácidos — los mismos bloques que forman las proteínas de tu cuerpo. Actúan como mensajeros que le indican a las células qué hacer: reparar tejido, quemar grasa, producir colágeno o liberar hormonas. Por eso pueden ser tan específicos y tan efectivos.",
       "learn.c1.t": "¿Por qué importa la pureza?", "learn.c1.d": "Un péptido de baja pureza contiene fragmentos incompletos e impurezas que reducen su efecto y pueden causar reacciones. Nuestros lotes se analizan por HPLC y espectrometría de masas: todos superan el 99% de pureza.",
@@ -49,7 +60,7 @@
       "contact.eyebrow": "Contacto", "contact.title": "¿Tienes preguntas? Escríbenos.", "contact.lead": "Te ayudamos a elegir el producto correcto, confirmar disponibilidad o coordinar tu entrega.", "contact.email": "Enviar correo",
       "footer.loc": "Ciudad de Guatemala",
       "footer.disclaimer": "La información de este sitio es educativa y describe los usos y beneficios documentados de cada compuesto. No sustituye la orientación de un profesional de salud. Si tienes una condición médica, estás embarazada o tomas medicamentos, consulta antes de usar cualquier producto.",
-      "cart.title": "Tu pedido", "cart.empty": "Tu pedido está vacío.", "cart.browse": "Ver productos", "cart.subtotal": "Subtotal", "cart.approx": "aprox.", "cart.checkout": "Finalizar pedido", "cart.continue": "Seguir comprando", "cart.remove": "Quitar",
+      "cart.title": "Tu pedido", "cart.empty": "Tu pedido está vacío.", "cart.browse": "Ver productos", "cart.subtotal": "Subtotal", "cart.approx": "aprox.", "cart.transfer": "A transferir:", "cart.checkout": "Finalizar pedido", "cart.continue": "Seguir comprando", "cart.remove": "Quitar",
       "cart.note": "El costo de entrega (si aplica) se confirma contigo antes de pagar.",
       "card.details": "Detalles", "card.add": "Agregar", "card.added": "Agregado al pedido", "card.coa": "COA",
       "pd.uses": "Para qué se usa", "pd.how": "Cómo funciona", "pd.know": "Lo que debes saber", "pd.add": "Agregar al pedido", "pd.coa": "Certificado de análisis del lote", "pd.coa.view": "Ver COA", "pd.coa.none": "Certificado disponible bajo solicitud — escríbenos con tu número de lote.",
@@ -58,13 +69,13 @@
       "co.name": "Nombre completo", "co.phone": "Teléfono (WhatsApp)", "co.email": "Correo electrónico",
       "co.delivery": "Entrega", "co.pickup": "Recoger", "co.pickup.d": "En nuestro punto de entrega en {loc}. Coordinamos día y hora.", "co.home": "Entrega a domicilio", "co.home.d": "Te confirmamos el costo según tu zona antes de pagar.",
       "co.address": "Dirección", "co.municipio": "Municipio / Zona", "co.departamento": "Departamento",
-      "co.payment": "Método de pago preferido", "co.bank": "Transferencia bancaria", "co.bank.d": "Te enviamos los datos de la cuenta al confirmar.", "co.card": "Tarjeta de crédito o débito", "co.card.d": "Te enviamos un link de pago seguro.",
+      "co.payment": "Método de pago preferido", "co.bank": "Transferencia bancaria", "co.bank.d": "Verás los datos de la cuenta y el monto exacto en quetzales al enviar tu pedido.",
       "co.notes": "Notas (opcional)", "co.notes.ph": "Horario preferido, referencias de la dirección, preguntas…",
       "co.summary": "Resumen", "co.total": "Total",
-      "co.notice": "Aún no se realiza ningún cobro. Al enviar tu pedido, te contactamos en menos de 24 horas para confirmar disponibilidad y coordinar el pago.",
+      "co.notice": "No se cobra nada automáticamente. Al enviar tu pedido verás los datos de la cuenta y el monto exacto en quetzales para hacer tu transferencia.",
       "co.submit": "Enviar pedido", "co.sending": "Enviando…", "co.back": "Volver al pedido",
       "co.err.required": "Por favor completa los campos marcados.", "co.err.send": "No pudimos enviar tu pedido. Intenta de nuevo o escríbenos a {email}.",
-      "ok.title": "¡Pedido recibido!", "ok.lead": "Guarda tu número de pedido. Te contactaremos en menos de 24 horas por WhatsApp o correo para confirmar y coordinar el pago y la entrega.", "ok.close": "Cerrar", "ok.wa": "Confirmar por WhatsApp",
+      "ok.title": "¡Pedido recibido!", "ok.lead": "Usa tu número de pedido como referencia al transferir. Cuando recibamos tu comprobante confirmamos disponibilidad y coordinamos la entrega.", "ok.close": "Cerrar", "ok.wa": "Confirmar por WhatsApp",
       "close": "Cerrar",
       "wa.order": "Hola, acabo de enviar el pedido {num} en Glow Peptides GT.",
     },
@@ -72,9 +83,9 @@
       "nav.products": "Products", "nav.coas": "Certificates", "nav.how": "How to buy", "nav.learn": "Learn", "nav.contact": "Contact", "nav.cart": "Order",
       "hero.eyebrow": "Now in Guatemala",
       "hero.title": "USA lab-verified peptides, <em>delivered in your city.</em>",
-      "hero.lead": "Every batch is tested by an independent laboratory in the United States and we publish the certificate. Order online, pay by bank transfer or card, and pick up or get it delivered.",
+      "hero.lead": "Every batch is tested by an independent laboratory in the United States and we publish the certificate. Order online, pay by bank transfer, and pick up or get it delivered.",
       "hero.cta1": "See products", "hero.cta2": "See certificates of analysis",
-      "trust.1": "≥99% purity, USA lab-verified", "trust.2": "Certificate of analysis per batch", "trust.3": "Local delivery or pickup", "trust.4": "Bank transfer or card",
+      "trust.1": "≥99% purity, USA lab-verified", "trust.2": "Certificate of analysis per batch", "trust.3": "Local delivery or pickup", "trust.4": "Payment by bank transfer",
       "products.eyebrow": "Catalog", "products.title": "Our products", "products.lead": "Tap any product to learn what it's used for, how it works, and see its certificate of analysis.",
       "coas.eyebrow": "Verified quality", "coas.title": "Certificates of analysis (COA)", "coas.lead": "Every batch is tested by HPLC and mass spectrometry at Freedom Diagnostics, an independent US laboratory. Download the certificate for your batch.",
       "coas.th.product": "Product", "coas.th.lot": "Lot / Accession", "coas.th.purity": "Purity", "coas.th.date": "Date", "coas.th.file": "Certificate",
@@ -82,8 +93,11 @@
       "coas.view": "View PDF", "coas.current": "Current lot",
       "how.eyebrow": "Simple and direct", "how.title": "How to buy",
       "how.s1.t": "Build your order", "how.s1.d": "Add the products you want and send your order with your contact details. No account needed.",
-      "how.s2.t": "Confirm and pay", "how.s2.d": "We contact you within 24 hours to confirm availability and send payment details — bank transfer or card via a secure payment link.",
-      "how.s3.t": "Pick up or receive", "how.s3.d": "Choose to pick up at our delivery point or have it delivered to your door. We coordinate day and time with you.",
+      "how.s2.t": "Pay by bank transfer", "how.s2.d": "As soon as you send your order you will see our Banco Industrial account details and the exact amount in quetzales. Transfer using your order number as the reference.",
+      "how.s3.t": "Send your receipt", "how.s3.d": "Send us the receipt by WhatsApp, we confirm your order and arrange pickup or home delivery.",
+      "bank.title": "Your transfer details", "bank.amount": "Transfer exactly", "bank.bank": "Bank", "bank.type": "Account type", "bank.number": "Account number", "bank.holder": "Account holder", "bank.ref": "Reference",
+      "bank.after": "Once you have transferred, send us the receipt by WhatsApp or email and we will confirm your order.",
+      "bank.copy": "Copy details", "bank.copied": "Details copied",
       "learn.eyebrow": "Learn", "learn.title": "What are peptides?",
       "learn.lead": "Peptides are short chains of amino acids — the same building blocks as the proteins in your body. They act as messengers that tell cells what to do: repair tissue, burn fat, produce collagen or release hormones. That's why they can be so specific and so effective.",
       "learn.c1.t": "Why does purity matter?", "learn.c1.d": "A low-purity peptide contains incomplete fragments and impurities that reduce its effect and can cause reactions. Our batches are tested by HPLC and mass spectrometry: all exceed 99% purity.",
@@ -98,7 +112,7 @@
       "contact.eyebrow": "Contact", "contact.title": "Questions? Write to us.", "contact.lead": "We'll help you choose the right product, confirm availability or coordinate your delivery.", "contact.email": "Send email",
       "footer.loc": "Guatemala City",
       "footer.disclaimer": "The information on this site is educational and describes the documented uses and benefits of each compound. It does not replace guidance from a healthcare professional. If you have a medical condition, are pregnant or take medication, consult before using any product.",
-      "cart.title": "Your order", "cart.empty": "Your order is empty.", "cart.browse": "See products", "cart.subtotal": "Subtotal", "cart.approx": "approx.", "cart.checkout": "Checkout", "cart.continue": "Continue shopping", "cart.remove": "Remove",
+      "cart.title": "Your order", "cart.empty": "Your order is empty.", "cart.browse": "See products", "cart.subtotal": "Subtotal", "cart.approx": "approx.", "cart.transfer": "To transfer:", "cart.checkout": "Checkout", "cart.continue": "Continue shopping", "cart.remove": "Remove",
       "cart.note": "Delivery cost (if any) is confirmed with you before payment.",
       "card.details": "Details", "card.add": "Add", "card.added": "Added to order", "card.coa": "COA",
       "pd.uses": "What it's used for", "pd.how": "How it works", "pd.know": "Good to know", "pd.add": "Add to order", "pd.coa": "Certificate of analysis for this batch", "pd.coa.view": "View COA", "pd.coa.none": "Certificate available on request — message us with your lot number.",
@@ -107,13 +121,13 @@
       "co.name": "Full name", "co.phone": "Phone (WhatsApp)", "co.email": "Email",
       "co.delivery": "Delivery", "co.pickup": "Pickup", "co.pickup.d": "At our delivery point in {loc}. We coordinate day and time.", "co.home": "Home delivery", "co.home.d": "We confirm the cost for your area before payment.",
       "co.address": "Address", "co.municipio": "Municipality / Zone", "co.departamento": "Department",
-      "co.payment": "Preferred payment method", "co.bank": "Bank transfer", "co.bank.d": "We send account details on confirmation.", "co.card": "Credit or debit card", "co.card.d": "We send a secure payment link.",
+      "co.payment": "Preferred payment method", "co.bank": "Bank transfer", "co.bank.d": "You will see the account details and the exact amount in quetzales when you send your order.",
       "co.notes": "Notes (optional)", "co.notes.ph": "Preferred time, address references, questions…",
       "co.summary": "Summary", "co.total": "Total",
-      "co.notice": "No charge is made yet. When you send your order, we contact you within 24 hours to confirm availability and arrange payment.",
+      "co.notice": "Nothing is charged automatically. When you send your order you will see the account details and the exact amount in quetzales to transfer.",
       "co.submit": "Send order", "co.sending": "Sending…", "co.back": "Back to order",
       "co.err.required": "Please complete the highlighted fields.", "co.err.send": "We couldn't send your order. Try again or email us at {email}.",
-      "ok.title": "Order received!", "ok.lead": "Save your order number. We'll contact you within 24 hours by WhatsApp or email to confirm and arrange payment and delivery.", "ok.close": "Close", "ok.wa": "Confirm on WhatsApp",
+      "ok.title": "Order received!", "ok.lead": "Use your order number as the reference when you transfer. Once we receive your receipt we confirm availability and arrange delivery.", "ok.close": "Close", "ok.wa": "Confirm on WhatsApp",
       "close": "Close",
       "wa.order": "Hi, I just sent order {num} on Glow Peptides GT.",
     },
@@ -138,7 +152,11 @@
   const L = (o) => (o && (o[lang] || o.es)) || "";
   const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]));
   const usd = (n) => "$" + n.toFixed(2);
-  const gtq = (n) => "Q" + Math.round(n * CONFIG.fxRate).toLocaleString(lang === "es" ? "es-GT" : "en-US");
+  // Whole quetzales per unit, so the lines a customer sees sum exactly to what they transfer.
+  const qUnit = (usdPrice) => Math.round(usdPrice * CONFIG.fxRate);
+  const fmtQ = (q) => "Q" + q.toLocaleString(lang === "es" ? "es-GT" : "en-US");
+  const gtq = (n) => fmtQ(qUnit(n));
+  const cartTotalQ = () => cartItems().reduce((s, x) => s + qUnit(x.p.price) * x.qty, 0);
   const prodName = (p) => (lang === "en" && p.nameEn) ? p.nameEn : p.name;
   const bySlug = (slug) => PRODUCTS.find(p => p.slug === slug);
   const coaOf = (p) => p.coa ? COAS.find(c => c.id === p.coa) : null;
@@ -148,6 +166,7 @@
   const cartCount = () => cartItems().reduce((s, x) => s + x.qty, 0);
 
   const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+  const ICON_BANK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10V20M19 10V20M3 20h18M12 3l9 5H3z"/></svg>';
   const ICON_DOC = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>';
   const ICON_INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>';
 
@@ -186,7 +205,7 @@
         <div class="card-body">
           <div class="card-title"><h3>${esc(prodName(p))}</h3><span class="strength">${esc(p.strength)}</span></div>
           <p class="tagline">${esc(L(p.tagline))}</p>
-          <div class="price"><span class="usd">${usd(p.price)}</span><span class="gtq">≈ ${gtq(p.price)}</span></div>
+          <div class="price"><span class="usd">${usd(p.price)}</span><span class="gtq">${gtq(p.price)}</span></div>
           <div class="card-actions">
             <button type="button" class="btn btn-outline" data-action="details">${t("card.details")}</button>
             <button type="button" class="btn btn-primary" data-action="add">${t("card.add")}</button>
@@ -268,7 +287,7 @@
       <img src="${p.img}" alt="" />
       <div>
         <div class="name">${esc(prodName(p))} <span class="meta">· ${esc(p.strength)}</span></div>
-        <div class="meta">${usd(p.price)} · ≈ ${gtq(p.price)}</div>
+        <div class="meta">${usd(p.price)} · ${gtq(p.price)}</div>
         <div class="qty" style="margin-top:6px"><button type="button" data-action="dec" aria-label="−">−</button><span>${qty}</span><button type="button" data-action="inc" aria-label="+">+</button></div>
       </div>
       <div><div class="line-price">${usd(p.price * qty)}</div><button type="button" class="remove" data-action="remove">${t("cart.remove")}</button></div>
@@ -276,7 +295,7 @@
     const total = cartTotal();
     $("#cartFoot").innerHTML = `<div class="totals">
         <div class="row total"><span>${t("cart.subtotal")}</span><span>${usd(total)}</span></div>
-        <div class="row"><span></span><span class="gtq">≈ ${gtq(total)} ${t("cart.approx")}</span></div>
+        <div class="row"><span></span><span class="gtq">${t("cart.transfer")} ${fmtQ(cartTotalQ())}</span></div>
       </div>
       <p class="muted" style="font-size:.82rem">${t("cart.note")}</p>
       <button type="button" class="btn btn-teal btn-block" data-action="checkout">${t("cart.checkout")}</button>
@@ -307,7 +326,7 @@
         <div class="pd-coa">${ICON_DOC}<span>${coa ? `${t("pd.coa")}: <strong>${esc(coa.lot)}</strong> · ${esc(coa.purity)} — <a href="${coa.file}" target="_blank" rel="noopener">${t("pd.coa.view")}</a>` : t("pd.coa.none")}</span></div>
         ${(function () { const g = LIB.find(i => i.type === "guide" && i.productSlug === p.slug); return g ? `<a href="#/aprende/${g.slug}" class="btn btn-ghost" style="justify-content:flex-start;padding-left:0" data-action="read" data-slug="${g.slug}">${t("lib.guideFor")}</a>` : ""; })()}
         <div class="pd-buy">
-          <div class="price"><span class="usd">${usd(p.price)}</span><span class="gtq">≈ ${gtq(p.price)} ${t("cart.approx")}</span></div>
+          <div class="price"><span class="usd">${usd(p.price)}</span><span class="gtq">${gtq(p.price)}</span></div>
           <button type="button" class="btn btn-primary btn-block" data-action="add" data-slug="${p.slug}">${t("pd.add")}</button>
         </div>
       </div>
@@ -339,16 +358,13 @@
         <div class="field"><label for="f-departamento">${t("co.departamento")} *</label><select id="f-departamento" name="departamento">${DEPARTAMENTOS.map(d => `<option${d === "Guatemala" ? " selected" : ""}>${d}</option>`).join("")}</select></div>
       </div>
       <div class="field"><label>${t("co.payment")}</label>
-        <div class="radio-group">
-          <label class="radio"><input type="radio" name="pago" value="transferencia" checked /><span><span class="rl">${t("co.bank")}</span><br /><span class="rd">${t("co.bank.d")}</span></span></label>
-          <label class="radio"><input type="radio" name="pago" value="tarjeta" /><span><span class="rl">${t("co.card")}</span><br /><span class="rd">${t("co.card.d")}</span></span></label>
-        </div>
+        <div class="pay-method">${ICON_BANK}<span><span class="rl">${t("co.bank")}</span><br /><span class="rd">${t("co.bank.d")}</span></span></div>
       </div>
       <div class="field"><label for="f-notas">${t("co.notes")}</label><textarea id="f-notas" name="notas" placeholder="${esc(t("co.notes.ph"))}"></textarea></div>
       <div class="summary">
         <strong>${t("co.summary")}</strong>
         ${items.map(({ p, qty }) => `<div class="row"><span>${qty} × ${esc(prodName(p))} ${esc(p.strength)}</span><span>${usd(p.price * qty)}</span></div>`).join("")}
-        <div class="row total"><span>${t("co.total")}</span><span>${usd(total)} <span class="muted" style="font-weight:500">≈ ${gtq(total)}</span></span></div>
+        <div class="row total"><span>${t("co.total")}</span><span>${fmtQ(cartTotalQ())} <span class="muted" style="font-weight:500">(${usd(total)})</span></span></div>
       </div>
       <div class="notice">${ICON_INFO}<span>${t("co.notice")}</span></div>
       <p class="form-error" id="formError" hidden></p>
@@ -366,7 +382,7 @@
 
   function orderSummaryText(items, total) {
     const lines = items.map(({ p, qty }) => `${qty} × ${p.name} ${p.strength} — ${usd(p.price * qty)}`);
-    lines.push(`TOTAL: ${usd(total)} (≈ ${gtq(total)})`);
+    lines.push(`TOTAL: ${fmtQ(cartTotalQ())} GTQ  (${usd(total)} USD)`);
     return lines.join("\n");
   }
 
@@ -387,7 +403,7 @@
     body.set("nombre", data.get("nombre")); body.set("telefono", data.get("telefono")); body.set("correo", data.get("correo"));
     body.set("entrega", delivery === "domicilio" ? "Entrega a domicilio" : "Recoger");
     body.set("direccion", delivery === "domicilio" ? data.get("direccion") : ""); body.set("municipio", delivery === "domicilio" ? data.get("municipio") : ""); body.set("departamento", delivery === "domicilio" ? data.get("departamento") : "");
-    body.set("pago", data.get("pago") === "tarjeta" ? "Tarjeta (link de pago)" : "Transferencia bancaria");
+    body.set("pago", "Transferencia bancaria — " + CONFIG.bank.name);
     body.set("notas", data.get("notas") || "");
     body.set("resumen", orderSummaryText(items, total));
     body.set("total_usd", total.toFixed(2)); body.set("total_gtq", String(Math.round(total * CONFIG.fxRate)));
@@ -401,8 +417,9 @@
         const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() });
         if (!res.ok) throw new Error("HTTP " + res.status);
       }
+      const paidQ = cartTotalQ();
       cart = {}; saveCart(); renderCart();
-      showSuccess(num);
+      showSuccess(num, paidQ);
     } catch (e) {
       console.error("order submit failed", e);
       err.textContent = t("co.err.send", { email: CONFIG.contactEmail }); err.hidden = false;
@@ -410,13 +427,34 @@
     }
   }
 
-  function showSuccess(num) {
+  function bankPanel(num, amountQ) {
+    const b = CONFIG.bank;
+    if (!b || !b.number) return "";
+    const rows = [
+      [t("bank.bank"), b.name],
+      [t("bank.type"), L(b.type)],
+      [t("bank.number"), b.number],
+      [t("bank.holder"), b.holder],
+      [t("bank.ref"), num],
+    ];
+    const plain = `${t("bank.amount")} ${fmtQ(amountQ)}\n` + rows.map(([k, v]) => `${k}: ${v}`).join("\n");
+    return `<section class="bank">
+      <h3>${t("bank.title")}</h3>
+      <div class="bank-amount"><span>${t("bank.amount")}</span><strong>${fmtQ(amountQ)}</strong></div>
+      <dl class="bank-rows">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+      <p class="bank-after">${t("bank.after")}</p>
+      <button type="button" class="btn btn-outline btn-sm" data-action="copy-bank" data-copy="${esc(plain)}">${t("bank.copy")}</button>
+    </section>`;
+  }
+
+  function showSuccess(num, amountQ) {
     const wa = CONFIG.whatsapp ? `<a class="btn btn-teal" href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t("wa.order", { num }))}" target="_blank" rel="noopener">${t("ok.wa")}</a>` : "";
     openModal(`<div class="success">
       <div class="check">${ICON_CHECK.replace("<svg", '<svg width="32" height="32"')}</div>
       <h2>${t("ok.title")}</h2>
       <div class="order-no">${num}</div>
       <p>${t("ok.lead")}</p>
+      ${bankPanel(num, amountQ)}
       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${wa}<button type="button" class="btn btn-outline" data-action="close-modal">${t("ok.close")}</button></div>
     </div>`);
     history.replaceState(null, "", location.pathname + location.search);
@@ -456,6 +494,16 @@
       if (a === "browse") { closeCart(); if (location.hash === "#productos") route(); else location.hash = "#productos"; return; }
       if (a === "close") { closeCart(); return; }
       if (a === "checkout") { openCheckout(); return; }
+      if (a === "copy-bank") {
+        const text = act.dataset.copy || "";
+        (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => toast(t("bank.copied"))).catch(() => {
+          const ta = document.createElement("textarea");
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand("copy"); toast(t("bank.copied")); } catch (x) { /* nothing to fall back to */ }
+          ta.remove();
+        });
+        return;
+      }
       if (a === "close-modal") { closeModal(); return; }
       if (a === "back-to-cart") { closeModal(); openCart(); return; }
       if (a === "read" && slug) { e.preventDefault(); openArticle(slug); return; }

@@ -16,8 +16,13 @@ pushing to `main` deploys to production.
 ## Orders
 Submitting the checkout posts to Netlify Forms (`pedido-gt`). Submissions appear in Netlify → Forms and are emailed to macriarenas@glowguate.com
 (Netlify → Site configuration → Notifications → Form submission).
-No payment is taken on-site: the order is confirmed by WhatsApp/email and paid by bank
-transfer or a card payment link.
+No payment is taken on-site. Customers pay by bank transfer in **quetzales** to the
+Banco Industrial account in `CONFIG.bank`; the confirmation screen shows the exact Q
+amount and the account details, with the order number as the transfer reference.
+
+**`CONFIG.fxRate` is real money.** Because customers transfer quetzales, that rate sets
+the exact amount each order is paid at — it is not a display estimate. Line items are
+converted per unit and summed, so what a customer sees always adds up to what they send.
 
 ## Editing prices / products
 Edit `data.js`. `price` is USD; the quetzal figure shown is `price × CONFIG.fxRate`.

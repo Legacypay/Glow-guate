@@ -337,3 +337,23 @@ p { margin: 0; }
 .article .body details[open] summary::after { content: "−"; }
 .article .body details p { margin: 12px 0 0; color: var(--ink-2); }
 .article .body hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+
+/* Bank transfer panel on the order confirmation */
+.bank { width: 100%; text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 14px; margin: 4px 0; }
+.bank h3 { font-family: var(--font-body); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.bank-amount { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: var(--teal-soft); border-radius: var(--radius-sm); padding: 12px 16px; }
+.bank-amount span { font-size: .9rem; font-weight: 600; color: var(--teal-dark); }
+.bank-amount strong { font-family: var(--font-display); font-size: 1.75rem; color: var(--teal-dark); letter-spacing: -.01em; }
+.bank-rows { display: grid; gap: 0; margin: 0; }
+.bank-rows > div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.bank-rows > div:last-child { border-bottom: 0; }
+.bank-rows dt { color: var(--muted); font-size: .88rem; flex: 0 0 auto; }
+.bank-rows dd { margin: 0; font-weight: 600; font-size: .92rem; text-align: right; color: var(--ink); overflow-wrap: anywhere; }
+.bank-after { font-size: .88rem; color: var(--ink-2); }
+.bank .btn { justify-self: start; }
+
+/* Single payment method (bank transfer) */
+.pay-method { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1.5px solid var(--teal); background: var(--teal-soft); border-radius: var(--radius-sm); }
+.pay-method svg { flex: 0 0 auto; width: 22px; height: 22px; color: var(--teal-dark); margin-top: 2px; }
+.pay-method .rl { font-weight: 700; font-size: .95rem; color: var(--ink); }
+.pay-method .rd { font-size: .85rem; color: var(--ink-2); }
