@@ -1,27 +1,10 @@
 // Everything the admin centre needs, behind one password-protected endpoint.
 import {
   ordersStore, json, issueToken, requireAuth, passwordValid,
-  getInventory, saveInventory, listOrders, STATUSES,
+  getInventory, saveInventory, listOrders, STATUSES, applyStockChange,
 } from './lib.mjs';
 
 const nowISO = () => new Date().toISOString();
-
-/* Stock moves when money is confirmed: committed on "pagado", returned on
-   "cancelado". Deliveries don't move stock again — it already left on payment. */
-function applyStockChange(inv, order, from, to) {
-  const committed = (s) => s === 'pagado' || s === 'entregado';
-  const wasCommitted = committed(from);
-  const isCommitted = committed(to);
-  if (wasCommitted === isCommitted) return [];
-  const sign = isCommitted ? -1 : 1;
-  const moves = [];
-  for (const item of order.items || []) {
-    const before = Number(inv.stock[item.slug] ?? 0);
-    inv.stock[item.slug] = before + sign * item.qty;
-    moves.push({ slug: item.slug, delta: sign * item.qty, from: before, to: inv.stock[item.slug] });
-  }
-  return moves;
-}
 
 export default async (req) => {
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
@@ -56,6 +39,7 @@ export default async (req) => {
       stats: {
         total: orders.length,
         nuevo: orders.filter((o) => o.status === 'nuevo').length,
+        pendiente_pago: orders.filter((o) => o.status === 'pendiente_pago').length,
         pagado: orders.filter((o) => o.status === 'pagado').length,
         entregado: orders.filter((o) => o.status === 'entregado').length,
         cancelado: orders.filter((o) => o.status === 'cancelado').length,

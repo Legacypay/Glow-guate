@@ -76,4 +76,63 @@ export async function listOrders() {
   return orders.filter(Boolean).sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')));
 }
 
-export const STATUSES = ['nuevo', 'pagado', 'entregado', 'cancelado'];
+// 'pendiente_pago' is a card order that reached CyberSource but has not come
+// back approved. It must not read as 'nuevo' — nobody is waiting on a transfer
+// for it, and an abandoned card checkout is not money owed.
+export const STATUSES = ['nuevo', 'pendiente_pago', 'pagado', 'entregado', 'cancelado'];
+
+/* ---------------- stock movement ----------------
+   Stock moves when money is confirmed: committed on "pagado", returned on
+   "cancelado". Deliveries don't move stock again — it already left on payment.
+   Shared so the admin and the CyberSource return both go through one rule. */
+export function applyStockChange(inv, order, from, to) {
+  const committed = (s) => s === 'pagado' || s === 'entregado';
+  const wasCommitted = committed(from);
+  const isCommitted = committed(to);
+  if (wasCommitted === isCommitted) return [];
+  const sign = isCommitted ? -1 : 1;
+  const moves = [];
+  for (const item of order.items || []) {
+    const before = Number(inv.stock[item.slug] ?? 0);
+    inv.stock[item.slug] = before + sign * item.qty;
+    moves.push({ slug: item.slug, delta: sign * item.qty, from: before, to: inv.stock[item.slug] });
+  }
+  return moves;
+}
+
+/* ---------------- order email alert ----------------
+   Orders are forwarded to the Netlify form purely so the email notification
+   fires. A failure here must never lose an order, so callers treat it as
+   advisory. Shared by the transfer path and the card path. */
+export const FORM_NAME = 'pedido-gt';
+
+export async function notifyForm(origin, order, pago) {
+  try {
+    const form = new URLSearchParams({
+      'form-name': FORM_NAME,
+      numero_pedido: order.num,
+      nombre: order.nombre,
+      telefono: order.telefono,
+      correo: order.correo,
+      entrega: order.entrega,
+      direccion: order.direccion,
+      municipio: order.municipio,
+      departamento: order.departamento,
+      pago: pago || order.pago || 'Transferencia bancaria',
+      notas: order.notas,
+      resumen: (order.items || []).map((i) => `${i.qty} \u00d7 ${i.name} ${i.strength} \u2014 Q${i.gtq * i.qty}`).join('\n')
+        + `\nTOTAL: Q${order.totalQ} GTQ ($${Number(order.totalUsd || 0).toFixed(2)} USD)`,
+      total_usd: Number(order.totalUsd || 0).toFixed(2),
+      total_gtq: String(order.totalQ),
+      idioma: order.idioma,
+    });
+    const res = await fetch(origin + '/', {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: form.toString(),
+    });
+    return res.ok;
+  } catch (e) {
+    return false;
+  }
+}

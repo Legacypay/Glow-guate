@@ -1,9 +1,7 @@
 // Public endpoint the checkout posts to. Stores the order so the admin has
 // structured, updatable data, then forwards the same fields to the Netlify
 // form so the existing email notifications still fire.
-import { ordersStore, json } from './lib.mjs';
-
-const FORM_NAME = 'pedido-gt';
+import { ordersStore, json, notifyForm } from './lib.mjs';
 
 export default async (req) => {
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
@@ -39,6 +37,7 @@ export default async (req) => {
     })),
     totalUsd: Number(o.totalUsd) || 0,
     totalQ: Number(o.totalQ) || 0,
+    pago: String(o.pago || 'Transferencia bancaria').slice(0, 80),
     adminNotes: '',
     history: [{ at: new Date().toISOString(), to: 'nuevo', by: 'sitio' }],
   };
@@ -48,36 +47,7 @@ export default async (req) => {
 
   // Then the form post, purely so the email alerts keep working. A failure here
   // must not lose the order, so it is reported but not fatal.
-  let notified = false;
-  try {
-    const form = new URLSearchParams({
-      'form-name': FORM_NAME,
-      numero_pedido: order.num,
-      nombre: order.nombre,
-      telefono: order.telefono,
-      correo: order.correo,
-      entrega: order.entrega,
-      direccion: order.direccion,
-      municipio: order.municipio,
-      departamento: order.departamento,
-      pago: String(o.pago || 'Transferencia bancaria'),
-      notas: order.notas,
-      resumen: order.items.map((i) => `${i.qty} × ${i.name} ${i.strength} — Q${i.gtq * i.qty}`).join('\n')
-        + `\nTOTAL: Q${order.totalQ} GTQ ($${order.totalUsd.toFixed(2)} USD)`,
-      total_usd: order.totalUsd.toFixed(2),
-      total_gtq: String(order.totalQ),
-      idioma: order.idioma,
-    });
-    const origin = new URL(req.url).origin;
-    const res = await fetch(origin + '/', {
-      method: 'POST',
-      headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      body: form.toString(),
-    });
-    notified = res.ok;
-  } catch (e) {
-    notified = false;
-  }
+  const notified = await notifyForm(new URL(req.url).origin, order, String(o.pago || 'Transferencia bancaria'));
 
   return json({ ok: true, num: order.num, notified });
 };

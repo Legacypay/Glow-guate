@@ -14,7 +14,8 @@
   const pName = (slug) => { const p = bySlug(slug); return p ? `${p.name} ${p.strength}` : slug; };
 
   const STATUS = {
-    nuevo:      { es: "Nuevo",      hint: "Esperando transferencia" },
+    nuevo:          { es: "Nuevo",          hint: "Esperando transferencia" },
+    pendiente_pago: { es: "Pago pendiente", hint: "Pago con tarjeta iniciado, sin aprobar" },
     pagado:     { es: "Pagado",     hint: "Transferencia confirmada" },
     entregado:  { es: "Entregado",  hint: "Entregado al cliente" },
     cancelado:  { es: "Cancelado",  hint: "Pedido cancelado" },
@@ -193,6 +194,7 @@
               <div><dt>Teléfono</dt><dd><a href="https://wa.me/${esc(String(o.telefono).replace(/\D/g, ""))}" target="_blank" rel="noopener">${esc(o.telefono)}</a></dd></div>
               <div><dt>Correo</dt><dd><a href="mailto:${esc(o.correo)}">${esc(o.correo)}</a></dd></div>
               <div><dt>Entrega</dt><dd>${esc(o.entrega)}</dd></div>
+              ${o.pago ? `<div><dt>Pago</dt><dd>${esc(o.pago)}</dd></div>` : ""}
               <div><dt>Dirección</dt><dd>${addr}</dd></div>
               ${o.notas ? `<div><dt>Nota del cliente</dt><dd>${esc(o.notas)}</dd></div>` : ""}
             </dl>
@@ -205,6 +207,18 @@
             </table>
           </section>
         </div>
+
+        ${o.payment ? `<section class="panel">
+          <h3>Pago con tarjeta</h3>
+          <dl class="kv">
+            <div><dt>Resultado</dt><dd>${esc(o.payment.decision || "sin respuesta")}${o.payment.reasonCode ? ` (${esc(o.payment.reasonCode)})` : ""}</dd></div>
+            ${o.payment.authCode ? `<div><dt>Código de autorización</dt><dd>${esc(o.payment.authCode)}</dd></div>` : ""}
+            ${o.payment.cardType || o.payment.last4 ? `<div><dt>Tarjeta</dt><dd>${esc(o.payment.cardType || "")} ${o.payment.last4 ? "•••• " + esc(o.payment.last4) : ""}</dd></div>` : ""}
+            ${o.payment.transactionId ? `<div><dt>ID de solicitud</dt><dd>${esc(o.payment.transactionId)}</dd></div>` : ""}
+            <div><dt>Ambiente</dt><dd>${esc(o.payment.env || "")}</dd></div>
+          </dl>
+          <p class="muted status-hint">Busca el ID de solicitud en el Business Center de CyberSource para anular o acreditar. Las anulaciones sólo se pueden hacer el mismo día.</p>
+        </section>` : ""}
 
         <section class="panel">
           <h3>Estado</h3>

@@ -70,6 +70,16 @@
       "co.delivery": "Entrega", "co.pickup": "Recoger", "co.pickup.d": "En nuestro punto de entrega en {loc}. Coordinamos día y hora.", "co.home": "Entrega a domicilio", "co.home.d": "Te confirmamos el costo según tu zona antes de pagar.",
       "co.address": "Dirección", "co.municipio": "Municipio / Zona", "co.departamento": "Departamento",
       "co.payment": "Método de pago preferido", "co.bank": "Transferencia bancaria", "co.bank.d": "Verás los datos de la cuenta y el monto exacto en quetzales al enviar tu pedido.",
+      "co.card": "Tarjeta de crédito o débito", "co.card.d": "Pago seguro en la página de CyberSource. Tus datos de tarjeta nunca pasan por este sitio.",
+      "co.card.test": "Modo de prueba: no se cobra ninguna tarjeta real.",
+      "co.pay": "Pagar {amount}", "co.redirect": "Redirigiendo al pago seguro…",
+      "pay.ok.title": "¡Pago aprobado!", "pay.ok.lead": "Tu pago fue aprobado y tu pedido está confirmado. Te contactamos para coordinar la entrega.",
+      "pay.fail.title": "El pago no se completó", "pay.fail.lead": "Tu tarjeta no fue cobrada. Puedes intentar de nuevo o pagar por transferencia bancaria.",
+      "pay.review.title": "Pago en revisión", "pay.review.lead": "Tu pago quedó en revisión por seguridad. Lo verificamos y te confirmamos en breve — no vuelvas a pagar todavía.",
+      "pay.error.title": "No pudimos confirmar el pago", "pay.error.lead": "Escríbenos con tu número de pedido y lo revisamos de inmediato.",
+      "pay.retry": "Intentar de nuevo", "pay.order": "Pedido",
+      "co.err.pay": "No pudimos iniciar el pago con tarjeta. Intenta de nuevo o elige transferencia bancaria.",
+      "co.err.stale": "Los precios se actualizaron. Recarga la página para ver el monto correcto.",
       "co.notes": "Notas (opcional)", "co.notes.ph": "Horario preferido, referencias de la dirección, preguntas…",
       "co.summary": "Resumen", "co.total": "Total",
       "co.notice": "No se cobra nada automáticamente. Al enviar tu pedido verás los datos de la cuenta y el monto exacto en quetzales para hacer tu transferencia.",
@@ -122,6 +132,16 @@
       "co.delivery": "Delivery", "co.pickup": "Pickup", "co.pickup.d": "At our delivery point in {loc}. We coordinate day and time.", "co.home": "Home delivery", "co.home.d": "We confirm the cost for your area before payment.",
       "co.address": "Address", "co.municipio": "Municipality / Zone", "co.departamento": "Department",
       "co.payment": "Preferred payment method", "co.bank": "Bank transfer", "co.bank.d": "You will see the account details and the exact amount in quetzales when you send your order.",
+      "co.card": "Credit or debit card", "co.card.d": "Secure payment on CyberSource's page. Your card details never pass through this site.",
+      "co.card.test": "Test mode: no real card is charged.",
+      "co.pay": "Pay {amount}", "co.redirect": "Redirecting to secure payment…",
+      "pay.ok.title": "Payment approved!", "pay.ok.lead": "Your payment went through and your order is confirmed. We'll be in touch to arrange delivery.",
+      "pay.fail.title": "Payment not completed", "pay.fail.lead": "Your card was not charged. You can try again or pay by bank transfer.",
+      "pay.review.title": "Payment under review", "pay.review.lead": "Your payment is being reviewed for security. We'll verify and confirm shortly — please don't pay again yet.",
+      "pay.error.title": "We couldn't confirm the payment", "pay.error.lead": "Write to us with your order number and we'll check it right away.",
+      "pay.retry": "Try again", "pay.order": "Order",
+      "co.err.pay": "We couldn't start the card payment. Try again or choose bank transfer.",
+      "co.err.stale": "Prices have been updated. Reload the page to see the correct amount.",
       "co.notes": "Notes (optional)", "co.notes.ph": "Preferred time, address references, questions…",
       "co.summary": "Summary", "co.total": "Total",
       "co.notice": "Nothing is charged automatically. When you send your order you will see the account details and the exact amount in quetzales to transfer.",
@@ -334,9 +354,75 @@
     history.replaceState(null, "", "#/p/" + slug);
   }
 
-  function openCheckout() {
+  /* ------------------------------------------------------------------ */
+  /* Card payment (CyberSource Secure Acceptance, Hosted Checkout)        */
+  /* ------------------------------------------------------------------ */
+  // The site asks the server what it can actually do rather than trusting a
+  // flag here, so the card option can never appear before the keys exist.
+  let payConfig = null;
+  async function ensurePayConfig() {
+    if (payConfig) return payConfig;
+    try {
+      const r = await fetch("/.netlify/functions/pay-config");
+      payConfig = r.ok ? await r.json() : { card: false };
+    } catch (e) { payConfig = { card: false }; }
+    return payConfig;
+  }
+
+  // While CyberSource is still on its TEST account, the card option must stay
+  // hidden from real customers — a test gateway takes no money. Open the site
+  // with ?pruebapago=1 to unlock it for the certification test.
+  let payTestUnlocked = false;
+  try {
+    if (/[?&]pruebapago=1/.test(location.search)) { localStorage.setItem("gpgt_paytest", "1"); }
+    payTestUnlocked = localStorage.getItem("gpgt_paytest") === "1";
+  } catch (e) { payTestUnlocked = /[?&]pruebapago=1/.test(location.search); }
+
+  const cardOffered = () => !!(payConfig && payConfig.card && (payConfig.env === "live" || payTestUnlocked));
+
+  // NeoNet require a Device Fingerprint on every production transaction. The
+  // profiling script must load before the order is submitted, so it goes in as
+  // soon as the checkout opens. We send only the unique identifier; the script
+  // gets merchantID + identifier as its session_id.
+  let deviceFingerprintId = null;
+  function ensureDeviceFingerprint() {
+    const df = payConfig && payConfig.deviceFingerprint;
+    if (!df || deviceFingerprintId) return;
+    deviceFingerprintId = (Date.now().toString(36) + Math.random().toString(36).slice(2, 8)).toUpperCase();
+    const sid = encodeURIComponent(df.merchantId + deviceFingerprintId);
+    const org = encodeURIComponent(df.orgId);
+    const sc = document.createElement("script");
+    sc.type = "text/javascript";
+    sc.src = `https://h.online-metrix.net/fp/tags.js?org_id=${org}&session_id=${sid}`;
+    document.head.appendChild(sc);
+    const ns = document.createElement("noscript");
+    ns.innerHTML = `<iframe style="width:100px;height:100px;border:0;position:absolute;top:-5000px" src="https://h.online-metrix.net/fp/tags?org_id=${org}&session_id=${sid}"></iframe>`;
+    document.body.appendChild(ns);
+  }
+
+  const payButtonLabel = (method) =>
+    method === "tarjeta" ? t("co.pay", { amount: fmtQ(cartTotalQ()) }) : t("co.submit");
+
+  function paymentField() {
+    if (!cardOffered()) {
+      return `<div class="field"><label>${t("co.payment")}</label>
+        <div class="pay-method">${ICON_BANK}<span><span class="rl">${t("co.bank")}</span><br /><span class="rd">${t("co.bank.d")}</span></span></div>
+      </div>`;
+    }
+    return `<div class="field"><label>${t("co.payment")}</label>
+      <div class="radio-group">
+        <label class="radio"><input type="radio" name="pago" value="tarjeta" checked /><span><span class="rl">${t("co.card")}</span><br /><span class="rd">${t("co.card.d")}</span></span></label>
+        <label class="radio"><input type="radio" name="pago" value="transferencia" /><span><span class="rl">${t("co.bank")}</span><br /><span class="rd">${t("co.bank.d")}</span></span></label>
+      </div>
+      ${payConfig.env === "test" ? `<p class="muted" style="margin-top:8px">${t("co.card.test")}</p>` : ""}
+    </div>`;
+  }
+
+  async function openCheckout() {
     const items = cartItems(); if (!items.length) return;
     closeCart();
+    await ensurePayConfig();
+    ensureDeviceFingerprint();
     const total = cartTotal();
     const loc = L(CONFIG.pickupLocation);
     openModal(`<form class="checkout" id="checkoutForm" novalidate>
@@ -357,9 +443,7 @@
         <div class="field"><label for="f-municipio">${t("co.municipio")} *</label><input id="f-municipio" name="municipio" placeholder="Zona 10, Mixco, Antigua…" /></div>
         <div class="field"><label for="f-departamento">${t("co.departamento")} *</label><select id="f-departamento" name="departamento">${DEPARTAMENTOS.map(d => `<option${d === "Guatemala" ? " selected" : ""}>${d}</option>`).join("")}</select></div>
       </div>
-      <div class="field"><label>${t("co.payment")}</label>
-        <div class="pay-method">${ICON_BANK}<span><span class="rl">${t("co.bank")}</span><br /><span class="rd">${t("co.bank.d")}</span></span></div>
-      </div>
+      ${paymentField()}
       <div class="field"><label for="f-notas">${t("co.notes")}</label><textarea id="f-notas" name="notas" placeholder="${esc(t("co.notes.ph"))}"></textarea></div>
       <div class="summary">
         <strong>${t("co.summary")}</strong>
@@ -372,6 +456,8 @@
       <button type="button" class="btn btn-ghost btn-block" data-action="back-to-cart">${t("co.back")}</button>
     </form>`);
     history.replaceState(null, "", "#/checkout");
+    const sb = $("#submitBtn");
+    if (sb && cardOffered()) sb.textContent = payButtonLabel("tarjeta");
   }
 
   function orderNumber() {
@@ -397,33 +483,60 @@
     if (bad) { err.textContent = t("co.err.required"); err.hidden = false; return; }
 
     const items = cartItems(); const total = cartTotal(); const num = orderNumber();
+    const method = (form.elements.pago && form.elements.pago.value) || "transferencia";
     const body = new URLSearchParams();
     body.set("form-name", CONFIG.formName);
     body.set("numero_pedido", num);
     body.set("nombre", data.get("nombre")); body.set("telefono", data.get("telefono")); body.set("correo", data.get("correo"));
     body.set("entrega", delivery === "domicilio" ? "Entrega a domicilio" : "Recoger");
     body.set("direccion", delivery === "domicilio" ? data.get("direccion") : ""); body.set("municipio", delivery === "domicilio" ? data.get("municipio") : ""); body.set("departamento", delivery === "domicilio" ? data.get("departamento") : "");
-    body.set("pago", "Transferencia bancaria — " + CONFIG.bank.name);
+    body.set("pago", method === "tarjeta" ? "Tarjeta (CyberSource)" : "Transferencia bancaria — " + CONFIG.bank.name);
     body.set("notas", data.get("notas") || "");
     body.set("resumen", orderSummaryText(items, total));
     body.set("total_usd", total.toFixed(2)); body.set("total_gtq", String(Math.round(total * CONFIG.fxRate)));
     body.set("idioma", lang);
 
-    const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = t("co.sending");
+    const payload = {
+      num, nombre: data.get("nombre"), telefono: data.get("telefono"), correo: data.get("correo"),
+      entrega: body.get("entrega"), direccion: body.get("direccion"), municipio: body.get("municipio"),
+      departamento: body.get("departamento"), pago: body.get("pago"), notas: body.get("notas"),
+      idioma: lang, totalUsd: total, totalQ: cartTotalQ(),
+      items: items.map(({ p, qty }) => ({ slug: p.slug, name: p.name, strength: p.strength, qty, usd: p.price, gtq: qUnit(p.price) })),
+    };
+
+    const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = method === "tarjeta" ? t("co.redirect") : t("co.sending");
     try {
       const isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+
+      // Card: the server stores the order and signs the amount, then the browser
+      // hands the customer to CyberSource. The cart is deliberately left alone —
+      // it is cleared on the receipt screen, so a declined card keeps the order
+      // intact to retry.
+      if (method === "tarjeta" && !isLocal) {
+        const r = await fetch("/.netlify/functions/pay-start", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ order: { ...payload, deviceFingerprintId } }),
+        });
+        if (r.status === 409) { const e = new Error("stale prices"); e.stale = true; throw e; }
+        const out = r.ok ? await r.json() : null;
+        if (!out || !out.fields || !out.endpoint) throw new Error("pay-start " + r.status);
+        const f = document.createElement("form");
+        f.method = "POST"; f.action = out.endpoint; f.style.display = "none";
+        Object.keys(out.fields).forEach((k) => {
+          const i = document.createElement("input");
+          i.type = "hidden"; i.name = k; i.value = out.fields[k];
+          f.appendChild(i);
+        });
+        document.body.appendChild(f);
+        f.submit();
+        return;
+      }
+
       if (isLocal) { await new Promise(r => setTimeout(r, 500)); }
       else {
         // The function stores the order for the admin centre and forwards it to the
         // Netlify form so the email alerts still fire. If it is unavailable we post
         // the form directly, so an order is never lost to a function outage.
-        const payload = {
-          num, nombre: data.get("nombre"), telefono: data.get("telefono"), correo: data.get("correo"),
-          entrega: body.get("entrega"), direccion: body.get("direccion"), municipio: body.get("municipio"),
-          departamento: body.get("departamento"), pago: body.get("pago"), notas: body.get("notas"),
-          idioma: lang, totalUsd: total, totalQ: cartTotalQ(),
-          items: items.map(({ p, qty }) => ({ slug: p.slug, name: p.name, strength: p.strength, qty, usd: p.price, gtq: qUnit(p.price) })),
-        };
         let stored = false;
         try {
           const r = await fetch("/.netlify/functions/order", {
@@ -441,8 +554,10 @@
       showSuccess(num, paidQ);
     } catch (e) {
       console.error("order submit failed", e);
-      err.textContent = t("co.err.send", { email: CONFIG.contactEmail }); err.hidden = false;
-      btn.disabled = false; btn.textContent = t("co.submit");
+      err.textContent = e && e.stale ? t("co.err.stale")
+        : method === "tarjeta" ? t("co.err.pay") : t("co.err.send", { email: CONFIG.contactEmail });
+      err.hidden = false;
+      btn.disabled = false; btn.textContent = payButtonLabel(method);
     }
   }
 
@@ -475,6 +590,28 @@
       <p>${t("ok.lead")}</p>
       ${bankPanel(num, amountQ)}
       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${wa}<button type="button" class="btn btn-outline" data-action="close-modal">${t("ok.close")}</button></div>
+    </div>`);
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+
+  // CyberSource returns the customer to /#/pago/<pedido>/<resultado>. The
+  // result was decided server-side against the signed reply — this only draws it.
+  function showPayResult(num, result) {
+    const done = result === "ok" || result === "revision";
+    if (done) { cart = {}; saveCart(); renderCart(); }
+    const titles = { ok: "pay.ok", revision: "pay.review", fail: "pay.fail" };
+    const key = titles[result] || "pay.error";
+    const wa = CONFIG.whatsapp
+      ? `<a class="btn ${result === "ok" ? "btn-outline" : "btn-teal"}" href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t("wa.order", { num }))}" target="_blank" rel="noopener">${t("ok.wa")}</a>`
+      : "";
+    const retry = result === "fail" || result === "error"
+      ? `<button type="button" class="btn btn-teal" data-action="checkout">${t("pay.retry")}</button>` : "";
+    openModal(`<div class="success">
+      <div class="check">${result === "ok" ? ICON_CHECK.replace("<svg", '<svg width="32" height="32"') : ICON_INFO.replace("<svg", '<svg width="32" height="32"')}</div>
+      <h2>${t(key + ".title")}</h2>
+      <div class="order-no">${esc(num)}</div>
+      <p>${t(key + ".lead")}</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${retry}${wa}<button type="button" class="btn btn-outline" data-action="close-modal">${t("ok.close")}</button></div>
     </div>`);
     history.replaceState(null, "", location.pathname + location.search);
   }
@@ -542,6 +679,7 @@
 
   document.addEventListener("change", (e) => {
     if (e.target.name === "entrega") { const addr = $("#addrFields"); if (addr) addr.hidden = e.target.value !== "domicilio"; }
+    if (e.target.name === "pago") { const sb = $("#submitBtn"); if (sb) sb.textContent = payButtonLabel(e.target.value); }
   });
   document.addEventListener("input", (e) => {
     if (e.target.id === "libSearch") { libQuery = e.target.value; renderLibrary(); }
@@ -572,6 +710,7 @@
     const h = location.hash;
     const changed = setView(viewOfHash(h));
     let m;
+    if ((m = h.match(/^#\/pago\/([^/]+)\/([a-z]+)$/))) return showPayResult(decodeURIComponent(m[1]), m[2]);
     if ((m = h.match(/^#\/p\/(.+)$/))) return openProduct(m[1]);
     if ((m = h.match(/^#\/aprende\/(.+)$/))) return openArticle(m[1]);
     if ($("#modal").classList.contains("open")) closeModal(true);

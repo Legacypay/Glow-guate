@@ -35,7 +35,16 @@ existed (e.g. `GT-260918-XW55`) live only in Netlify Forms.
 go in an `Authorization: Bearer` header, not the body. Marking an order
 **pagado** decrements stock; **cancelado** restores it.
 
-**Payment is a bank transfer in quetzales** to her Banco Industrial cuenta
+**Card payments (CyberSource Secure Acceptance, Hosted Checkout)** are built
+but not switched on — see [docs/PAGOS-CYBERSOURCE.md](docs/PAGOS-CYBERSOURCE.md).
+The option only appears when `CYBS_PROFILE_ID`/`ACCESS_KEY`/`SECRET_KEY` exist
+**and** `CYBS_ENV=live`; in test mode it is unlocked per-browser with
+`?pruebapago=1`, so a test gateway is never shown to a real customer.
+`pay-start` recomputes the amount from `data.js` and signs it, `pay-return`
+verifies CyberSource's HMAC before marking anything paid. Never mark an order
+paid on the redirect alone.
+
+**Payment is also a bank transfer in quetzales** to her Banco Industrial cuenta
 monetaria, shown only on the order confirmation with the order number as the
 reference. So `CONFIG.fxRate` is **real money**, not a display estimate — it is
 computed per unit (`qUnit`) and summed (`cartTotalQ`) so lines equal the total.
