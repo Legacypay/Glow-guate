@@ -7,8 +7,12 @@ Cuenta CyberSource (ambiente de prueba): **`visanetgt_glowpeptidegt`** — ese e
 el merchant ID que va en `CYBS_MERCHANT_ID` y que forma el `session_id` del
 Device Fingerprint (merchantID + identificador único).
 
-**Servicios contratados:** procesamiento estándar y 3D Secure. Sin TMS
-(no guardamos tarjetas) y sin pagos recurrentes (no hay suscripciones).
+**Servicios contratados:** sólo procesamiento de pagos estándar. **Sin 3D
+Secure** — decisión del dueño (2026-09-21): los compradores son familia y
+conocidos, no tráfico frío, así que la fricción del reto 3DS cuesta más que el
+traslado de responsabilidad por contracargos. Sin TMS (no guardamos tarjetas) y
+sin pagos recurrentes (no hay suscripciones). Los tres se pueden agregar
+después si cambia el perfil de compradores.
 
 ## Qué método usamos y por qué
 
