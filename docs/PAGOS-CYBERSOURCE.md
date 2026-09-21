@@ -3,6 +3,13 @@
 Afiliación **280528000** · Terminal **99583771** · Soporte NeoNet
 canalesdigitales@neonet.com.gt · 2424-2828
 
+Cuenta CyberSource (ambiente de prueba): **`visanetgt_glowpeptidegt`** — ese es
+el merchant ID que va en `CYBS_MERCHANT_ID` y que forma el `session_id` del
+Device Fingerprint (merchantID + identificador único).
+
+**Servicios contratados:** procesamiento estándar y 3D Secure. Sin TMS
+(no guardamos tarjetas) y sin pagos recurrentes (no hay suscripciones).
+
 ## Qué método usamos y por qué
 
 NeoNet ofrece tres: SOAP Toolkit API, Secure Acceptance API y **Secure
