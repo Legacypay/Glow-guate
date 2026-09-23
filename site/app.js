@@ -83,6 +83,7 @@
       "co.notes": "Notas (opcional)", "co.notes.ph": "Horario preferido, referencias de la dirección, preguntas…",
       "co.summary": "Resumen", "co.total": "Total",
       "co.notice": "No se cobra nada automáticamente. Al enviar tu pedido verás los datos de la cuenta y el monto exacto en quetzales para hacer tu transferencia.",
+      "co.notice.card": "Al confirmar te llevamos a la página segura de CyberSource para pagar. Los datos de tu tarjeta no pasan por este sitio.",
       "co.submit": "Enviar pedido", "co.sending": "Enviando…", "co.back": "Volver al pedido",
       "co.err.required": "Por favor completa los campos marcados.", "co.err.send": "No pudimos enviar tu pedido. Intenta de nuevo o escríbenos a {email}.",
       "ok.title": "¡Pedido recibido!", "ok.lead": "Usa tu número de pedido como referencia al transferir. Cuando recibamos tu comprobante confirmamos disponibilidad y coordinamos la entrega.", "ok.close": "Cerrar", "ok.wa": "Confirmar por WhatsApp",
@@ -145,6 +146,7 @@
       "co.notes": "Notes (optional)", "co.notes.ph": "Preferred time, address references, questions…",
       "co.summary": "Summary", "co.total": "Total",
       "co.notice": "Nothing is charged automatically. When you send your order you will see the account details and the exact amount in quetzales to transfer.",
+      "co.notice.card": "When you confirm we take you to CyberSource's secure page to pay. Your card details never pass through this site.",
       "co.submit": "Send order", "co.sending": "Sending…", "co.back": "Back to order",
       "co.err.required": "Please complete the highlighted fields.", "co.err.send": "We couldn't send your order. Try again or email us at {email}.",
       "ok.title": "Order received!", "ok.lead": "Use your order number as the reference when you transfer. Once we receive your receipt we confirm availability and arrange delivery.", "ok.close": "Close", "ok.wa": "Confirm on WhatsApp",
@@ -450,7 +452,7 @@
         ${items.map(({ p, qty }) => `<div class="row"><span>${qty} × ${esc(prodName(p))} ${esc(p.strength)}</span><span>${usd(p.price * qty)}</span></div>`).join("")}
         <div class="row total"><span>${t("co.total")}</span><span>${fmtQ(cartTotalQ())} <span class="muted" style="font-weight:500">(${usd(total)})</span></span></div>
       </div>
-      <div class="notice">${ICON_INFO}<span>${t("co.notice")}</span></div>
+      <div class="notice">${ICON_INFO}<span id="coNotice">${t(cardOffered() ? "co.notice.card" : "co.notice")}</span></div>
       <p class="form-error" id="formError" hidden></p>
       <button type="submit" class="btn btn-teal btn-block" id="submitBtn">${t("co.submit")}</button>
       <button type="button" class="btn btn-ghost btn-block" data-action="back-to-cart">${t("co.back")}</button>
@@ -679,7 +681,10 @@
 
   document.addEventListener("change", (e) => {
     if (e.target.name === "entrega") { const addr = $("#addrFields"); if (addr) addr.hidden = e.target.value !== "domicilio"; }
-    if (e.target.name === "pago") { const sb = $("#submitBtn"); if (sb) sb.textContent = payButtonLabel(e.target.value); }
+    if (e.target.name === "pago") {
+      const sb = $("#submitBtn"); if (sb) sb.textContent = payButtonLabel(e.target.value);
+      const nt = $("#coNotice"); if (nt) nt.textContent = t(e.target.value === "tarjeta" ? "co.notice.card" : "co.notice");
+    }
   });
   document.addEventListener("input", (e) => {
     if (e.target.id === "libSearch") { libQuery = e.target.value; renderLibrary(); }

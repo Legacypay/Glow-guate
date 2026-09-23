@@ -54,7 +54,7 @@ p { margin: 0; }
 .btn-outline:hover { border-color: var(--ink); }
 .btn-ghost { background: transparent; color: var(--ink-2); padding: 8px 12px; }
 .btn-ghost:hover { background: var(--surface-2); }
-.btn-block { width: 100%; }
+.btn-block { width: 100%; min-height: 46px; }  /* full-width buttons are the primary touch targets on mobile */
 .btn[disabled] { opacity: .5; cursor: not-allowed; }
 .btn-sm { padding: 8px 14px; font-size: .85rem; }
 
@@ -269,7 +269,7 @@ p { margin: 0; }
 .modal.open { display: flex; }
 .modal-panel { background: var(--surface); width: 100%; max-width: 920px; max-height: 94vh; overflow-y: auto; border-radius: 22px 22px 0 0; box-shadow: var(--shadow-lg); position: relative; animation: rise .22s ease; }
 @keyframes rise { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
-.modal-close { position: sticky; top: 0; float: right; margin: 12px 12px 0 0; z-index: 2; background: var(--surface); border: 1px solid var(--line); }
+.modal-close { position: sticky; top: 0; float: right; margin: 12px 12px 0 0; z-index: 2; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 2px 10px rgba(16,24,40,.10); }
 @media (min-width: 760px) { .modal { align-items: center; padding: 24px; } .modal-panel { border-radius: 22px; } }
 
 .pd { display: grid; grid-template-columns: 1fr; }
@@ -305,7 +305,12 @@ p { margin: 0; }
 .radio-group { display: grid; gap: 8px; grid-template-columns: 1fr; }
 .radio { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); cursor: pointer; }
 .radio:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
-.radio input { margin-top: 3px; accent-color: var(--teal); }
+/* `.field input` above sets width:100% + padding + border for text fields, and
+   it also matched these radios — so every radio rendered 75px wide and shoved
+   its own label into a narrow column that wrapped against the card edge. */
+.radio input[type="radio"] { flex: 0 0 auto; width: 18px; height: 18px; min-width: 0; padding: 0; border: 0; margin: 1px 0 0; accent-color: var(--teal); }
+.radio > span { min-width: 0; }
+.radio .rl, .radio .rd { overflow-wrap: anywhere; }
 .radio .rl { font-weight: 600; font-size: .95rem; }
 .radio .rd { font-size: .83rem; color: var(--ink-2); }
 .summary { background: var(--bg); border-radius: var(--radius); padding: 16px; display: grid; gap: 8px; font-size: .93rem; }
