@@ -257,12 +257,49 @@
   const libSub = (x) => ((lang === "es" && x.html_es) ? (x.subtitle_es || "") : (x.subtitle || ""));
   const libHtml = (x) => ((lang === "es" && x.html_es) ? x.html_es : x.html);
   const englishOnly = (x) => lang === "es" && !x.html_es;
+  // Covers for the 19 articles that have neither their own image nor a product
+  // we sell. Compounds outside the GT catalogue deliberately get lab/quality
+  // imagery rather than some other product's vial — showing an MK-677 guide
+  // with a BPC-157 vial would read as if we sold it.
+  const LIB_FALLBACK = {
+    // methods — the blog already has the exact illustration for these
+    "how-to-read-a-coa": "img/blog/certificates-of-analysis-explained-how-to-read-coa.webp",
+    "hplc-and-mass-spectrometry-purity": "img/blog/how-research-peptide-purity-is-verified.webp",
+    "lyophilized-vials-vs-capsules": "img/blog/peptide-synthesis-solid-phase-liquid-phase-purity.webp",
+    // comparisons — a vial of one of the two compared, where we stock it
+    "bpc-157-vs-tb-500": "vial:bpc-157-10mg",
+    "cjc-1295-ipamorelin-vs-tesamorelin": "vial:cjc-1295-ipamorelin",
+    "glow-blend-vs-klow-blend": "img/blog/glow-70-vs-klow-80-peptide-blends.webp",
+    "mt-ii-vs-pt-141": "vial:pt-141-10mg",
+    "semax-vs-selank": "vial:semax-10mg",
+    // preparation and care
+    "almacenamiento-y-conservacion": "vial:agua-bacteriostatica",
+    // compounds we do not stock — generic lab imagery, never another product
+    "5-amino-1mq": "img/blog/research-peptide-quality-factors-laboratories.webp",
+    "aod-9604": "img/blog/third-party-testing-independent-verification-peptides.webp",
+    "epithalon": "img/blog/peptide-synthesis-solid-phase-liquid-phase-purity.webp",
+    "foxo4-dri": "img/blog/how-research-peptide-purity-is-verified.webp",
+    "methylene-blue": "img/blog/research-peptide-quality-factors-laboratories.webp",
+    "mk-677": "img/blog/third-party-testing-independent-verification-peptides.webp",
+    "mt-ii": "img/blog/peptide-synthesis-solid-phase-liquid-phase-purity.webp",
+    "slu-pp-332": "img/blog/how-research-peptide-purity-is-verified.webp",
+    "ss-31": "img/blog/glow-peptides-and-glow-aminos-compared.webp",
+    "tesofensine": "img/blog/research-peptide-quality-factors-laboratories.webp",
+  };
+
   function libCover(x) {
-    if (x.type === "blog" && x.cover) return `<img src="${x.cover}" alt="" loading="lazy" />`;
+    if (x.cover) return `<img src="${x.cover}" alt="" loading="lazy" />`;
     const p = x.productSlug ? bySlug(x.productSlug) : null;
     if (p) return `<img class="vial" src="${p.img}" alt="" loading="lazy" />`;
-    const glyph = x.type === "compare" ? "⇄" : x.type === "method" ? "🔬" : x.type === "prep" ? "🧪" : "📄";
-    return `<span style="font-size:2rem;opacity:.5">${glyph}</span>`;
+    const fb = LIB_FALLBACK[x.slug];
+    if (fb && fb.startsWith("vial:")) {
+      const fp = bySlug(fb.slice(5));
+      if (fp) return `<img class="vial" src="${fp.img}" alt="" loading="lazy" />`;
+    } else if (fb) {
+      return `<img src="${fb}" alt="" loading="lazy" />`;
+    }
+    // Last resort: the brand mark, never an empty box or a glyph.
+    return `<img class="vial" src="img/glow-logo.png" alt="" loading="lazy" />`;
   }
   function renderLibrary() {
     const chips = $("#libChips"); if (!chips) return;
