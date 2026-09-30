@@ -222,6 +222,25 @@ p { margin: 0; }
 .article .body dl { margin: 0 0 14px; }
 .article .body dt { font-weight: 700; margin-top: 10px; }
 .article .body dd { margin: 2px 0 0; color: var(--ink-2); }
+/* Human evidence block — the status badge is the point: a customer can see at a
+   glance whether a compound is an approved medicine or has never been tried in
+   a person, without reading the paragraph. */
+.article .body .evidence { border: 1.5px solid var(--line); border-left-width: 5px; border-radius: var(--radius-sm); padding: 16px 18px; margin: 0 0 18px; background: var(--surface-2); }
+.article .body .evidence > :last-child { margin-bottom: 0; }
+.article .body .ev-badge { display: inline-block; margin: 0 0 10px; padding: 4px 11px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.article .body .ev-safety { padding-top: 12px; border-top: 1px solid var(--line); }
+.article .body .ev-foot { font-size: .84rem; color: var(--muted); }
+.article .body .ev-approved { border-left-color: var(--teal); }
+.article .body .ev-approved .ev-badge { background: var(--teal-soft); color: var(--teal-dark); }
+.article .body .ev-trials { border-left-color: #2b6ccb; }
+.article .body .ev-trials .ev-badge { background: #e8eefc; color: #2b4a9e; }
+.article .body .ev-limited { border-left-color: var(--amber); }
+.article .body .ev-limited .ev-badge { background: var(--amber-soft); color: #7a4f0c; }
+.article .body .ev-none { border-left-color: #b42318; }
+.article .body .ev-none .ev-badge { background: #fde8ef; color: #a51f4a; }
+.article .body figure.fig { margin: 0 0 16px; }
+.article .body figure.fig img { width: 100%; height: auto; }
+.article .body figure.fig figcaption { font-size: .84rem; color: var(--muted); margin-top: 6px; }
 .article .actions { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid var(--line); }
 .modal-panel.wide { max-width: 860px; }
 

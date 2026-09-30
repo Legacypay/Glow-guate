@@ -1,0 +1,627 @@
+{
+  "_README": "Human-evidence profiles rendered into every compound guide, ES and EN. status: approved = an approved medicine somewhere, with Phase 3 data; trials = real published human trials, not approved; limited = small, old or unreplicated human data; none = no published human clinical trials. NOTHING HERE MAY BE INVENTED. If a compound has no human trials, that is what the customer is told — that is the informative answer, not a gap to fill.",
+
+  "retatrutide": {
+    "status": "trials",
+    "es": {
+      "resumen": "Retatrutida es de los compuestos con evidencia humana más sólida de este catálogo. Está en desarrollo clínico por Eli Lilly y ha pasado por ensayos de fase 2 publicados en revistas médicas de primer nivel. Todavía no está aprobada por ninguna agencia reguladora.",
+      "puntos": [
+        "Ensayo de fase 2 en obesidad publicado en el <em>New England Journal of Medicine</em> (2023): 338 adultos con obesidad, 48 semanas. En la dosis más alta el grupo tratado perdió alrededor de 24% del peso corporal, frente a cerca de 2% con placebo.",
+        "Ensayo de fase 2 en diabetes tipo 2 publicado en <em>The Lancet</em> (2023): mejoras en control glucémico y peso frente a placebo.",
+        "Actúa sobre tres receptores a la vez (GLP-1, GIP y glucagón), a diferencia de los agonistas de un solo receptor.",
+        "El programa de fase 3 sigue en curso; los resultados a largo plazo aún no están completos."
+      ],
+      "seguridad": "Los efectos adversos más frecuentes en los ensayos fueron gastrointestinales —náuseas, vómitos, diarrea— y aumentaron con la dosis. La escalada gradual de dosis fue parte del diseño de los estudios."
+    },
+    "en": {
+      "summary": "Retatrutide has the strongest human evidence of anything in this catalogue. It is in clinical development by Eli Lilly and has completed phase 2 trials published in leading medical journals. It is not yet approved by any regulator.",
+      "points": [
+        "Phase 2 obesity trial published in the <em>New England Journal of Medicine</em> (2023): 338 adults with obesity, 48 weeks. At the highest dose the treated group lost roughly 24% of body weight, against about 2% on placebo.",
+        "Phase 2 type 2 diabetes trial published in <em>The Lancet</em> (2023): improvements in glycaemic control and weight versus placebo.",
+        "Acts on three receptors at once (GLP-1, GIP and glucagon), unlike single-receptor agonists.",
+        "The phase 3 programme is still running; long-term results are not yet complete."
+      ],
+      "safety": "The most common adverse effects in trials were gastrointestinal — nausea, vomiting, diarrhoea — and increased with dose. Gradual dose escalation was part of the study design."
+    }
+  },
+
+  "tesamorelin": {
+    "status": "approved",
+    "es": {
+      "resumen": "Tesamorelina es un medicamento aprobado. La FDA de Estados Unidos lo autorizó en 2010 (marca Egrifta) para reducir el exceso de grasa abdominal en personas con lipodistrofia asociada al VIH. Es el compuesto con respaldo regulatorio más claro de este catálogo.",
+      "puntos": [
+        "Dos ensayos de fase 3 aleatorizados y controlados con placebo, con cerca de 800 adultos en total, a 26 semanas.",
+        "Reducción de la grasa visceral abdominal de aproximadamente 15% frente a placebo, medida por tomografía.",
+        "El efecto se revierte al suspender el tratamiento: la grasa visceral regresa.",
+        "También se ha estudiado en hígado graso en personas con VIH, con resultados publicados en <em>The Lancet HIV</em> (2019)."
+      ],
+      "seguridad": "En los ensayos se observaron dolor articular, edema y aumentos de glucosa en sangre. Está aprobado para una indicación específica; su uso fuera de ella no cuenta con ese respaldo."
+    },
+    "en": {
+      "summary": "Tesamorelin is an approved medicine. The US FDA authorised it in 2010 (brand name Egrifta) to reduce excess abdominal fat in people with HIV-associated lipodystrophy. It carries the clearest regulatory backing of anything in this catalogue.",
+      "points": [
+        "Two randomised, placebo-controlled phase 3 trials, around 800 adults in total, over 26 weeks.",
+        "Roughly 15% reduction in visceral abdominal fat versus placebo, measured by CT.",
+        "The effect reverses on stopping: visceral fat returns.",
+        "Also studied in fatty liver disease in people with HIV, published in <em>The Lancet HIV</em> (2019)."
+      ],
+      "safety": "Joint pain, oedema and rises in blood glucose were seen in trials. It is approved for one specific indication; use outside it does not carry that backing."
+    }
+  },
+
+  "pt-141": {
+    "status": "approved",
+    "es": {
+      "resumen": "PT-141 (bremelanotida) es un medicamento aprobado. La FDA lo autorizó en 2019 (marca Vyleesi) para el deseo sexual hipoactivo en mujeres premenopáusicas.",
+      "puntos": [
+        "Programa de fase 3 RECONNECT: dos ensayos idénticos, aleatorizados y controlados con placebo, con alrededor de 1,200 mujeres, a 24 semanas.",
+        "Mejoras estadísticamente significativas en las escalas de deseo sexual y en la angustia asociada, frente a placebo.",
+        "La magnitud del efecto fue modesta: ayudó a una parte de las participantes, no a todas.",
+        "Se estudió previamente en disfunción eréctil; ese desarrollo se detuvo por aumentos de presión arterial con la vía nasal."
+      ],
+      "seguridad": "Las náuseas fueron muy frecuentes en los ensayos (cerca de 40% de las participantes). También se reportaron rubor, cefalea y elevaciones transitorias de presión arterial. No se recomienda en personas con hipertensión no controlada o enfermedad cardiovascular."
+    },
+    "en": {
+      "summary": "PT-141 (bremelanotide) is an approved medicine. The FDA authorised it in 2019 (brand name Vyleesi) for hypoactive sexual desire disorder in premenopausal women.",
+      "points": [
+        "RECONNECT phase 3 programme: two identical randomised, placebo-controlled trials, around 1,200 women, over 24 weeks.",
+        "Statistically significant improvements in sexual desire scores and in associated distress, versus placebo.",
+        "The effect size was modest: it helped some participants, not all.",
+        "Earlier studied in erectile dysfunction; that development stopped because of blood-pressure rises with the nasal route."
+      ],
+      "safety": "Nausea was very common in trials (around 40% of participants). Flushing, headache and transient blood-pressure rises were also reported. Not recommended in people with uncontrolled hypertension or cardiovascular disease."
+    }
+  },
+
+  "methylene-blue": {
+    "status": "approved",
+    "es": {
+      "resumen": "El azul de metileno es un medicamento establecido desde hace más de un siglo, con uso hospitalario aprobado. No es un compuesto experimental.",
+      "puntos": [
+        "Aprobado para tratar la metahemoglobinemia; se administra por vía intravenosa en el hospital.",
+        "Se usa además como colorante quirúrgico y en la encefalopatía por ifosfamida.",
+        "Se investigó a fondo en Alzheimer como derivado (LMTM / TRx0237): los ensayos de fase 3 no alcanzaron sus objetivos principales cuando se añadió al tratamiento habitual.",
+        "La evidencia en dosis bajas para energía o cognición en personas sanas es preliminar y no concluyente."
+      ],
+      "seguridad": "Importante: el azul de metileno es un inhibidor de la monoaminooxidasa. Combinado con antidepresivos serotoninérgicos (ISRS, IRSN y otros) puede provocar síndrome serotoninérgico, que es grave. También puede causar hemólisis en personas con deficiencia de G6PD. Consulta con tu médico antes de usarlo si tomas cualquier antidepresivo."
+    },
+    "en": {
+      "summary": "Methylene blue is an established medicine with more than a century of approved hospital use. It is not an experimental compound.",
+      "points": [
+        "Approved to treat methaemoglobinaemia, given intravenously in hospital.",
+        "Also used as a surgical dye and in ifosfamide-induced encephalopathy.",
+        "Investigated extensively in Alzheimer's as a derivative (LMTM / TRx0237): phase 3 trials did not meet their primary endpoints when added to standard treatment.",
+        "Evidence for low doses for energy or cognition in healthy people is preliminary and not conclusive."
+      ],
+      "safety": "Important: methylene blue is a monoamine oxidase inhibitor. Combined with serotonergic antidepressants (SSRIs, SNRIs and others) it can cause serotonin syndrome, which is serious. It can also cause haemolysis in people with G6PD deficiency. Talk to your doctor before using it if you take any antidepressant."
+    }
+  },
+
+  "mk-677": {
+    "status": "trials",
+    "es": {
+      "resumen": "MK-677 (ibutamoren) tiene ensayos clínicos en humanos reales y publicados, algunos de larga duración. Nunca fue aprobado como medicamento: su desarrollo se detuvo.",
+      "puntos": [
+        "Ensayo de dos años publicado en <em>Annals of Internal Medicine</em> (2008): 65 adultos mayores sanos, 25 mg diarios. Aumentó de forma sostenida la hormona de crecimiento y el IGF-1, y la masa libre de grasa subió cerca de 1 kg.",
+        "En ese mismo estudio no mejoraron la fuerza ni la función física, a pesar del cambio hormonal.",
+        "Un ensayo en recuperación de fractura de cadera no alcanzó su objetivo principal.",
+        "Aumenta el apetito de forma marcada; ese efecto se estudió también en caquexia."
+      ],
+      "seguridad": "En los ensayos se observaron retención de líquidos, aumento del apetito, elevación de la glucosa en ayunas y reducción de la sensibilidad a la insulina. Estas son razones por las que su desarrollo no continuó."
+    },
+    "en": {
+      "summary": "MK-677 (ibutamoren) has real, published human trials, some of them long. It was never approved as a medicine: development stopped.",
+      "points": [
+        "Two-year trial published in <em>Annals of Internal Medicine</em> (2008): 65 healthy older adults, 25 mg daily. Sustained increases in growth hormone and IGF-1, with fat-free mass up by about 1 kg.",
+        "In that same study, strength and physical function did not improve despite the hormonal change.",
+        "A hip-fracture recovery trial did not meet its primary endpoint.",
+        "It markedly increases appetite; that effect was also studied in cachexia."
+      ],
+      "safety": "Trials showed fluid retention, increased appetite, raised fasting glucose and reduced insulin sensitivity. These are among the reasons development did not continue."
+    }
+  },
+
+  "tesofensine": {
+    "status": "trials",
+    "es": {
+      "resumen": "Tesofensina tiene un ensayo de fase 2 en obesidad publicado en <em>The Lancet</em>, con resultados llamativos. No está aprobada por la FDA ni por la agencia europea.",
+      "puntos": [
+        "Ensayo de fase 2b publicado en <em>The Lancet</em> (2008): 203 adultos con obesidad, 24 semanas.",
+        "Con la dosis intermedia la pérdida de peso fue de alrededor de 11% del peso corporal, frente a cerca de 2% con placebo.",
+        "Se desarrolló originalmente para Parkinson y Alzheimer, donde no funcionó; el efecto sobre el peso se detectó en esos estudios.",
+        "Actúa inhibiendo la recaptación de noradrenalina, dopamina y serotonina."
+      ],
+      "seguridad": "En los ensayos se observaron aumentos de frecuencia cardiaca y de presión arterial relacionados con la dosis, además de sequedad de boca, insomnio y náuseas. El perfil cardiovascular fue el punto que más limitó su desarrollo."
+    },
+    "en": {
+      "summary": "Tesofensine has a phase 2 obesity trial published in <em>The Lancet</em> with striking results. It is not approved by the FDA or the European agency.",
+      "points": [
+        "Phase 2b trial published in <em>The Lancet</em> (2008): 203 adults with obesity, 24 weeks.",
+        "At the mid dose, weight loss was around 11% of body weight versus about 2% on placebo.",
+        "Originally developed for Parkinson's and Alzheimer's, where it failed; the weight effect was noticed in those studies.",
+        "Works by inhibiting reuptake of noradrenaline, dopamine and serotonin."
+      ],
+      "safety": "Trials showed dose-related increases in heart rate and blood pressure, plus dry mouth, insomnia and nausea. The cardiovascular profile was the main limit on its development."
+    }
+  },
+
+  "ss-31": {
+    "status": "trials",
+    "es": {
+      "resumen": "SS-31 (elamipretida) ha llegado hasta ensayos de fase 3 en enfermedades mitocondriales raras, desarrollada por Stealth BioTherapeutics. Los resultados han sido mixtos.",
+      "puntos": [
+        "Ensayo de fase 3 en miopatía mitocondrial primaria: no alcanzó su objetivo principal de distancia caminada en seis minutos.",
+        "Ensayo en síndrome de Barth, una enfermedad genética muy rara, con señales de mejoría en fuerza muscular en un número pequeño de pacientes.",
+        "También se ha estudiado en neuropatía óptica hereditaria de Leber y en degeneración macular seca.",
+        "Se dirige a la cardiolipina de la membrana mitocondrial interna, un mecanismo distinto al de los antioxidantes convencionales."
+      ],
+      "seguridad": "Las reacciones en el sitio de inyección fueron el efecto adverso más reportado en los ensayos. No está disponible como medicamento aprobado en Guatemala."
+    },
+    "en": {
+      "summary": "SS-31 (elamipretide) has reached phase 3 trials in rare mitochondrial diseases, developed by Stealth BioTherapeutics. Results have been mixed.",
+      "points": [
+        "Phase 3 trial in primary mitochondrial myopathy: did not meet its primary endpoint of six-minute walk distance.",
+        "Trial in Barth syndrome, a very rare genetic disease, with signals of improved muscle strength in a small number of patients.",
+        "Also studied in Leber hereditary optic neuropathy and in dry macular degeneration.",
+        "Targets cardiolipin in the inner mitochondrial membrane, a different mechanism from conventional antioxidants."
+      ],
+      "safety": "Injection-site reactions were the most reported adverse effect in trials. It is not available as an approved medicine in Guatemala."
+    }
+  },
+
+  "aod-9604": {
+    "status": "trials",
+    "es": {
+      "resumen": "AOD-9604 es uno de los pocos compuestos de esta lista que sí llegó a ensayos en humanos para pérdida de peso — y no funcionó. Es importante saberlo antes de comprarlo con esa expectativa.",
+      "puntos": [
+        "Es un fragmento de la hormona de crecimiento humana (aminoácidos 176-191), diseñado para separar el efecto sobre la grasa del efecto sobre el crecimiento.",
+        "Metabolic Pharmaceuticals lo llevó a ensayos de fase 2 en obesidad.",
+        "El ensayo de fase 2b más grande, de 12 semanas, no mostró pérdida de peso significativa frente a placebo, y el desarrollo para obesidad se detuvo.",
+        "Posteriormente se comercializó en Estados Unidos como ingrediente alimentario bajo autoafirmación GRAS, no como medicamento."
+      ],
+      "seguridad": "Fue bien tolerado en los ensayos; el problema no fue la seguridad sino la falta de eficacia sobre el peso."
+    },
+    "en": {
+      "summary": "AOD-9604 is one of the few compounds here that did reach human trials for weight loss — and it did not work. That is worth knowing before buying it for that purpose.",
+      "points": [
+        "It is a fragment of human growth hormone (amino acids 176-191), designed to separate the fat effect from the growth effect.",
+        "Metabolic Pharmaceuticals took it into phase 2 obesity trials.",
+        "The largest 12-week phase 2b trial showed no significant weight loss versus placebo, and obesity development stopped.",
+        "It was later marketed in the US as a food ingredient under self-affirmed GRAS status, not as a medicine."
+      ],
+      "safety": "It was well tolerated in trials; the problem was not safety but lack of effect on weight."
+    }
+  },
+
+  "cjc-1295-ipamorelin": {
+    "status": "trials",
+    "es": {
+      "resumen": "Los dos componentes se han estudiado por separado en humanos. La combinación tal como se vende no se ha estudiado en ningún ensayo clínico.",
+      "puntos": [
+        "CJC-1295 con DAC: estudio publicado en <em>Journal of Clinical Endocrinology &amp; Metabolism</em> (2006) en adultos sanos, con aumentos sostenidos de hormona de crecimiento e IGF-1 durante días tras una sola aplicación.",
+        "Ipamorelin: llegó a fase 2 para íleo posoperatorio y no alcanzó sus objetivos principales; ese desarrollo se detuvo.",
+        "Ninguno de los dos llegó a aprobarse como medicamento.",
+        "No existen ensayos de la combinación CJC-1295 + Ipamorelina, ni de sus efectos a largo plazo."
+      ],
+      "seguridad": "Aumentar la hormona de crecimiento y el IGF-1 de forma sostenida no es inocuo: se asocia a retención de líquidos, dolor articular y cambios en la glucosa. Las personas con antecedente de cáncer deben consultar a su médico, porque el IGF-1 influye en la proliferación celular."
+    },
+    "en": {
+      "summary": "The two components have been studied separately in humans. The combination as sold has not been studied in any clinical trial.",
+      "points": [
+        "CJC-1295 with DAC: study published in the <em>Journal of Clinical Endocrinology &amp; Metabolism</em> (2006) in healthy adults, with sustained increases in growth hormone and IGF-1 for days after a single dose.",
+        "Ipamorelin: reached phase 2 for post-operative ileus and did not meet its primary endpoints; that development stopped.",
+        "Neither was ever approved as a medicine.",
+        "There are no trials of the CJC-1295 + Ipamorelin combination, nor of its long-term effects."
+      ],
+      "safety": "Sustained elevation of growth hormone and IGF-1 is not harmless: it is associated with fluid retention, joint pain and changes in glucose. People with a history of cancer should consult their doctor, because IGF-1 influences cell proliferation."
+    }
+  },
+
+  "ghk-cu": {
+    "status": "trials",
+    "es": {
+      "resumen": "GHK-Cu tiene evidencia humana real, pero es evidencia de uso <strong>tópico</strong> sobre la piel. La aplicación inyectada no se ha estudiado en ensayos clínicos.",
+      "puntos": [
+        "Estudios dermatológicos controlados con cremas de tripéptido de cobre han mostrado mejoras en firmeza, densidad y aspecto de arrugas frente a control.",
+        "También se ha estudiado en cicatrización de heridas y en el folículo piloso.",
+        "Es un complejo natural presente en el plasma humano, cuya concentración disminuye con la edad.",
+        "La evidencia tópica no se traslada automáticamente a la vía inyectada: son exposiciones distintas."
+      ],
+      "seguridad": "Por vía tópica es bien tolerado, con irritación local ocasional. El cobre es un mineral que se acumula; las personas con enfermedad de Wilson u otros trastornos del metabolismo del cobre deben evitarlo."
+    },
+    "en": {
+      "summary": "GHK-Cu has real human evidence, but it is evidence for <strong>topical</strong> use on skin. Injected use has not been studied in clinical trials.",
+      "points": [
+        "Controlled dermatology studies with copper tripeptide creams have shown improvements in firmness, density and the appearance of wrinkles versus control.",
+        "It has also been studied in wound healing and in the hair follicle.",
+        "It is a natural complex present in human plasma, whose concentration falls with age.",
+        "Topical evidence does not automatically transfer to the injected route: these are different exposures."
+      ],
+      "safety": "Topically it is well tolerated, with occasional local irritation. Copper is a mineral that accumulates; people with Wilson's disease or other copper metabolism disorders should avoid it."
+    }
+  },
+
+  "glutathione": {
+    "status": "trials",
+    "es": {
+      "resumen": "El glutatión es un antioxidante que el cuerpo produce de forma natural y tiene estudios controlados en humanos, aunque modestos en tamaño y en efecto.",
+      "puntos": [
+        "Ensayo de seis meses publicado en <em>European Journal of Nutrition</em> (2015) con 54 adultos: la suplementación oral aumentó las reservas corporales de glutatión.",
+        "Ensayo aleatorizado publicado en <em>Journal of Dermatological Treatment</em> (2012) con 60 participantes: aclaramiento leve del tono de piel a cuatro semanas frente a placebo.",
+        "El punto más discutido es la biodisponibilidad oral: buena parte se degrada en la digestión.",
+        "Es un compuesto endógeno, no una molécula experimental."
+      ],
+      "seguridad": "Bien tolerado en los estudios publicados. La vía intravenosa, popular para aclarar la piel, no cuenta con ensayos de seguridad a largo plazo y ha motivado advertencias de autoridades sanitarias en varios países."
+    },
+    "en": {
+      "summary": "Glutathione is an antioxidant the body makes naturally, and it has controlled human studies — though modest in size and in effect.",
+      "points": [
+        "Six-month trial published in the <em>European Journal of Nutrition</em> (2015) with 54 adults: oral supplementation raised body stores of glutathione.",
+        "Randomised trial published in the <em>Journal of Dermatological Treatment</em> (2012) with 60 participants: mild skin-tone lightening at four weeks versus placebo.",
+        "The most debated point is oral bioavailability: much of it is broken down in digestion.",
+        "It is an endogenous compound, not an experimental molecule."
+      ],
+      "safety": "Well tolerated in published studies. The intravenous route, popular for skin lightening, has no long-term safety trials and has prompted warnings from health authorities in several countries."
+    }
+  },
+
+  "nad-plus": {
+    "status": "trials",
+    "es": {
+      "resumen": "La evidencia humana existe sobre todo para los <strong>precursores</strong> del NAD+ (nicotinamida ribósido y NMN), no para el NAD+ administrado directamente.",
+      "puntos": [
+        "Ensayo con nicotinamida ribósido publicado en <em>Nature Communications</em> (2018) en adultos de mediana edad: elevó el NAD+ sanguíneo de forma consistente.",
+        "Ensayo con NMN publicado en <em>Science</em> (2021) en 25 mujeres posmenopáusicas con prediabetes: mejoró la sensibilidad muscular a la insulina.",
+        "Los estudios muestran de forma fiable que el NAD+ sanguíneo sube; lo que aún no está demostrado es que eso se traduzca en beneficios clínicos duraderos.",
+        "El NAD+ intravenoso, muy ofrecido en clínicas, tiene mucha menos evidencia controlada que los precursores orales."
+      ],
+      "seguridad": "Los precursores orales se toleraron bien en los ensayos. Las infusiones intravenosas rápidas suelen provocar molestias en el pecho, rubor y náuseas durante la administración."
+    },
+    "en": {
+      "summary": "Human evidence exists mainly for NAD+ <strong>precursors</strong> (nicotinamide riboside and NMN), not for NAD+ given directly.",
+      "points": [
+        "Nicotinamide riboside trial published in <em>Nature Communications</em> (2018) in middle-aged adults: consistently raised blood NAD+.",
+        "NMN trial published in <em>Science</em> (2021) in 25 postmenopausal women with prediabetes: improved muscle insulin sensitivity.",
+        "Studies reliably show blood NAD+ rises; what is not yet established is that this translates into durable clinical benefit.",
+        "Intravenous NAD+, widely offered in clinics, has far less controlled evidence than the oral precursors."
+      ],
+      "safety": "Oral precursors were well tolerated in trials. Rapid intravenous infusions commonly cause chest discomfort, flushing and nausea during administration."
+    }
+  },
+
+  "semax": {
+    "status": "limited",
+    "es": {
+      "resumen": "Semax se desarrolló en Rusia y allí está registrado como medicamento. Fuera de Rusia no ha sido aprobado ni evaluado por agencias reguladoras occidentales.",
+      "puntos": [
+        "Se usa en Rusia en el contexto del accidente cerebrovascular y de trastornos cognitivos.",
+        "Los estudios clínicos son en su mayoría rusos, de tamaño pequeño y publicados en revistas que no están indexadas en las bases de datos occidentales.",
+        "No existen ensayos independientes grandes que hayan replicado esos resultados.",
+        "Es un fragmento modificado de la hormona ACTH, sin la actividad hormonal de la molécula completa."
+      ],
+      "seguridad": "El perfil de seguridad reportado es favorable, pero proviene de la misma literatura limitada. La ausencia de ensayos independientes significa que hay menos certeza, no que sea más seguro."
+    },
+    "en": {
+      "summary": "Semax was developed in Russia and is registered there as a medicine. Outside Russia it has not been approved or assessed by Western regulators.",
+      "points": [
+        "Used in Russia in the context of stroke and cognitive disorders.",
+        "Clinical studies are mostly Russian, small, and published in journals not indexed in Western databases.",
+        "No large independent trials have replicated those results.",
+        "It is a modified fragment of the hormone ACTH, without the hormonal activity of the full molecule."
+      ],
+      "safety": "The reported safety profile is favourable, but it comes from that same limited literature. Absence of independent trials means less certainty, not more safety."
+    }
+  },
+
+  "selank": {
+    "status": "limited",
+    "es": {
+      "resumen": "Selank, como Semax, se desarrolló y está registrado en Rusia. No cuenta con aprobación ni ensayos occidentales.",
+      "puntos": [
+        "En Rusia se ha utilizado en el contexto de los trastornos de ansiedad.",
+        "Los estudios publicados son pequeños y provienen mayoritariamente de los mismos grupos de investigación que lo desarrollaron.",
+        "No ha sido replicado en ensayos independientes grandes.",
+        "Deriva de la tuftsina, un péptido inmunomodulador natural."
+      ],
+      "seguridad": "No se han reportado efectos adversos relevantes en la literatura disponible, que es limitada. No se conocen sus efectos a largo plazo."
+    },
+    "en": {
+      "summary": "Selank, like Semax, was developed and is registered in Russia. It has no Western approval or trials.",
+      "points": [
+        "In Russia it has been used in the context of anxiety disorders.",
+        "Published studies are small and come mostly from the same research groups that developed it.",
+        "It has not been replicated in large independent trials.",
+        "It derives from tuftsin, a natural immunomodulatory peptide."
+      ],
+      "safety": "No significant adverse effects are reported in the available literature, which is limited. Its long-term effects are unknown."
+    }
+  },
+
+  "mt-ii": {
+    "status": "limited",
+    "es": {
+      "resumen": "MT-II (melanotan II) tiene algunos estudios humanos antiguos y pequeños, pero nunca fue aprobado en ningún país — y tiene señales de seguridad que conviene conocer.",
+      "puntos": [
+        "Estudios pequeños de los años noventa documentaron pigmentación de la piel y, por separado, respuesta eréctil en hombres.",
+        "El desarrollo comercial se dirigió después a compuestos relacionados, no a MT-II.",
+        "No existen ensayos grandes ni datos de uso prolongado.",
+        "Su venta no está autorizada en la Unión Europea, Australia ni Estados Unidos; varias agencias han emitido advertencias públicas."
+      ],
+      "seguridad": "Atención: hay reportes de casos publicados que asocian su uso con cambios en lunares y melanoma, así como con rabdomiólisis. Cualquier lunar que cambie de tamaño, forma o color debe ser revisado por un dermatólogo. Las náuseas y el rubor son frecuentes."
+    },
+    "en": {
+      "summary": "MT-II (melanotan II) has some old, small human studies, but it was never approved in any country — and there are safety signals worth knowing.",
+      "points": [
+        "Small studies in the 1990s documented skin pigmentation and, separately, erectile response in men.",
+        "Commercial development later moved to related compounds, not MT-II.",
+        "There are no large trials and no long-term use data.",
+        "Its sale is not authorised in the European Union, Australia or the United States; several agencies have issued public warnings."
+      ],
+      "safety": "Note: published case reports link its use to changes in moles and to melanoma, as well as to rhabdomyolysis. Any mole that changes in size, shape or colour should be checked by a dermatologist. Nausea and flushing are common."
+    }
+  },
+
+  "epithalon": {
+    "status": "limited",
+    "es": {
+      "resumen": "Epitalón proviene de una línea de investigación rusa de varias décadas. La evidencia humana existe pero es metodológicamente débil y no ha sido replicada fuera de Rusia.",
+      "puntos": [
+        "Los estudios rusos reportaron seguimientos de largo plazo en adultos mayores con afirmaciones sobre mortalidad y envejecimiento.",
+        "Esos estudios son pequeños, antiguos y no cumplen los estándares actuales de aleatorización y cegamiento.",
+        "No existen ensayos independientes occidentales que los hayan confirmado.",
+        "La hipótesis propuesta se relaciona con la telomerasa, pero eso no se ha demostrado en ensayos controlados en humanos."
+      ],
+      "seguridad": "No hay datos de seguridad de calidad moderna. La ausencia de efectos adversos reportados en literatura débil no equivale a un perfil de seguridad establecido."
+    },
+    "en": {
+      "summary": "Epitalon comes from a decades-long Russian line of research. Human evidence exists but is methodologically weak and has not been replicated outside Russia.",
+      "points": [
+        "Russian studies reported long-term follow-up in older adults with claims about mortality and ageing.",
+        "Those studies are small, old, and do not meet current standards of randomisation and blinding.",
+        "No independent Western trials have confirmed them.",
+        "The proposed hypothesis relates to telomerase, but this has not been demonstrated in controlled human trials."
+      ],
+      "safety": "There is no modern-quality safety data. Absence of reported adverse effects in weak literature is not an established safety profile."
+    }
+  },
+
+  "tb-500": {
+    "status": "none",
+    "es": {
+      "resumen": "Hay que separar dos cosas que suelen confundirse. La timosina beta-4 completa sí llegó a ensayos clínicos. TB-500, que es un fragmento sintético más corto, <strong>no tiene ensayos clínicos propios</strong>.",
+      "puntos": [
+        "La timosina beta-4 completa (43 aminoácidos) fue evaluada en ensayos de fase 2 en ojo seco, úlceras por presión y epidermólisis bullosa.",
+        "TB-500 corresponde a una región corta de esa proteína, no a la molécula completa.",
+        "No existen ensayos clínicos publicados de TB-500 en humanos.",
+        "Toda la evidencia que se cita habitualmente para lesiones y recuperación proviene de modelos animales."
+      ],
+      "seguridad": "Al no haber ensayos en humanos, no hay un perfil de seguridad establecido ni datos de uso prolongado."
+    },
+    "en": {
+      "summary": "Two things are often confused here. Full-length thymosin beta-4 did reach clinical trials. TB-500, a shorter synthetic fragment, <strong>has no clinical trials of its own</strong>.",
+      "points": [
+        "Full thymosin beta-4 (43 amino acids) was evaluated in phase 2 trials in dry eye, pressure ulcers and epidermolysis bullosa.",
+        "TB-500 corresponds to a short region of that protein, not the complete molecule.",
+        "There are no published human clinical trials of TB-500.",
+        "All the evidence usually cited for injury and recovery comes from animal models."
+      ],
+      "safety": "With no human trials, there is no established safety profile and no long-term use data."
+    }
+  },
+
+  "bpc-157": {
+    "status": "none",
+    "es": {
+      "resumen": "BPC-157 es uno de los péptidos más populares y, al mismo tiempo, uno de los que menos evidencia humana tiene: <strong>no hay ensayos clínicos publicados en personas</strong>.",
+      "puntos": [
+        "Toda la investigación citada habitualmente —cicatrización de tendón, ligamento, intestino— proviene de estudios en roedores.",
+        "Se registró un ensayo clínico en colitis ulcerosa, pero no se publicaron resultados.",
+        "Ninguna agencia reguladora lo ha evaluado ni aprobado.",
+        "Los resultados en animales, incluso consistentes, no predicen de forma fiable el efecto en personas: es el punto donde fracasa la mayoría de los compuestos."
+      ],
+      "seguridad": "No existe un perfil de seguridad humano establecido. Los reportes de buena tolerancia provienen de la experiencia de usuarios, no de estudios controlados."
+    },
+    "en": {
+      "summary": "BPC-157 is one of the most popular peptides and, at the same time, one of the least supported in humans: <strong>there are no published clinical trials in people</strong>.",
+      "points": [
+        "All the research usually cited — tendon, ligament and gut healing — comes from rodent studies.",
+        "A clinical trial in ulcerative colitis was registered, but no results were published.",
+        "No regulator has assessed or approved it.",
+        "Animal results, even consistent ones, do not reliably predict effect in people: that is where most compounds fail."
+      ],
+      "safety": "There is no established human safety profile. Reports of good tolerance come from user experience, not controlled studies."
+    }
+  },
+
+  "mots-c": {
+    "status": "none",
+    "es": {
+      "resumen": "MOTS-c es un péptido de origen mitocondrial con investigación humana observacional, pero <strong>sin ensayos clínicos de intervención publicados</strong>.",
+      "puntos": [
+        "Se ha medido en personas: los niveles endógenos varían con el ejercicio, la edad y el estado metabólico.",
+        "Esa investigación describe una asociación; no demuestra que administrarlo produzca un beneficio.",
+        "Los estudios de intervención publicados son en ratones, con resultados sobre sensibilidad a la insulina y capacidad de ejercicio.",
+        "No ha sido evaluado por ninguna agencia reguladora."
+      ],
+      "seguridad": "Sin ensayos de intervención en humanos, no hay datos de seguridad ni de dosis establecidos."
+    },
+    "en": {
+      "summary": "MOTS-c is a mitochondria-derived peptide with observational human research, but <strong>no published interventional clinical trials</strong>.",
+      "points": [
+        "It has been measured in people: endogenous levels vary with exercise, age and metabolic state.",
+        "That research describes an association; it does not show that administering it produces a benefit.",
+        "Published interventional studies are in mice, with results on insulin sensitivity and exercise capacity.",
+        "It has not been assessed by any regulator."
+      ],
+      "safety": "Without human interventional trials, there is no established safety or dosing data."
+    }
+  },
+
+  "kpv": {
+    "status": "none",
+    "es": {
+      "resumen": "KPV es un tripéptido derivado de la hormona α-MSH. La investigación disponible es preclínica: <strong>no hay ensayos clínicos en humanos</strong>.",
+      "puntos": [
+        "Los estudios publicados son en cultivos celulares y en modelos animales de inflamación intestinal y cutánea.",
+        "Es el fragmento final de la α-MSH, sin el efecto pigmentario de la molécula completa.",
+        "No ha sido evaluado por ninguna agencia reguladora.",
+        "No existen datos de absorción, dosis ni efecto en personas."
+      ],
+      "seguridad": "Sin estudios humanos, no hay perfil de seguridad establecido."
+    },
+    "en": {
+      "summary": "KPV is a tripeptide derived from the hormone α-MSH. Available research is preclinical: <strong>there are no human clinical trials</strong>.",
+      "points": [
+        "Published studies are in cell culture and animal models of intestinal and skin inflammation.",
+        "It is the final fragment of α-MSH, without the pigmentary effect of the full molecule.",
+        "It has not been assessed by any regulator.",
+        "There is no data on absorption, dose or effect in people."
+      ],
+      "safety": "With no human studies, there is no established safety profile."
+    }
+  },
+
+  "5-amino-1mq": {
+    "status": "none",
+    "es": {
+      "resumen": "5-Amino-1MQ es una molécula pequeña inhibidora de la enzima NNMT. La investigación es enteramente preclínica: <strong>no hay ensayos clínicos en humanos</strong>.",
+      "puntos": [
+        "Los estudios publicados son en ratones, con resultados sobre grasa corporal y metabolismo.",
+        "No es un péptido, aunque suele venderse junto a ellos.",
+        "No ha sido evaluado por ninguna agencia reguladora.",
+        "No existen datos de seguridad, dosis ni efecto en personas."
+      ],
+      "seguridad": "Sin estudios humanos, no hay perfil de seguridad establecido ni información sobre interacciones."
+    },
+    "en": {
+      "summary": "5-Amino-1MQ is a small molecule that inhibits the enzyme NNMT. Research is entirely preclinical: <strong>there are no human clinical trials</strong>.",
+      "points": [
+        "Published studies are in mice, with results on body fat and metabolism.",
+        "It is not a peptide, although it is usually sold alongside them.",
+        "It has not been assessed by any regulator.",
+        "There is no data on safety, dose or effect in people."
+      ],
+      "safety": "With no human studies, there is no established safety profile and no information on interactions."
+    }
+  },
+
+  "slu-pp-332": {
+    "status": "none",
+    "es": {
+      "resumen": "SLU-PP-332 es un compuesto experimental salido de un laboratorio académico, descrito en prensa como «ejercicio en pastilla». La investigación es exclusivamente en animales: <strong>no hay ensayos clínicos en humanos</strong>.",
+      "puntos": [
+        "Es un agonista de los receptores ERR, estudiado en ratones por resistencia y metabolismo.",
+        "Los resultados que circulan en medios provienen de esos estudios en ratones, no de personas.",
+        "No ha entrado en desarrollo clínico ni ha sido evaluado por ninguna agencia reguladora.",
+        "No existen datos de dosis, absorción ni seguridad en humanos."
+      ],
+      "seguridad": "Sin estudios humanos, no hay perfil de seguridad establecido. Es de los compuestos más experimentales del catálogo."
+    },
+    "en": {
+      "summary": "SLU-PP-332 is an experimental compound out of an academic laboratory, described in the press as \"exercise in a pill\". Research is exclusively in animals: <strong>there are no human clinical trials</strong>.",
+      "points": [
+        "It is an ERR receptor agonist, studied in mice for endurance and metabolism.",
+        "The results circulating in the media come from those mouse studies, not from people.",
+        "It has not entered clinical development or been assessed by any regulator.",
+        "There is no data on dose, absorption or safety in humans."
+      ],
+      "safety": "With no human studies, there is no established safety profile. It is among the most experimental compounds in the catalogue."
+    }
+  },
+
+  "foxo4-dri": {
+    "status": "none",
+    "es": {
+      "resumen": "FOXO4-DRI es un péptido senolítico experimental. La investigación es preclínica: <strong>no hay ensayos clínicos en humanos</strong>.",
+      "puntos": [
+        "El estudio de referencia se publicó en <em>Cell</em> (2017) y se realizó en ratones.",
+        "La idea es eliminar de forma selectiva células senescentes; es una hipótesis activa en investigación del envejecimiento.",
+        "No ha entrado en desarrollo clínico ni ha sido evaluado por ninguna agencia reguladora.",
+        "No existen datos de dosis ni de seguridad en personas."
+      ],
+      "seguridad": "Sin estudios humanos, no hay perfil de seguridad establecido. Es de los compuestos más experimentales del catálogo."
+    },
+    "en": {
+      "summary": "FOXO4-DRI is an experimental senolytic peptide. Research is preclinical: <strong>there are no human clinical trials</strong>.",
+      "points": [
+        "The landmark study was published in <em>Cell</em> (2017) and was done in mice.",
+        "The idea is to selectively clear senescent cells; it is an active hypothesis in ageing research.",
+        "It has not entered clinical development or been assessed by any regulator.",
+        "There is no dosing or safety data in people."
+      ],
+      "safety": "With no human studies, there is no established safety profile. It is among the most experimental compounds in the catalogue."
+    }
+  },
+
+  "glow-blend": {
+    "status": "none",
+    "es": {
+      "resumen": "GLOW es una mezcla de tres péptidos (GHK-Cu, BPC-157 y TB-500). <strong>La mezcla como tal no se ha estudiado en ningún ensayo clínico</strong>; la evidencia hay que verla componente por componente, y es desigual.",
+      "puntos": [
+        "GHK-Cu: sí tiene estudios humanos, pero de aplicación tópica sobre la piel, no inyectada.",
+        "BPC-157: no tiene ensayos clínicos publicados en humanos.",
+        "TB-500: no tiene ensayos clínicos propios; la timosina beta-4 completa, que es otra molécula, sí llegó a fase 2.",
+        "No existen estudios sobre cómo interactúan los tres juntos."
+      ],
+      "seguridad": "No hay un perfil de seguridad establecido para la combinación. Consulta cada guía individual para lo que se sabe de cada componente."
+    },
+    "en": {
+      "summary": "GLOW is a blend of three peptides (GHK-Cu, BPC-157 and TB-500). <strong>The blend itself has not been studied in any clinical trial</strong>; the evidence has to be read component by component, and it is uneven.",
+      "points": [
+        "GHK-Cu: does have human studies, but for topical application on skin, not injected.",
+        "BPC-157: has no published human clinical trials.",
+        "TB-500: has no trials of its own; full thymosin beta-4, a different molecule, did reach phase 2.",
+        "There are no studies of how the three interact together."
+      ],
+      "safety": "There is no established safety profile for the combination. See each individual guide for what is known about each component."
+    }
+  },
+
+  "klow-blend": {
+    "status": "none",
+    "es": {
+      "resumen": "KLOW añade KPV a la combinación de GLOW. <strong>Tampoco existe ningún ensayo clínico de la mezcla</strong>, y el componente añadido es el que menos evidencia humana tiene.",
+      "puntos": [
+        "KPV: investigación exclusivamente preclínica, sin ensayos en humanos.",
+        "GHK-Cu: evidencia humana tópica, no inyectada.",
+        "BPC-157 y TB-500: sin ensayos clínicos propios en humanos.",
+        "No existen estudios sobre la combinación de los cuatro."
+      ],
+      "seguridad": "No hay un perfil de seguridad establecido para la combinación. Consulta cada guía individual."
+    },
+    "en": {
+      "summary": "KLOW adds KPV to the GLOW combination. <strong>There is likewise no clinical trial of the blend</strong>, and the added component is the one with the least human evidence.",
+      "points": [
+        "KPV: exclusively preclinical research, no human trials.",
+        "GHK-Cu: topical human evidence, not injected.",
+        "BPC-157 and TB-500: no clinical trials of their own in humans.",
+        "There are no studies of the four in combination."
+      ],
+      "safety": "There is no established safety profile for the combination. See each individual guide."
+    }
+  },
+
+  "wolverine": {
+    "status": "none",
+    "es": {
+      "resumen": "Wolverine combina BPC-157 y TB-500. <strong>Ninguno de los dos tiene ensayos clínicos publicados en humanos</strong>, y la mezcla tampoco.",
+      "puntos": [
+        "BPC-157: toda la investigación de cicatrización y recuperación es en roedores.",
+        "TB-500: sin ensayos propios; la timosina beta-4 completa es otra molécula y llegó a fase 2.",
+        "No existen estudios de la combinación ni de cómo interactúan.",
+        "Ninguna agencia reguladora los ha evaluado."
+      ],
+      "seguridad": "No hay perfil de seguridad humano establecido para ninguno de los dos componentes ni para la mezcla."
+    },
+    "en": {
+      "summary": "Wolverine combines BPC-157 and TB-500. <strong>Neither has published human clinical trials</strong>, and neither does the blend.",
+      "points": [
+        "BPC-157: all the healing and recovery research is in rodents.",
+        "TB-500: no trials of its own; full thymosin beta-4 is a different molecule and reached phase 2.",
+        "There are no studies of the combination or of how they interact.",
+        "No regulator has assessed them."
+      ],
+      "safety": "There is no established human safety profile for either component or for the blend."
+    }
+  }
+}

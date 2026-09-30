@@ -147,6 +147,55 @@ function rewriteLinks(html) {
   });
 }
 
+/* ---------------- human evidence ----------------
+   The GT market is not RUO, so the guides say what a compound has actually
+   been tested for in people. The honest answer is often "nothing" — ten of
+   these compounds have no human trials at all, and saying so plainly is the
+   informative outcome, not a hole to paper over. Nothing in evidence.json is
+   invented; where a trial is named it was really run and really published. */
+const evidence = existsSync(join(here, 'evidence.json'))
+  ? JSON.parse(readFileSync(join(here, 'evidence.json'), 'utf8')) : {};
+
+const EV_LABEL = {
+  es: {
+    approved: 'Medicamento aprobado',
+    trials: 'Ensayos clínicos publicados',
+    limited: 'Evidencia humana limitada',
+    none: 'Sin ensayos clínicos en humanos',
+  },
+  en: {
+    approved: 'Approved medicine',
+    trials: 'Published clinical trials',
+    limited: 'Limited human evidence',
+    none: 'No human clinical trials',
+  },
+};
+
+const EV_HEAD = { es: 'Evidencia en humanos', en: 'Human evidence' };
+const EV_SAFETY = { es: 'Seguridad y advertencias', en: 'Safety and cautions' };
+const EV_FOOT = {
+  es: 'Esta información es educativa y describe lo que se ha estudiado. No sustituye la consulta con un profesional de salud, que es quien debe valorar tu caso, tus condiciones y tus medicamentos.',
+  en: 'This information is educational and describes what has been studied. It does not replace consulting a health professional, who is the person to assess your case, your conditions and your medicines.',
+};
+
+function evidenceHtml(slug, lang) {
+  const e = evidence[slug];
+  if (!e) return '';
+  const b = e[lang];
+  if (!b) return '';
+  const summary = lang === 'es' ? b.resumen : b.summary;
+  const points = (lang === 'es' ? b.puntos : b.points) || [];
+  const safety = lang === 'es' ? b.seguridad : b.safety;
+  return `<h2>${EV_HEAD[lang]}</h2> `
+    + `<div class="evidence ev-${e.status}"> `
+    + `<p class="ev-badge">${EV_LABEL[lang][e.status]}</p> `
+    + `<p>${summary}</p> `
+    + (points.length ? `<ul>${points.map((x) => `<li>${x}</li>`).join(' ')}</ul> ` : '')
+    + (safety ? `<p class="ev-safety"><strong>${EV_SAFETY[lang]}.</strong> ${safety}</p> ` : '')
+    + `<p class="ev-foot">${EV_FOOT[lang]}</p> `
+    + `</div> `;
+}
+
 /* ---------------- Spanish guide template ---------------- */
 const ES = {
   handling: {
@@ -157,9 +206,11 @@ const ES = {
   faq: (n, form) => `<h2>Preguntas frecuentes</h2> <div class="faq"> <h3>¿Cómo se verifica la pureza de ${n}?</h3><p>Cada lote se analiza de forma independiente en un laboratorio de USA mediante HPLC con detección UV (pureza) y espectrometría de masas (identidad), y se acompaña de un certificado de análisis propio de ese lote. Nuestro estándar de pureza es ≥99.2%.</p> <h3>¿Cómo se debe almacenar ${n}?</h3><p>${form === 'capsule' ? 'Mantén las cápsulas selladas en un lugar fresco y seco, protegidas de la luz y la humedad; la refrigeración prolonga su vida útil.' : 'Los viales liofilizados sellados se conservan en frío y protegidos de la luz; para almacenamiento prolongado, congelados. Mantén el vial sellado hasta el momento de usarlo.'}</p> </div>`,
 };
 
-function esGuideHtml(name, tr, form) {
+function esGuideHtml(name, tr, form, slug) {
   const bg = tr.bg ? `<h2>Antecedentes</h2> <p>${tr.bg}</p> ` : '';
-  return `<div class="wrap"> <p class="lead">${tr.lead}</p> ${bg}<h2>Manejo y almacenamiento</h2> ${ES.handling[form](name)} <h2>Calidad y análisis</h2> ${ES.quality(name)} ${ES.faq(name, form)}</div>`;
+  // Evidence goes above handling and quality: it is the first thing a customer
+  // deciding whether to buy actually needs.
+  return `<div class="wrap"> <p class="lead">${tr.lead}</p> ${evidenceHtml(slug, 'es')}${bg}<h2>Manejo y almacenamiento</h2> ${ES.handling[form](name)} <h2>Calidad y análisis</h2> ${ES.quality(name)} ${ES.faq(name, form)}</div>`;
 }
 
 const esGuides = existsSync(join(here, 'es', 'guides.json')) ? JSON.parse(readFileSync(join(here, 'es', 'guides.json'), 'utf8')) : {};
@@ -189,6 +240,14 @@ function learnPage(slug) {
 
   const isCompare = /-vs-/.test(slug);
   const type = METHOD_SLUGS.has(slug) ? 'method' : isCompare ? 'compare' : 'guide';
+  // Same section on the English side. The body comes from the US store, so it
+  // is spliced in after the opening paragraph rather than templated.
+  const ev = evidenceHtml(slug, 'en');
+  if (ev) {
+    const cut = main.indexOf('</p>');
+    main = cut === -1 ? main + ' ' + ev : main.slice(0, cut + 4) + ' ' + ev + main.slice(cut + 4);
+  }
+
   const item = { id: slug, type, slug, title, subtitle, html: main, productSlug: type === 'guide' ? (GT_PRODUCT[slug] || null) : null };
 
   if (type === 'guide' && esGuides[slug]) {
@@ -196,7 +255,7 @@ function learnPage(slug) {
     const form = /capsule form|in capsule/i.test(main) ? 'capsule' : 'vial';
     item.title_es = tr.title || title;
     item.subtitle_es = tr.sub;
-    item.html_es = esGuideHtml(item.title_es, tr, form);
+    item.html_es = esGuideHtml(item.title_es, tr, form, slug);
   } else {
     const body = esBody(slug);
     if (body) {
@@ -238,9 +297,9 @@ function nativeArticles() {
   return JSON.parse(readFileSync(join(dir, 'index.json'), 'utf8')).map((m) => ({
     id: m.slug, type: m.type || 'prep', slug: m.slug,
     title: m.title, subtitle: m.sub,
-    html: readFileSync(join(dir, `${m.slug}.en.html`), 'utf8').trim(),
+    html: readFileSync(join(dir, `${m.slug}.en.html`), 'utf8').trim().replace('{{EVIDENCE}}', evidenceHtml(m.evidence || m.slug, 'en')),
     title_es: m.title_es, subtitle_es: m.sub_es,
-    html_es: readFileSync(join(dir, `${m.slug}.es.html`), 'utf8').trim(),
+    html_es: readFileSync(join(dir, `${m.slug}.es.html`), 'utf8').trim().replace('{{EVIDENCE}}', evidenceHtml(m.evidence || m.slug, 'es')),
     productSlug: m.productSlug || null,
   }));
 }
@@ -249,6 +308,23 @@ const learnSlugs = readdirSync(LEARN_DIR, { withFileTypes: true }).filter((d) =>
 const skipped = learnSlugs.filter((x) => SKIP_SLUGS.has(x));
 const learn = learnSlugs.filter((x) => !SKIP_SLUGS.has(x)).map(learnPage).filter(Boolean);
 const LIBRARY = [...learn, ...nativeArticles(), ...blogPosts()];
+
+// The US store keeps adding figures to its learn pages. Those images live in
+// its repo, not ours, so a silent import is a broken image on glowguate.com.
+// Fail loudly instead of shipping one.
+const mediaRefs = [...new Set(
+  LIBRARY.flatMap((x) => [x.html, x.html_es])
+    .join(' ')
+    .match(/\/learn-media\/[A-Za-z0-9._-]+/g) || []
+)];
+const missingMedia = mediaRefs.filter((r) => !existsSync(join(here, '..', 'site', r.replace(/^\//, ''))));
+if (missingMedia.length) {
+  console.error(`\n  MISSING IMAGES — copy these from the main repo into site/learn-media/ before deploying:`);
+  missingMedia.forEach((m) => console.error(`    ${m}`));
+  process.exitCode = 1;
+} else if (mediaRefs.length) {
+  console.log(`  learn-media: ${mediaRefs.length} image(s) referenced, all present`);
+}
 
 const out = `/* GENERATED by tools/build-content.mjs — do not edit by hand. ${LIBRARY.length} items. */\nwindow.LIBRARY = ${JSON.stringify(LIBRARY)};\n`;
 writeFileSync(join(here, '..', 'site', 'content.js'), out);

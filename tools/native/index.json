@@ -1,5 +1,15 @@
 [
   {
+    "slug": "retatrutide",
+    "type": "guide",
+    "productSlug": "retatrutide-10mg",
+    "evidence": "retatrutide",
+    "title": "Retatrutide",
+    "sub": "Triple receptor agonist (GLP-1, GIP, glucagon) · phase 2 published",
+    "title_es": "Retatrutida",
+    "sub_es": "Agonista triple (GLP-1, GIP, glucagón) · fase 2 publicada"
+  },
+  {
     "slug": "como-reconstituir",
     "type": "prep",
     "productSlug": "agua-bacteriostatica",
