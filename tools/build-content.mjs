@@ -200,22 +200,27 @@ const SPEC_LABEL = {
     cas: 'Número CAS', pubchem: 'PubChem CID', formula: 'Fórmula molecular',
     mw: 'Peso molecular', sequence: 'Secuencia de aminoácidos', length: 'Número de residuos',
     source: 'Origen', synonyms: 'Sinónimos', class: 'Clase', target: 'Diana molecular',
-    evidence_note: 'Estado de la investigación', total: 'Contenido total por vial',
+    evidence_note: 'Estado de la investigación', total: 'Contenido por vial',
     ratio: 'Proporción de componentes', appearance: 'Aspecto',
   },
   en: {
     cas: 'CAS number', pubchem: 'PubChem CID', formula: 'Molecular formula',
     mw: 'Molecular weight', sequence: 'Amino acid sequence', length: 'Residue count',
     source: 'Source', synonyms: 'Synonyms', class: 'Class', target: 'Molecular target',
-    evidence_note: 'Research status', total: 'Total content per vial',
+    evidence_note: 'Research status', total: 'Content per vial',
     ratio: 'Component ratio', appearance: 'Appearance',
   },
 };
 
 const SPEC_HEAD = { es: 'Ficha técnica', en: 'Technical specifications' };
+const OVERVIEW_HEAD = { es: 'Resumen técnico', en: 'Technical overview' };
 const SPEC_LEAD = {
-  es: 'Sin ensayos clínicos que reportar, lo que sí podemos darte es identidad química verificable. Estos datos son públicos y comprobables, y puedes contrastarlos con el certificado de análisis de tu lote.',
-  en: 'With no clinical trials to report, what we can give you is verifiable chemical identity. These values are public and checkable, and you can compare them against the certificate of analysis for your lot.',
+  es: 'Datos de identidad química, verificables contra el certificado de análisis de tu lote.',
+  en: 'Chemical identity data, verifiable against the certificate of analysis for your lot.',
+};
+const SPEC_LEAD_BLEND = {
+  es: 'El resumen corresponde al vial tal como se suministra. Las tablas siguientes dan la identidad de cada componente como entidad química independiente.',
+  en: 'The summary applies to the vial as supplied. The tables that follow give the identity of each component as a separate chemical entity.',
 };
 
 // A value is either language-neutral (CAS, formula, mass, sequence) or an
@@ -239,7 +244,11 @@ function specsHtml(slug, lang) {
     body += specTable(sp.rows, lang);
   }
   if (!body) return '';
-  return `<h2>${SPEC_HEAD[lang]}</h2> <p>${SPEC_LEAD[lang]}</p> ${body} `;
+  const ov = sp.overview && sp.overview[lang];
+  const overview = ov && ov.length
+    ? `<h2>${OVERVIEW_HEAD[lang]}</h2> ${ov.map((x) => `<p>${x}</p>`).join(' ')} ` : '';
+  const lead = sp.blend ? SPEC_LEAD_BLEND[lang] : SPEC_LEAD[lang];
+  return `${overview}<h2>${SPEC_HEAD[lang]}</h2> <p>${lead}</p> ${body} `;
 }
 
 const EV_COMPARE_HEAD = { es: 'Evidencia en humanos, lado a lado', en: 'Human evidence, side by side' };
@@ -267,6 +276,11 @@ function compareEvidenceHtml(slug, lang, nameOf) {
 function evidenceHtml(slug, lang) {
   const e = evidence[slug];
   if (!e) return '';
+  // Owner's call (2026-09-30): no warning-style block on compounds without
+  // human trials. Those guides open with a neutral technical overview and the
+  // spec tables instead — see specsHtml(). The status data stays in
+  // evidence.json because the comparison columns still read it.
+  if (e.status === 'none') return '';
   const b = e[lang];
   if (!b) return '';
   const summary = lang === 'es' ? b.resumen : b.summary;

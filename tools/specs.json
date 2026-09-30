@@ -40,7 +40,17 @@
           "en": "BPC 157, PL-14736, pentadecapeptide BPC 157, bepecin"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "BPC-157 is a synthetic linear peptide of fifteen amino acids. Its sequence corresponds to a partial fragment of a protein identified in human gastric juice, which is where the name — Body Protection Compound — comes from.",
+        "It is produced by solid-phase peptide synthesis and supplied as a white lyophilized powder with no fillers. For a peptide of its length it is unusually stable, and it is one of the most widely referenced compounds in the preclinical literature on tendon, ligament and gastrointestinal tissue models."
+      ],
+      "es": [
+        "BPC-157 es un péptido lineal sintético de quince aminoácidos. Su secuencia corresponde a un fragmento parcial de una proteína identificada en el jugo gástrico humano, de ahí su nombre: Body Protection Compound.",
+        "Se produce por síntesis de péptidos en fase sólida y se suministra como polvo blanco liofilizado, sin excipientes. Para un péptido de su longitud es notablemente estable, y es de los compuestos más citados en la literatura preclínica sobre modelos de tendón, ligamento y tejido gastrointestinal."
+      ]
+    }
   },
   "kpv": {
     "rows": [
@@ -79,7 +89,17 @@
         "synonyms",
         "α-MSH (11-13), ACTH (11-13), L-lysyl-L-prolyl-L-valine"
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "KPV is a tripeptide — lysine, proline, valine — matching the last three residues (positions 11 to 13) of alpha-melanocyte-stimulating hormone, α-MSH. It is the region of the hormone studied for anti-inflammatory signalling, isolated from the pigmentary activity of the full molecule.",
+        "At 342 g/mol it is the smallest peptide in the catalogue. It is produced synthetically and supplied lyophilized; published work on it is in cell and animal models of intestinal and skin inflammation."
+      ],
+      "es": [
+        "KPV es un tripéptido —lisina, prolina, valina— que corresponde a los tres últimos residuos (posiciones 11 a 13) de la hormona estimulante de melanocitos alfa, α-MSH. Es la región de la hormona estudiada por su señalización antiinflamatoria, separada de la actividad pigmentaria de la molécula completa.",
+        "Con 342 g/mol es el péptido más pequeño del catálogo. Se produce de forma sintética y se suministra liofilizado; los trabajos publicados son en modelos celulares y animales de inflamación intestinal y cutánea."
+      ]
+    }
   },
   "mots-c": {
     "rows": [
@@ -113,7 +133,17 @@
           "en": "mitochondrial open reading frame of the 12S rRNA type-c"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "MOTS-c is a sixteen-amino-acid peptide encoded not in the cell nucleus but in mitochondrial DNA, within the 12S rRNA region. It belongs to a small group of known mitochondrial-derived peptides.",
+        "Endogenous MOTS-c has been measured in people, with levels that vary with exercise, age and metabolic state. Studies administering it have been carried out in mouse models of metabolism and exercise capacity. The supplied material is synthetic and lyophilized."
+      ],
+      "es": [
+        "MOTS-c es un péptido de dieciséis aminoácidos codificado no en el núcleo de la célula sino en el ADN mitocondrial, dentro de la región 12S rRNA. Pertenece a un grupo reducido de péptidos de origen mitocondrial conocidos.",
+        "El MOTS-c endógeno se ha medido en personas, con niveles que varían según el ejercicio, la edad y el estado metabólico. Los estudios en que se administra se han realizado en modelos de ratón de metabolismo y capacidad de ejercicio. El material suministrado es sintético y liofilizado."
+      ]
+    }
   },
   "5-amino-1mq": {
     "rows": [
@@ -153,7 +183,17 @@
           "en": "5-amino-1-methylquinolinium"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "5-Amino-1MQ (5-amino-1-methylquinolinium) is a small molecule rather than a peptide: a methylated quinolinium compound designed as a selective inhibitor of the enzyme nicotinamide N-methyltransferase, NNMT.",
+        "NNMT sits where NAD+ metabolism and methyl-donor metabolism meet, which is why the compound appears in metabolic research. That work has so far been conducted in rodent models."
+      ],
+      "es": [
+        "5-Amino-1MQ (5-amino-1-metilquinolinio) es una molécula pequeña y no un péptido: un compuesto de quinolinio metilado, diseñado como inhibidor selectivo de la enzima nicotinamida N-metiltransferasa, NNMT.",
+        "La NNMT se ubica donde se cruzan el metabolismo del NAD+ y el de los donadores de metilo, y por eso el compuesto aparece en investigación metabólica. Ese trabajo se ha realizado hasta ahora en modelos de roedor."
+      ]
+    }
   },
   "slu-pp-332": {
     "rows": [
@@ -185,7 +225,17 @@
           "en": "characterised only in rodent studies"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "SLU-PP-332 is a synthetic small molecule developed at Saint Louis University as an agonist of the estrogen-related receptors ERRα, ERRβ and ERRγ — nuclear receptors that regulate mitochondrial biogenesis and oxidative metabolism in muscle.",
+        "That mechanism is the reason it has been described as an exercise mimetic. Published work has been carried out in mouse models of endurance and metabolism."
+      ],
+      "es": [
+        "SLU-PP-332 es una molécula pequeña sintética desarrollada en Saint Louis University como agonista de los receptores relacionados con estrógenos ERRα, ERRβ y ERRγ, receptores nucleares que regulan la biogénesis mitocondrial y el metabolismo oxidativo del músculo.",
+        "Ese mecanismo es el motivo por el que se le ha descrito como mimético del ejercicio. Los trabajos publicados se han realizado en modelos de ratón de resistencia y metabolismo."
+      ]
+    }
   },
   "foxo4-dri": {
     "rows": [
@@ -217,7 +267,17 @@
           "en": "landmark study published in Cell (2017), in mice"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "FOXO4-DRI is a D-retro-inverso peptide: built from D-amino acids assembled in reverse order. The design keeps the side-chain orientation of the original sequence while making the peptide resistant to enzymatic breakdown.",
+        "It was designed to interfere with the binding between the FOXO4 protein and p53 in senescent cells, and was described in a 2017 study in Cell, conducted in mice — one of the first peptide approaches in senolytic research."
+      ],
+      "es": [
+        "FOXO4-DRI es un péptido D-retro-inverso: construido con aminoácidos D ensamblados en orden inverso. El diseño conserva la orientación de las cadenas laterales de la secuencia original y a la vez hace al péptido resistente a la degradación enzimática.",
+        "Se diseñó para interferir con la unión entre la proteína FOXO4 y p53 en células senescentes, y se describió en un estudio de 2017 en Cell, realizado en ratones: uno de los primeros enfoques con péptidos en la investigación senolítica."
+      ]
+    }
   },
   "glow-blend": {
     "blend": [
@@ -325,8 +385,8 @@
       [
         "total",
         {
-          "es": "70 mg de péptido total por vial",
-          "en": "70 mg total peptide content per vial"
+          "es": "70 mg nominales (50 + 10 + 10); el certificado reporta el contenido neto medido de cada lote",
+          "en": "70 mg nominal (50 + 10 + 10); the certificate reports the measured net content of each lot"
         }
       ],
       [
@@ -340,7 +400,17 @@
           "en": "lyophilized powder with a blue to blue-violet tint from the copper complex"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "GLOW is a co-formulation of three separately synthesised peptides in a single vial — GHK-Cu, BPC-157 and TB-500 — at 70 mg of nominal total content in a 5 : 1 : 1 ratio. It is a combination rather than a new molecule: each component keeps its own chemical identity, CAS number and research literature.",
+        "The three are structurally very different: a copper-bound tripeptide, a fifteen-residue linear peptide, and the 43-residue thymosin beta-4 protein. Their molecular weights run from about 400 to about 4,960 g/mol, so the specifications below are given component by component, and each is confirmed as a separate analyte on the certificate of analysis. The powder's blue tint comes from the copper in GHK-Cu."
+      ],
+      "es": [
+        "GLOW es una coformulación de tres péptidos sintetizados por separado en un solo vial —GHK-Cu, BPC-157 y TB-500— con 70 mg de contenido total nominal en proporción 5 : 1 : 1. Es una combinación, no una molécula nueva: cada componente conserva su propia identidad química, número CAS y literatura de investigación.",
+        "Los tres son estructuralmente muy distintos: un tripéptido unido a cobre, un péptido lineal de quince residuos y la proteína timosina beta-4, de 43. Sus pesos moleculares van de unos 400 a unos 4,960 g/mol, por eso las especificaciones se dan componente por componente, y cada uno se confirma como analito independiente en el certificado de análisis. El tono azul del polvo proviene del cobre del GHK-Cu."
+      ]
+    }
   },
   "klow-blend": {
     "blend": [
@@ -482,8 +552,8 @@
       [
         "total",
         {
-          "es": "80 mg de péptido total por vial",
-          "en": "80 mg total peptide content per vial"
+          "es": "80 mg nominales (50 + 10 + 10 + 10); el certificado reporta el contenido neto medido de cada lote",
+          "en": "80 mg nominal (50 + 10 + 10 + 10); the certificate reports the measured net content of each lot"
         }
       ],
       [
@@ -497,7 +567,17 @@
           "en": "lyophilized powder with a blue to blue-violet tint from the copper complex"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "KLOW is a co-formulation of four separately synthesised peptides in a single vial — GHK-Cu, BPC-157, TB-500 and KPV — at 80 mg of nominal total content in a 5 : 1 : 1 : 1 ratio. It is the GLOW combination with KPV added, and each component keeps its own chemical identity and research literature.",
+        "The four span three structural types: the copper-bound tripeptide GHK-Cu, the short linear peptides BPC-157 and KPV, and the 43-residue thymosin beta-4. Molecular weights range from 342 g/mol for KPV to about 4,960 g/mol for thymosin beta-4, so the specifications are given per component and each is verified as a separate analyte. The blue tint comes from the copper in GHK-Cu; the other three are colourless."
+      ],
+      "es": [
+        "KLOW es una coformulación de cuatro péptidos sintetizados por separado en un solo vial —GHK-Cu, BPC-157, TB-500 y KPV— con 80 mg de contenido total nominal en proporción 5 : 1 : 1 : 1. Es la combinación GLOW con KPV añadido, y cada componente conserva su propia identidad química y literatura de investigación.",
+        "Los cuatro abarcan tres tipos estructurales: el tripéptido de cobre GHK-Cu, los péptidos lineales cortos BPC-157 y KPV, y la timosina beta-4 de 43 residuos. Los pesos moleculares van de 342 g/mol en KPV a unos 4,960 g/mol en la timosina beta-4, por eso las especificaciones se dan por componente y cada uno se verifica como analito independiente. El tono azul proviene del cobre del GHK-Cu; los otros tres son incoloros."
+      ]
+    }
   },
   "wolverine": {
     "blend": [
@@ -576,8 +656,8 @@
       [
         "total",
         {
-          "es": "20 mg de péptido total por vial",
-          "en": "20 mg total peptide content per vial"
+          "es": "20 mg nominales (10 + 10); el certificado reporta el contenido neto medido de cada lote",
+          "en": "20 mg nominal (10 + 10); the certificate reports the measured net content of each lot"
         }
       ],
       [
@@ -591,6 +671,16 @@
           "en": "white lyophilized powder"
         }
       ]
-    ]
+    ],
+    "overview": {
+      "en": [
+        "Wolverine is a co-formulation of two separately synthesised peptides in a single vial — BPC-157 and TB-500 — at 10 mg each, 20 mg of nominal total content.",
+        "The pairing combines a fifteen-residue linear peptide with the 43-residue thymosin beta-4 protein, whose molecular weights differ more than threefold. Each is therefore specified and verified separately; the certificate of analysis reports the measured net content of each component for every lot."
+      ],
+      "es": [
+        "Wolverine es una coformulación de dos péptidos sintetizados por separado en un solo vial —BPC-157 y TB-500— con 10 mg de cada uno, 20 mg de contenido total nominal.",
+        "La combinación une un péptido lineal de quince residuos con la proteína timosina beta-4, de 43, cuyos pesos moleculares difieren en más del triple. Por eso cada uno se especifica y verifica por separado; el certificado de análisis reporta el contenido neto medido de cada componente en cada lote."
+      ]
+    }
   }
 }
