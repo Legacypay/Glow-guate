@@ -369,26 +369,26 @@
     }
   },
   "tb-500": {
-    "status": "none",
+    "status": "trials",
     "es": {
-      "resumen": "Hay que separar dos cosas que suelen confundirse. La timosina beta-4 completa sí llegó a ensayos clínicos. TB-500, que es un fragmento sintético más corto, <strong>no tiene ensayos clínicos propios</strong>.",
+      "resumen": "El certificado de análisis de nuestro lote identifica el contenido como <strong>timosina beta-4</strong>, la proteína completa de 43 aminoácidos, no un fragmento corto. Eso importa para la evidencia: la timosina beta-4 sí llegó a ensayos clínicos de fase 2.",
       "puntos": [
-        "La timosina beta-4 completa (43 aminoácidos) fue evaluada en ensayos de fase 2 en ojo seco, úlceras por presión y epidermólisis bullosa.",
-        "TB-500 corresponde a una región corta de esa proteína, no a la molécula completa.",
-        "No existen ensayos clínicos publicados de TB-500 en humanos.",
-        "Toda la evidencia que se cita habitualmente para lesiones y recuperación proviene de modelos animales."
+        "La timosina beta-4 completa fue evaluada por RegeneRx en ensayos de fase 2 en ojo seco, úlceras por presión y epidermólisis bullosa.",
+        "Esos ensayos evaluaron aplicación tópica y oftálmica; no hay ensayos de la vía inyectada para recuperación deportiva o de lesiones.",
+        "Es una proteína presente de forma natural en casi todas las células humanas, donde regula la actina.",
+        "El nombre «TB-500» se usa en el mercado tanto para la proteína completa como para un fragmento corto; revisa siempre el certificado de análisis para saber cuál estás comprando. El nuestro dice timosina beta-4."
       ],
-      "seguridad": "Al no haber ensayos en humanos, no hay un perfil de seguridad establecido ni datos de uso prolongado."
+      "seguridad": "Los ensayos de fase 2 no reportaron problemas de seguridad relevantes en las vías estudiadas. No existen datos de seguridad a largo plazo por vía inyectada."
     },
     "en": {
-      "summary": "Two things are often confused here. Full-length thymosin beta-4 did reach clinical trials. TB-500, a shorter synthetic fragment, <strong>has no clinical trials of its own</strong>.",
+      "summary": "Our lot's certificate of analysis identifies the contents as <strong>thymosin beta-4</strong>, the complete 43-amino-acid protein, not a short fragment. That matters for the evidence: thymosin beta-4 did reach phase 2 clinical trials.",
       "points": [
-        "Full thymosin beta-4 (43 amino acids) was evaluated in phase 2 trials in dry eye, pressure ulcers and epidermolysis bullosa.",
-        "TB-500 corresponds to a short region of that protein, not the complete molecule.",
-        "There are no published human clinical trials of TB-500.",
-        "All the evidence usually cited for injury and recovery comes from animal models."
+        "Full-length thymosin beta-4 was evaluated by RegeneRx in phase 2 trials in dry eye, pressure ulcers and epidermolysis bullosa.",
+        "Those trials tested topical and ophthalmic application; there are no trials of the injected route for sports or injury recovery.",
+        "It is a protein naturally present in nearly every human cell, where it regulates actin.",
+        "The name \"TB-500\" is used in the market for both the complete protein and a short fragment; always check the certificate of analysis to know which you are buying. Ours says thymosin beta-4."
       ],
-      "safety": "With no human trials, there is no established safety profile and no long-term use data."
+      "safety": "Phase 2 trials reported no significant safety problems by the routes studied. There is no long-term safety data for the injected route."
     }
   },
   "bpc-157": {
@@ -536,7 +536,7 @@
       "puntos": [
         "GHK-Cu: sí tiene estudios humanos, pero de aplicación tópica sobre la piel, no inyectada.",
         "BPC-157: no tiene ensayos clínicos publicados en humanos.",
-        "TB-500: no tiene ensayos clínicos propios; la timosina beta-4 completa, que es otra molécula, sí llegó a fase 2.",
+        "TB-500: nuestro certificado lo identifica como timosina beta-4 completa, que sí llegó a ensayos de fase 2 (tópicos y oftálmicos), no por vía inyectada.",
         "No existen estudios sobre cómo interactúan los tres juntos."
       ],
       "seguridad": "No hay un perfil de seguridad establecido para la combinación. Consulta cada guía individual para lo que se sabe de cada componente."
@@ -546,7 +546,7 @@
       "points": [
         "GHK-Cu: does have human studies, but for topical application on skin, not injected.",
         "BPC-157: has no published human clinical trials.",
-        "TB-500: has no trials of its own; full thymosin beta-4, a different molecule, did reach phase 2.",
+        "TB-500: our certificate identifies it as full-length thymosin beta-4, which did reach phase 2 trials (topical and ophthalmic), not by the injected route.",
         "There are no studies of how the three interact together."
       ],
       "safety": "There is no established safety profile for the combination. See each individual guide for what is known about each component."
@@ -559,7 +559,7 @@
       "puntos": [
         "KPV: investigación exclusivamente preclínica, sin ensayos en humanos.",
         "GHK-Cu: evidencia humana tópica, no inyectada.",
-        "BPC-157 y TB-500: sin ensayos clínicos propios en humanos.",
+        "BPC-157: sin ensayos clínicos propios. TB-500: identificado en nuestro certificado como timosina beta-4 completa, con ensayos de fase 2 tópicos y oftálmicos.",
         "No existen estudios sobre la combinación de los cuatro."
       ],
       "seguridad": "No hay un perfil de seguridad establecido para la combinación. Consulta cada guía individual."
@@ -569,7 +569,7 @@
       "points": [
         "KPV: exclusively preclinical research, no human trials.",
         "GHK-Cu: topical human evidence, not injected.",
-        "BPC-157 and TB-500: no clinical trials of their own in humans.",
+        "BPC-157: no clinical trials of its own. TB-500: identified on our certificate as full-length thymosin beta-4, with topical and ophthalmic phase 2 trials.",
         "There are no studies of the four in combination."
       ],
       "safety": "There is no established safety profile for the combination. See each individual guide."
@@ -578,20 +578,20 @@
   "wolverine": {
     "status": "none",
     "es": {
-      "resumen": "Wolverine combina BPC-157 y TB-500. <strong>Ninguno de los dos tiene ensayos clínicos publicados en humanos</strong>, y la mezcla tampoco.",
+      "resumen": "Wolverine combina BPC-157 y TB-500. BPC-157 <strong>no tiene ensayos clínicos publicados en humanos</strong>; el TB-500 de nuestro lote es timosina beta-4 completa, que sí llegó a fase 2 por vías tópica y oftálmica. La mezcla como tal no se ha estudiado.",
       "puntos": [
         "BPC-157: toda la investigación de cicatrización y recuperación es en roedores.",
-        "TB-500: sin ensayos propios; la timosina beta-4 completa es otra molécula y llegó a fase 2.",
+        "TB-500: nuestro certificado lo identifica como timosina beta-4 completa, que llegó a fase 2 en indicaciones tópicas y oftálmicas; no hay ensayos de la vía inyectada.",
         "No existen estudios de la combinación ni de cómo interactúan.",
         "Ninguna agencia reguladora los ha evaluado."
       ],
       "seguridad": "No hay perfil de seguridad humano establecido para ninguno de los dos componentes ni para la mezcla."
     },
     "en": {
-      "summary": "Wolverine combines BPC-157 and TB-500. <strong>Neither has published human clinical trials</strong>, and neither does the blend.",
+      "summary": "Wolverine combines BPC-157 and TB-500. BPC-157 <strong>has no published human clinical trials</strong>; the TB-500 in our lot is full-length thymosin beta-4, which did reach phase 2 by topical and ophthalmic routes. The blend itself has not been studied.",
       "points": [
         "BPC-157: all the healing and recovery research is in rodents.",
-        "TB-500: no trials of its own; full thymosin beta-4 is a different molecule and reached phase 2.",
+        "TB-500: our certificate identifies it as full-length thymosin beta-4, which reached phase 2 in topical and ophthalmic indications; there are no trials of the injected route.",
         "There are no studies of the combination or of how they interact.",
         "No regulator has assessed them."
       ],
@@ -603,8 +603,8 @@
     "bpc-157-vs-tb-500": {
       "a": "bpc-157",
       "b": "tb-500",
-      "es": "Esta comparación es, en evidencia humana, un empate en cero. Ninguno de los dos tiene ensayos clínicos publicados en personas. Todo lo que se dice sobre recuperación de tejidos proviene de estudios en roedores, y en el caso de TB-500 conviene no confundirlo con la timosina beta-4 completa, que es otra molécula y sí llegó a fase 2. Elegir entre ambos no es elegir entre dos niveles de evidencia: es elegir entre dos compuestos igualmente no probados en humanos.",
-      "en": "On human evidence, this comparison is a nil-nil draw. Neither has published clinical trials in people. Everything said about tissue recovery comes from rodent studies, and with TB-500 it is worth not confusing it with full thymosin beta-4, a different molecule that did reach phase 2. Choosing between them is not choosing between two levels of evidence: it is choosing between two compounds equally untested in humans."
+      "es": "La diferencia real está en la evidencia, no en el mecanismo. BPC-157 no tiene ningún ensayo clínico publicado en personas: todo es en roedores. El TB-500 de nuestro lote está identificado en el certificado como timosina beta-4 completa, que sí llegó a ensayos de fase 2 —en ojo seco, úlceras por presión y epidermólisis bullosa— aunque por vías tópica y oftálmica, no inyectada. Ninguno tiene ensayos que respalden el uso inyectado para recuperación de lesiones.",
+      "en": "The real difference is in the evidence, not the mechanism. BPC-157 has no published clinical trial in people at all: everything is rodent. The TB-500 in our lot is identified on the certificate as full-length thymosin beta-4, which did reach phase 2 trials — in dry eye, pressure ulcers and epidermolysis bullosa — though by topical and ophthalmic routes, not injected. Neither has trials supporting injected use for injury recovery."
     },
     "cjc-1295-ipamorelin-vs-tesamorelin": {
       "a": "cjc-1295-ipamorelin",

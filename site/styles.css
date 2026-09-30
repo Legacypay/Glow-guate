@@ -238,6 +238,12 @@ p { margin: 0; }
 .article .body .ev-limited .ev-badge { background: var(--amber-soft); color: #7a4f0c; }
 .article .body .ev-none { border-left-color: #b42318; }
 .article .body .ev-none .ev-badge { background: #fde8ef; color: #a51f4a; }
+/* Technical specification tables — two columns, label left, value right.
+   Sequences and formulas are long, so they wrap rather than force a scroll. */
+.article .body table.spec { display: table; table-layout: fixed; width: 100%; margin: 0 0 16px; font-size: .9rem; }
+.article .body table.spec th { width: 38%; background: transparent; text-transform: none; letter-spacing: 0; font-size: .9rem; font-weight: 600; color: var(--ink-2); vertical-align: top; }
+.article .body table.spec td { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .article .body table.spec th { width: 45%; } }
 .article .body .ev-compare { border-left-width: 1.5px; }
 .article .body .ev-cols { display: grid; gap: 12px; grid-template-columns: 1fr; margin-bottom: 14px; }
 @media (min-width: 620px) { .article .body .ev-cols { grid-template-columns: 1fr 1fr; } }

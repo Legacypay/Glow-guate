@@ -1,0 +1,596 @@
+{
+  "_README": "Chemical identity data for the guides whose compounds have no human trial evidence. When there is no trial to report, verifiable identity data is the honest substitute: a customer can check a CAS number or a molecular weight against the certificate of analysis. ONLY FIELDS THAT ARE KNOWN GO IN. A wrong CAS number is trivially checkable and would destroy exactly the trust this is meant to build — leave a field out rather than guess it.",
+  "bpc-157": {
+    "rows": [
+      [
+        "cas",
+        "137525-51-0"
+      ],
+      [
+        "pubchem",
+        "9941957"
+      ],
+      [
+        "formula",
+        "C₆₂H₉₈N₁₆O₂₂"
+      ],
+      [
+        "mw",
+        "1419.5 g/mol"
+      ],
+      [
+        "sequence",
+        "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val (GEPPPGKPADDAGLV)"
+      ],
+      [
+        "length",
+        "15"
+      ],
+      [
+        "source",
+        {
+          "es": "sintético",
+          "en": "synthetic"
+        }
+      ],
+      [
+        "synonyms",
+        {
+          "es": "BPC 157, PL-14736, pentadecapéptido BPC 157, bepecina",
+          "en": "BPC 157, PL-14736, pentadecapeptide BPC 157, bepecin"
+        }
+      ]
+    ]
+  },
+  "kpv": {
+    "rows": [
+      [
+        "cas",
+        "67727-97-3"
+      ],
+      [
+        "pubchem",
+        "125672"
+      ],
+      [
+        "formula",
+        "C₁₆H₃₀N₄O₄"
+      ],
+      [
+        "mw",
+        "342.43 g/mol"
+      ],
+      [
+        "sequence",
+        "Lys-Pro-Val (KPV)"
+      ],
+      [
+        "length",
+        "3"
+      ],
+      [
+        "source",
+        {
+          "es": "sintético",
+          "en": "synthetic"
+        }
+      ],
+      [
+        "synonyms",
+        "α-MSH (11-13), ACTH (11-13), L-lysyl-L-prolyl-L-valine"
+      ]
+    ]
+  },
+  "mots-c": {
+    "rows": [
+      [
+        "formula",
+        "C₁₀₁H₁₅₃N₂₅O₂₃S₂"
+      ],
+      [
+        "mw",
+        "≈2174 g/mol"
+      ],
+      [
+        "sequence",
+        "Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg (MRWQEMGYIFYPRKLR)"
+      ],
+      [
+        "length",
+        "16"
+      ],
+      [
+        "source",
+        {
+          "es": "sintético; codificado en el ADN mitocondrial (región 12S rRNA)",
+          "en": "synthetic; encoded in mitochondrial DNA (12S rRNA region)"
+        }
+      ],
+      [
+        "synonyms",
+        {
+          "es": "marco de lectura abierto mitocondrial del 12S rRNA tipo c",
+          "en": "mitochondrial open reading frame of the 12S rRNA type-c"
+        }
+      ]
+    ]
+  },
+  "5-amino-1mq": {
+    "rows": [
+      [
+        "class",
+        {
+          "es": "molécula pequeña, sal de quinolinio — no es un péptido",
+          "en": "small molecule, quinolinium salt — not a peptide"
+        }
+      ],
+      [
+        "formula",
+        "C₁₀H₁₁N₂⁺ (cation); commonly supplied as the iodide salt"
+      ],
+      [
+        "mw",
+        "159.21 g/mol (cation); 286.11 g/mol as the iodide"
+      ],
+      [
+        "target",
+        {
+          "es": "inhibidor de la nicotinamida N-metiltransferasa (NNMT)",
+          "en": "nicotinamide N-methyltransferase (NNMT) inhibitor"
+        }
+      ],
+      [
+        "source",
+        {
+          "es": "sintético",
+          "en": "synthetic"
+        }
+      ],
+      [
+        "synonyms",
+        {
+          "es": "5-amino-1-metilquinolinio",
+          "en": "5-amino-1-methylquinolinium"
+        }
+      ]
+    ]
+  },
+  "slu-pp-332": {
+    "rows": [
+      [
+        "class",
+        {
+          "es": "molécula pequeña — no es un péptido",
+          "en": "small molecule — not a peptide"
+        }
+      ],
+      [
+        "target",
+        {
+          "es": "agonista de los receptores relacionados con estrógenos (ERRα, ERRβ, ERRγ)",
+          "en": "pan-agonist of the estrogen-related receptors (ERRα, ERRβ, ERRγ)"
+        }
+      ],
+      [
+        "source",
+        {
+          "es": "sintético; desarrollado en Saint Louis University",
+          "en": "synthetic; developed at Saint Louis University"
+        }
+      ],
+      [
+        "evidence_note",
+        {
+          "es": "caracterizado únicamente en estudios con roedores",
+          "en": "characterised only in rodent studies"
+        }
+      ]
+    ]
+  },
+  "foxo4-dri": {
+    "rows": [
+      [
+        "class",
+        {
+          "es": "péptido D-retro-inverso — construido con aminoácidos D en secuencia invertida, lo que resiste la degradación enzimática",
+          "en": "D-retro-inverso peptide — built from D-amino acids in reverse sequence, which resists enzymatic breakdown"
+        }
+      ],
+      [
+        "target",
+        {
+          "es": "interrumpe la interacción FOXO4–p53 en células senescentes",
+          "en": "disrupts the FOXO4–p53 interaction in senescent cells"
+        }
+      ],
+      [
+        "source",
+        {
+          "es": "sintético",
+          "en": "synthetic"
+        }
+      ],
+      [
+        "evidence_note",
+        {
+          "es": "estudio de referencia publicado en Cell (2017), en ratones",
+          "en": "landmark study published in Cell (2017), in mice"
+        }
+      ]
+    ]
+  },
+  "glow-blend": {
+    "blend": [
+      {
+        "name": "GHK-Cu",
+        "mg": "50 mg",
+        "rows": [
+          [
+            "cas",
+            "89030-95-5"
+          ],
+          [
+            "formula",
+            "C₁₄H₂₁CuN₆O₄⁻"
+          ],
+          [
+            "mw",
+            "400.90 g/mol"
+          ],
+          [
+            "sequence",
+            {
+              "es": "Gly-His-Lys, complejo de cobre(II)",
+              "en": "Gly-His-Lys, copper(II) complex"
+            }
+          ],
+          [
+            "length",
+            "3"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "tripéptido de cobre-1, prezatida de cobre; péptido libre GHK: CAS 49557-75-7, 340.38 g/mol",
+              "en": "copper tripeptide-1, prezatide copper; free peptide GHK: CAS 49557-75-7, 340.38 g/mol"
+            }
+          ]
+        ]
+      },
+      {
+        "name": "BPC-157",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "137525-51-0"
+          ],
+          [
+            "pubchem",
+            "9941957"
+          ],
+          [
+            "formula",
+            "C₆₂H₉₈N₁₆O₂₂"
+          ],
+          [
+            "mw",
+            "1419.5 g/mol"
+          ],
+          [
+            "sequence",
+            "GEPPPGKPADDAGLV"
+          ],
+          [
+            "length",
+            "15"
+          ]
+        ]
+      },
+      {
+        "name": "TB-500 (thymosin beta-4)",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "77591-33-4"
+          ],
+          [
+            "pubchem",
+            "16132341"
+          ],
+          [
+            "mw",
+            "≈4963 g/mol"
+          ],
+          [
+            "sequence",
+            "Ac-SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES-OH"
+          ],
+          [
+            "length",
+            "43"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "timosina β4, Tβ4, timbetasina",
+              "en": "thymosin β4, Tβ4, timbetasin"
+            }
+          ]
+        ]
+      }
+    ],
+    "totals": [
+      [
+        "total",
+        {
+          "es": "70 mg de péptido total por vial",
+          "en": "70 mg total peptide content per vial"
+        }
+      ],
+      [
+        "ratio",
+        "GHK-Cu : BPC-157 : TB-500 = 5 : 1 : 1"
+      ],
+      [
+        "appearance",
+        {
+          "es": "polvo liofilizado con tono azul a azul violáceo aportado por el complejo de cobre",
+          "en": "lyophilized powder with a blue to blue-violet tint from the copper complex"
+        }
+      ]
+    ]
+  },
+  "klow-blend": {
+    "blend": [
+      {
+        "name": "GHK-Cu",
+        "mg": "50 mg",
+        "rows": [
+          [
+            "cas",
+            "89030-95-5"
+          ],
+          [
+            "formula",
+            "C₁₄H₂₁CuN₆O₄⁻"
+          ],
+          [
+            "mw",
+            "400.90 g/mol"
+          ],
+          [
+            "sequence",
+            {
+              "es": "Gly-His-Lys, complejo de cobre(II)",
+              "en": "Gly-His-Lys, copper(II) complex"
+            }
+          ],
+          [
+            "length",
+            "3"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "tripéptido de cobre-1, prezatida de cobre",
+              "en": "copper tripeptide-1, prezatide copper"
+            }
+          ]
+        ]
+      },
+      {
+        "name": "BPC-157",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "137525-51-0"
+          ],
+          [
+            "pubchem",
+            "9941957"
+          ],
+          [
+            "formula",
+            "C₆₂H₉₈N₁₆O₂₂"
+          ],
+          [
+            "mw",
+            "1419.5 g/mol"
+          ],
+          [
+            "sequence",
+            "GEPPPGKPADDAGLV"
+          ],
+          [
+            "length",
+            "15"
+          ]
+        ]
+      },
+      {
+        "name": "TB-500 (thymosin beta-4)",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "77591-33-4"
+          ],
+          [
+            "pubchem",
+            "16132341"
+          ],
+          [
+            "mw",
+            "≈4963 g/mol"
+          ],
+          [
+            "sequence",
+            "Ac-SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES-OH"
+          ],
+          [
+            "length",
+            "43"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "timosina β4, Tβ4, timbetasina",
+              "en": "thymosin β4, Tβ4, timbetasin"
+            }
+          ]
+        ]
+      },
+      {
+        "name": "KPV",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "67727-97-3"
+          ],
+          [
+            "pubchem",
+            "125672"
+          ],
+          [
+            "formula",
+            "C₁₆H₃₀N₄O₄"
+          ],
+          [
+            "mw",
+            "342.43 g/mol"
+          ],
+          [
+            "sequence",
+            "Lys-Pro-Val"
+          ],
+          [
+            "length",
+            "3"
+          ],
+          [
+            "synonyms",
+            "α-MSH (11-13)"
+          ]
+        ]
+      }
+    ],
+    "totals": [
+      [
+        "total",
+        {
+          "es": "80 mg de péptido total por vial",
+          "en": "80 mg total peptide content per vial"
+        }
+      ],
+      [
+        "ratio",
+        "GHK-Cu : BPC-157 : TB-500 : KPV = 5 : 1 : 1 : 1"
+      ],
+      [
+        "appearance",
+        {
+          "es": "polvo liofilizado con tono azul a azul violáceo aportado por el complejo de cobre",
+          "en": "lyophilized powder with a blue to blue-violet tint from the copper complex"
+        }
+      ]
+    ]
+  },
+  "wolverine": {
+    "blend": [
+      {
+        "name": "BPC-157",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "137525-51-0"
+          ],
+          [
+            "pubchem",
+            "9941957"
+          ],
+          [
+            "formula",
+            "C₆₂H₉₈N₁₆O₂₂"
+          ],
+          [
+            "mw",
+            "1419.5 g/mol"
+          ],
+          [
+            "sequence",
+            "GEPPPGKPADDAGLV"
+          ],
+          [
+            "length",
+            "15"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "BPC 157, PL-14736, bepecina",
+              "en": "BPC 157, PL-14736, bepecin"
+            }
+          ]
+        ]
+      },
+      {
+        "name": "TB-500 (thymosin beta-4)",
+        "mg": "10 mg",
+        "rows": [
+          [
+            "cas",
+            "77591-33-4"
+          ],
+          [
+            "pubchem",
+            "16132341"
+          ],
+          [
+            "mw",
+            "≈4963 g/mol"
+          ],
+          [
+            "sequence",
+            "Ac-SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES-OH"
+          ],
+          [
+            "length",
+            "43"
+          ],
+          [
+            "synonyms",
+            {
+              "es": "timosina β4, Tβ4, timbetasina",
+              "en": "thymosin β4, Tβ4, timbetasin"
+            }
+          ]
+        ]
+      }
+    ],
+    "totals": [
+      [
+        "total",
+        {
+          "es": "20 mg de péptido total por vial",
+          "en": "20 mg total peptide content per vial"
+        }
+      ],
+      [
+        "ratio",
+        "BPC-157 : TB-500 = 1 : 1"
+      ],
+      [
+        "appearance",
+        {
+          "es": "polvo blanco liofilizado",
+          "en": "white lyophilized powder"
+        }
+      ]
+    ]
+  }
+}

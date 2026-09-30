@@ -187,6 +187,61 @@ const COMPOUND_NAME = {
   'mt-ii': 'MT-II', 'pt-141': 'PT-141', 'semax': 'Semax', 'selank': 'Selank',
 };
 
+/* ---------------- technical specifications ----------------
+   Where a compound has no human trial to report, verifiable chemical identity
+   takes its place: CAS, PubChem, formula, mass, sequence. A customer can check
+   these against the certificate of analysis, which is the whole point — it is
+   data they can confirm, not a claim they have to take on faith. */
+const specs = existsSync(join(here, 'specs.json'))
+  ? JSON.parse(readFileSync(join(here, 'specs.json'), 'utf8')) : {};
+
+const SPEC_LABEL = {
+  es: {
+    cas: 'Número CAS', pubchem: 'PubChem CID', formula: 'Fórmula molecular',
+    mw: 'Peso molecular', sequence: 'Secuencia de aminoácidos', length: 'Número de residuos',
+    source: 'Origen', synonyms: 'Sinónimos', class: 'Clase', target: 'Diana molecular',
+    evidence_note: 'Estado de la investigación', total: 'Contenido total por vial',
+    ratio: 'Proporción de componentes', appearance: 'Aspecto',
+  },
+  en: {
+    cas: 'CAS number', pubchem: 'PubChem CID', formula: 'Molecular formula',
+    mw: 'Molecular weight', sequence: 'Amino acid sequence', length: 'Residue count',
+    source: 'Source', synonyms: 'Synonyms', class: 'Class', target: 'Molecular target',
+    evidence_note: 'Research status', total: 'Total content per vial',
+    ratio: 'Component ratio', appearance: 'Appearance',
+  },
+};
+
+const SPEC_HEAD = { es: 'Ficha técnica', en: 'Technical specifications' };
+const SPEC_LEAD = {
+  es: 'Sin ensayos clínicos que reportar, lo que sí podemos darte es identidad química verificable. Estos datos son públicos y comprobables, y puedes contrastarlos con el certificado de análisis de tu lote.',
+  en: 'With no clinical trials to report, what we can give you is verifiable chemical identity. These values are public and checkable, and you can compare them against the certificate of analysis for your lot.',
+};
+
+// A value is either language-neutral (CAS, formula, mass, sequence) or an
+// {es, en} pair. Neutral values must NOT be duplicated per language — that is
+// how a CAS number ends up diverging between the two sites.
+const specValue = (v, lang) => (v && typeof v === 'object' ? (v[lang] || v.en || '') : v);
+
+const specTable = (rows, lang) =>
+  `<table class="spec"><tbody>${rows.map(([k, v]) =>
+    `<tr><th>${SPEC_LABEL[lang][k] || k}</th><td>${specValue(v, lang)}</td></tr>`).join('')}</tbody></table>`;
+
+function specsHtml(slug, lang) {
+  const sp = specs[slug];
+  if (!sp) return '';
+  let body = '';
+  if (sp.blend) {
+    if (sp.totals) body += specTable(sp.totals, lang);
+    body += sp.blend.map((c) =>
+      `<h3>${c.name}${c.mg ? ` — ${c.mg}` : ''}</h3>${specTable(c.rows, lang)}`).join('');
+  } else if (sp.rows) {
+    body += specTable(sp.rows, lang);
+  }
+  if (!body) return '';
+  return `<h2>${SPEC_HEAD[lang]}</h2> <p>${SPEC_LEAD[lang]}</p> ${body} `;
+}
+
 const EV_COMPARE_HEAD = { es: 'Evidencia en humanos, lado a lado', en: 'Human evidence, side by side' };
 
 function compareEvidenceHtml(slug, lang, nameOf) {
@@ -241,7 +296,7 @@ function esGuideHtml(name, tr, form, slug) {
   const bg = tr.bg ? `<h2>Antecedentes</h2> <p>${tr.bg}</p> ` : '';
   // Evidence goes above handling and quality: it is the first thing a customer
   // deciding whether to buy actually needs.
-  return `<div class="wrap"> <p class="lead">${tr.lead}</p> ${evidenceHtml(slug, 'es')}${bg}<h2>Manejo y almacenamiento</h2> ${ES.handling[form](name)} <h2>Calidad y análisis</h2> ${ES.quality(name)} ${ES.faq(name, form)}</div>`;
+  return `<div class="wrap"> <p class="lead">${tr.lead}</p> ${evidenceHtml(slug, 'es')}${specsHtml(slug, 'es')}${bg}<h2>Manejo y almacenamiento</h2> ${ES.handling[form](name)} <h2>Calidad y análisis</h2> ${ES.quality(name)} ${ES.faq(name, form)}</div>`;
 }
 
 const esGuides = existsSync(join(here, 'es', 'guides.json')) ? JSON.parse(readFileSync(join(here, 'es', 'guides.json'), 'utf8')) : {};
@@ -276,7 +331,7 @@ function learnPage(slug) {
   const displayName = (key) => (esGuides[key] && esGuides[key].title) || COMPOUND_NAME[key] || key;
   const ev = type === 'compare'
     ? compareEvidenceHtml(slug, 'en', displayName)
-    : evidenceHtml(slug, 'en');
+    : evidenceHtml(slug, 'en') + specsHtml(slug, 'en');
   if (ev) {
     const cut = main.indexOf('</p>');
     main = cut === -1 ? main + ' ' + ev : main.slice(0, cut + 4) + ' ' + ev + main.slice(cut + 4);
