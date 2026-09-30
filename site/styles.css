@@ -238,6 +238,17 @@ p { margin: 0; }
 .article .body .ev-limited .ev-badge { background: var(--amber-soft); color: #7a4f0c; }
 .article .body .ev-none { border-left-color: #b42318; }
 .article .body .ev-none .ev-badge { background: #fde8ef; color: #a51f4a; }
+.article .body .ev-compare { border-left-width: 1.5px; }
+.article .body .ev-cols { display: grid; gap: 12px; grid-template-columns: 1fr; margin-bottom: 14px; }
+@media (min-width: 620px) { .article .body .ev-cols { grid-template-columns: 1fr 1fr; } }
+.article .body .ev-col { background: var(--surface); border: 1px solid var(--line); border-top-width: 4px; border-radius: var(--radius-sm); padding: 14px 16px; }
+.article .body .ev-col h3 { margin: 0 0 8px; font-size: 1rem; }
+.article .body .ev-col p:last-child { margin-bottom: 0; font-size: .92rem; }
+.article .body .ev-col.ev-approved { border-top-color: var(--teal); }
+.article .body .ev-col.ev-trials { border-top-color: #2b6ccb; }
+.article .body .ev-col.ev-limited { border-top-color: var(--amber); }
+.article .body .ev-col.ev-none { border-top-color: #b42318; }
+.article .body .ev-verdict { padding-top: 12px; border-top: 1px solid var(--line); }
 .article .body figure.fig { margin: 0 0 16px; }
 .article .body figure.fig img { width: 100%; height: auto; }
 .article .body figure.fig figcaption { font-size: .84rem; color: var(--muted); margin-top: 6px; }

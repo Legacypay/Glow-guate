@@ -1,6 +1,5 @@
 {
   "_README": "Human-evidence profiles rendered into every compound guide, ES and EN. status: approved = an approved medicine somewhere, with Phase 3 data; trials = real published human trials, not approved; limited = small, old or unreplicated human data; none = no published human clinical trials. NOTHING HERE MAY BE INVENTED. If a compound has no human trials, that is what the customer is told — that is the informative answer, not a gap to fill.",
-
   "retatrutide": {
     "status": "trials",
     "es": {
@@ -24,7 +23,6 @@
       "safety": "The most common adverse effects in trials were gastrointestinal — nausea, vomiting, diarrhoea — and increased with dose. Gradual dose escalation was part of the study design."
     }
   },
-
   "tesamorelin": {
     "status": "approved",
     "es": {
@@ -48,7 +46,6 @@
       "safety": "Joint pain, oedema and rises in blood glucose were seen in trials. It is approved for one specific indication; use outside it does not carry that backing."
     }
   },
-
   "pt-141": {
     "status": "approved",
     "es": {
@@ -72,7 +69,6 @@
       "safety": "Nausea was very common in trials (around 40% of participants). Flushing, headache and transient blood-pressure rises were also reported. Not recommended in people with uncontrolled hypertension or cardiovascular disease."
     }
   },
-
   "methylene-blue": {
     "status": "approved",
     "es": {
@@ -96,7 +92,6 @@
       "safety": "Important: methylene blue is a monoamine oxidase inhibitor. Combined with serotonergic antidepressants (SSRIs, SNRIs and others) it can cause serotonin syndrome, which is serious. It can also cause haemolysis in people with G6PD deficiency. Talk to your doctor before using it if you take any antidepressant."
     }
   },
-
   "mk-677": {
     "status": "trials",
     "es": {
@@ -120,7 +115,6 @@
       "safety": "Trials showed fluid retention, increased appetite, raised fasting glucose and reduced insulin sensitivity. These are among the reasons development did not continue."
     }
   },
-
   "tesofensine": {
     "status": "trials",
     "es": {
@@ -144,7 +138,6 @@
       "safety": "Trials showed dose-related increases in heart rate and blood pressure, plus dry mouth, insomnia and nausea. The cardiovascular profile was the main limit on its development."
     }
   },
-
   "ss-31": {
     "status": "trials",
     "es": {
@@ -168,7 +161,6 @@
       "safety": "Injection-site reactions were the most reported adverse effect in trials. It is not available as an approved medicine in Guatemala."
     }
   },
-
   "aod-9604": {
     "status": "trials",
     "es": {
@@ -192,7 +184,6 @@
       "safety": "It was well tolerated in trials; the problem was not safety but lack of effect on weight."
     }
   },
-
   "cjc-1295-ipamorelin": {
     "status": "trials",
     "es": {
@@ -216,7 +207,6 @@
       "safety": "Sustained elevation of growth hormone and IGF-1 is not harmless: it is associated with fluid retention, joint pain and changes in glucose. People with a history of cancer should consult their doctor, because IGF-1 influences cell proliferation."
     }
   },
-
   "ghk-cu": {
     "status": "trials",
     "es": {
@@ -240,7 +230,6 @@
       "safety": "Topically it is well tolerated, with occasional local irritation. Copper is a mineral that accumulates; people with Wilson's disease or other copper metabolism disorders should avoid it."
     }
   },
-
   "glutathione": {
     "status": "trials",
     "es": {
@@ -264,7 +253,6 @@
       "safety": "Well tolerated in published studies. The intravenous route, popular for skin lightening, has no long-term safety trials and has prompted warnings from health authorities in several countries."
     }
   },
-
   "nad-plus": {
     "status": "trials",
     "es": {
@@ -288,7 +276,6 @@
       "safety": "Oral precursors were well tolerated in trials. Rapid intravenous infusions commonly cause chest discomfort, flushing and nausea during administration."
     }
   },
-
   "semax": {
     "status": "limited",
     "es": {
@@ -312,7 +299,6 @@
       "safety": "The reported safety profile is favourable, but it comes from that same limited literature. Absence of independent trials means less certainty, not more safety."
     }
   },
-
   "selank": {
     "status": "limited",
     "es": {
@@ -336,7 +322,6 @@
       "safety": "No significant adverse effects are reported in the available literature, which is limited. Its long-term effects are unknown."
     }
   },
-
   "mt-ii": {
     "status": "limited",
     "es": {
@@ -360,7 +345,6 @@
       "safety": "Note: published case reports link its use to changes in moles and to melanoma, as well as to rhabdomyolysis. Any mole that changes in size, shape or colour should be checked by a dermatologist. Nausea and flushing are common."
     }
   },
-
   "epithalon": {
     "status": "limited",
     "es": {
@@ -384,7 +368,6 @@
       "safety": "There is no modern-quality safety data. Absence of reported adverse effects in weak literature is not an established safety profile."
     }
   },
-
   "tb-500": {
     "status": "none",
     "es": {
@@ -408,7 +391,6 @@
       "safety": "With no human trials, there is no established safety profile and no long-term use data."
     }
   },
-
   "bpc-157": {
     "status": "none",
     "es": {
@@ -432,7 +414,6 @@
       "safety": "There is no established human safety profile. Reports of good tolerance come from user experience, not controlled studies."
     }
   },
-
   "mots-c": {
     "status": "none",
     "es": {
@@ -456,7 +437,6 @@
       "safety": "Without human interventional trials, there is no established safety or dosing data."
     }
   },
-
   "kpv": {
     "status": "none",
     "es": {
@@ -480,7 +460,6 @@
       "safety": "With no human studies, there is no established safety profile."
     }
   },
-
   "5-amino-1mq": {
     "status": "none",
     "es": {
@@ -504,7 +483,6 @@
       "safety": "With no human studies, there is no established safety profile and no information on interactions."
     }
   },
-
   "slu-pp-332": {
     "status": "none",
     "es": {
@@ -528,7 +506,6 @@
       "safety": "With no human studies, there is no established safety profile. It is among the most experimental compounds in the catalogue."
     }
   },
-
   "foxo4-dri": {
     "status": "none",
     "es": {
@@ -552,7 +529,6 @@
       "safety": "With no human studies, there is no established safety profile. It is among the most experimental compounds in the catalogue."
     }
   },
-
   "glow-blend": {
     "status": "none",
     "es": {
@@ -576,7 +552,6 @@
       "safety": "There is no established safety profile for the combination. See each individual guide for what is known about each component."
     }
   },
-
   "klow-blend": {
     "status": "none",
     "es": {
@@ -600,7 +575,6 @@
       "safety": "There is no established safety profile for the combination. See each individual guide."
     }
   },
-
   "wolverine": {
     "status": "none",
     "es": {
@@ -622,6 +596,39 @@
         "No regulator has assessed them."
       ],
       "safety": "There is no established human safety profile for either component or for the blend."
+    }
+  },
+  "_compare": {
+    "_README": "Comparison articles get a side-by-side of both compounds' evidence status plus a verdict. The verdict is the honest bottom line: in two of these five, one compound is an approved medicine and the other has never been approved anywhere.",
+    "bpc-157-vs-tb-500": {
+      "a": "bpc-157",
+      "b": "tb-500",
+      "es": "Esta comparación es, en evidencia humana, un empate en cero. Ninguno de los dos tiene ensayos clínicos publicados en personas. Todo lo que se dice sobre recuperación de tejidos proviene de estudios en roedores, y en el caso de TB-500 conviene no confundirlo con la timosina beta-4 completa, que es otra molécula y sí llegó a fase 2. Elegir entre ambos no es elegir entre dos niveles de evidencia: es elegir entre dos compuestos igualmente no probados en humanos.",
+      "en": "On human evidence, this comparison is a nil-nil draw. Neither has published clinical trials in people. Everything said about tissue recovery comes from rodent studies, and with TB-500 it is worth not confusing it with full thymosin beta-4, a different molecule that did reach phase 2. Choosing between them is not choosing between two levels of evidence: it is choosing between two compounds equally untested in humans."
+    },
+    "cjc-1295-ipamorelin-vs-tesamorelin": {
+      "a": "cjc-1295-ipamorelin",
+      "b": "tesamorelin",
+      "es": "Aquí la diferencia de evidencia es grande y vale la pena entenderla. Tesamorelina es un medicamento aprobado por la FDA, con dos ensayos de fase 3 y cerca de 800 pacientes detrás. CJC-1295 e Ipamorelina se estudiaron en humanos por separado, pero ninguno llegó a aprobarse y la combinación que se vende no se ha estudiado en ningún ensayo. Si el criterio es qué tan probado está algo en personas, no están al mismo nivel.",
+      "en": "The evidence gap here is large and worth understanding. Tesamorelin is an FDA-approved medicine with two phase 3 trials and around 800 patients behind it. CJC-1295 and Ipamorelin were each studied in humans separately, but neither was approved, and the combination as sold has not been studied in any trial. If the criterion is how well tested something is in people, they are not on the same level."
+    },
+    "glow-blend-vs-klow-blend": {
+      "a": "glow-blend",
+      "b": "klow-blend",
+      "es": "Ninguna de las dos mezclas se ha estudiado como mezcla en un ensayo clínico, y la diferencia entre ellas —la adición de KPV— es precisamente el componente con menos evidencia humana de los cuatro: KPV sólo tiene investigación preclínica. De los componentes compartidos, únicamente GHK-Cu tiene estudios en personas, y son de aplicación tópica sobre la piel, no inyectada.",
+      "en": "Neither blend has been studied as a blend in a clinical trial, and the difference between them — the addition of KPV — is precisely the component with the least human evidence of the four: KPV has only preclinical research. Of the shared components, only GHK-Cu has studies in people, and those are for topical application on skin, not injected."
+    },
+    "mt-ii-vs-pt-141": {
+      "a": "mt-ii",
+      "b": "pt-141",
+      "es": "Es la comparación donde más importa la diferencia de evidencia. PT-141 (bremelanotida) es un medicamento aprobado por la FDA en 2019, con un programa de fase 3 de unas 1,200 participantes. MT-II nunca fue aprobado en ningún país, su evidencia humana son estudios pequeños de los años noventa, y existen reportes de casos publicados que lo asocian con cambios en lunares, melanoma y rabdomiólisis. Varias agencias sanitarias han emitido advertencias públicas sobre su venta.",
+      "en": "This is the comparison where the evidence difference matters most. PT-141 (bremelanotide) is an FDA-approved medicine from 2019, with a phase 3 programme of around 1,200 participants. MT-II was never approved in any country, its human evidence is small studies from the 1990s, and there are published case reports linking it to changes in moles, melanoma and rhabdomyolysis. Several health agencies have issued public warnings about its sale."
+    },
+    "semax-vs-selank": {
+      "a": "semax",
+      "b": "selank",
+      "es": "Ambos comparten la misma situación: se desarrollaron en Rusia, allí están registrados como medicamentos, y su literatura clínica es rusa, de tamaño pequeño y en buena parte no indexada en las bases de datos occidentales. Ninguno ha sido aprobado ni evaluado por agencias occidentales, y ninguno ha sido replicado en ensayos independientes grandes. La comparación entre ellos se sostiene en mecanismo y uso reportado, no en evidencia comparativa: no existe un ensayo que los haya puesto frente a frente.",
+      "en": "Both share the same situation: developed in Russia, registered there as medicines, with a clinical literature that is Russian, small and largely not indexed in Western databases. Neither has been approved or assessed by Western regulators, and neither has been replicated in large independent trials. The comparison between them rests on mechanism and reported use, not on comparative evidence: no trial has put them head to head."
     }
   }
 }

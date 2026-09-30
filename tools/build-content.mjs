@@ -178,6 +178,37 @@ const EV_FOOT = {
   en: 'This information is educational and describes what has been studied. It does not replace consulting a health professional, who is the person to assess your case, your conditions and your medicines.',
 };
 
+// Comparison articles get both compounds side by side. A badge each is more
+// use than prose here: in two of the five, one side is an approved medicine
+// and the other was never approved anywhere.
+const COMPOUND_NAME = {
+  'bpc-157': 'BPC-157', 'tb-500': 'TB-500', 'cjc-1295-ipamorelin': 'CJC-1295 / Ipamorelina',
+  'tesamorelin': 'Tesamorelina', 'glow-blend': 'GLOW Blend', 'klow-blend': 'KLOW Blend',
+  'mt-ii': 'MT-II', 'pt-141': 'PT-141', 'semax': 'Semax', 'selank': 'Selank',
+};
+
+const EV_COMPARE_HEAD = { es: 'Evidencia en humanos, lado a lado', en: 'Human evidence, side by side' };
+
+function compareEvidenceHtml(slug, lang, nameOf) {
+  const c = (evidence._compare || {})[slug];
+  if (!c) return '';
+  const cell = (key) => {
+    const e = evidence[key];
+    if (!e) return '';
+    return `<div class="ev-col ev-${e.status}">`
+      + `<h3>${nameOf(key)}</h3>`
+      + `<p class="ev-badge">${EV_LABEL[lang][e.status]}</p>`
+      + `<p>${lang === 'es' ? e[lang].resumen : e[lang].summary}</p>`
+      + `</div>`;
+  };
+  return `<h2>${EV_COMPARE_HEAD[lang]}</h2> `
+    + `<div class="evidence ev-compare"> `
+    + `<div class="ev-cols">${cell(c.a)}${cell(c.b)}</div> `
+    + `<p class="ev-verdict">${c[lang]}</p> `
+    + `<p class="ev-foot">${EV_FOOT[lang]}</p> `
+    + `</div> `;
+}
+
 function evidenceHtml(slug, lang) {
   const e = evidence[slug];
   if (!e) return '';
@@ -242,7 +273,10 @@ function learnPage(slug) {
   const type = METHOD_SLUGS.has(slug) ? 'method' : isCompare ? 'compare' : 'guide';
   // Same section on the English side. The body comes from the US store, so it
   // is spliced in after the opening paragraph rather than templated.
-  const ev = evidenceHtml(slug, 'en');
+  const displayName = (key) => (esGuides[key] && esGuides[key].title) || COMPOUND_NAME[key] || key;
+  const ev = type === 'compare'
+    ? compareEvidenceHtml(slug, 'en', displayName)
+    : evidenceHtml(slug, 'en');
   if (ev) {
     const cut = main.indexOf('</p>');
     main = cut === -1 ? main + ' ' + ev : main.slice(0, cut + 4) + ' ' + ev + main.slice(cut + 4);
@@ -257,7 +291,11 @@ function learnPage(slug) {
     item.subtitle_es = tr.sub;
     item.html_es = esGuideHtml(item.title_es, tr, form, slug);
   } else {
-    const body = esBody(slug);
+    const body0 = esBody(slug);
+    const evEs = type === 'compare' ? compareEvidenceHtml(slug, 'es', displayName) : '';
+    const body = body0 && evEs
+      ? (() => { const cut = body0.indexOf('</p>'); return cut === -1 ? body0 + ' ' + evEs : body0.slice(0, cut + 4) + ' ' + evEs + body0.slice(cut + 4); })()
+      : body0;
     if (body) {
       item.html_es = body;
       item.title_es = (esMeta[slug] || {}).title || title;
