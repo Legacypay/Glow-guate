@@ -5,7 +5,7 @@
 // ever marked paid after verifyResponse() passes AND the decision is ACCEPT
 // with reason code 100. Everything else is recorded, not trusted.
 import {
-  ordersStore, getInventory, saveInventory, applyStockChange, notifyForm,
+  ordersStore, getInventory, saveInventory, applyStockChange, notifyForm, notifyWhatsApp,
 } from './lib.mjs';
 import { verifyResponse, outcomeOf } from './cybersource.mjs';
 
@@ -73,7 +73,7 @@ export default async (req) => {
       await saveInventory(inv);
     }
     await store.setJSON(num, order);
-    await notifyForm(origin, order, order.pago);
+    await Promise.all([notifyForm(origin, order, order.pago), notifyWhatsApp(order, order.pago, origin)]);
     return back(num, 'ok');
   }
 

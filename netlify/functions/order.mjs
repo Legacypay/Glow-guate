@@ -1,7 +1,7 @@
 // Public endpoint the checkout posts to. Stores the order so the admin has
 // structured, updatable data, then forwards the same fields to the Netlify
 // form so the existing email notifications still fire.
-import { ordersStore, json, notifyForm } from './lib.mjs';
+import { ordersStore, json, notifyForm, notifyWhatsApp } from './lib.mjs';
 
 export default async (req) => {
   if (req.method !== 'POST') return json({ error: 'method' }, 405);
@@ -47,7 +47,12 @@ export default async (req) => {
 
   // Then the form post, purely so the email alerts keep working. A failure here
   // must not lose the order, so it is reported but not fatal.
-  const notified = await notifyForm(new URL(req.url).origin, order, String(o.pago || 'Transferencia bancaria'));
+  const origin = new URL(req.url).origin;
+  const pago = String(o.pago || 'Transferencia bancaria');
+  const [notified, whatsapp] = await Promise.all([
+    notifyForm(origin, order, pago),
+    notifyWhatsApp(order, `${pago} — esperando comprobante`, origin),
+  ]);
 
-  return json({ ok: true, num: order.num, notified });
+  return json({ ok: true, num: order.num, notified, whatsapp });
 };

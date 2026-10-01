@@ -79,6 +79,68 @@ export async function listOrders() {
 // 'pendiente_pago' is a card order that reached CyberSource but has not come
 // back approved. It must not read as 'nuevo' — nobody is waiting on a transfer
 // for it, and an abandoned card checkout is not money owed.
+/* ---------------- WhatsApp order alert ----------------
+   Sends María the order on WhatsApp alongside the email. It fires at the same
+   moment the email does: on submission for a bank transfer, on approval for a
+   card. Off until WA_APIKEY is set, so deploying this changes nothing.
+
+   Providers are plain HTTP GETs:
+     callmebot (default) — free, message comes from the bot's own contact so it
+                           notifies like any chat; free tier is for personal use
+     textmebot           — paid ($1/mo for one recipient); covers this use
+   Only the city/department goes in the message, never the street address:
+   the text passes through the provider, and the full address is already in
+   the email and the admin. */
+const fmtQ = (n) => 'Q' + Number(n || 0).toLocaleString('en-US');
+
+export function waOrderText(order, pago, origin) {
+  const delivery = /domicilio/i.test(order.entrega || '')
+    ? `Entrega a domicilio — ${[order.municipio, order.departamento].filter(Boolean).join(', ') || 'sin zona'}`
+    : 'Recoge en el punto de entrega';
+  const lines = (order.items || []).map((i) => `${i.qty} × ${i.name} ${i.strength}`.trim());
+  return [
+    `*Nuevo pedido ${order.num}*`,
+    [order.nombre, order.telefono].filter(Boolean).join(' · '),
+    delivery,
+    '',
+    ...lines,
+    '',
+    `*Total: ${fmtQ(order.totalQ)}*`,
+    `Pago: ${pago || order.pago || 'Transferencia bancaria'}`,
+    `Admin: ${origin}/admin/`,
+  ].join('\n');
+}
+
+export function waRequestUrl(text) {
+  const key = process.env.WA_APIKEY || '';
+  const to = String(process.env.WA_TO || '50255279444').replace(/\D/g, '');
+  const provider = String(process.env.WA_PROVIDER || 'callmebot').toLowerCase();
+  const t = encodeURIComponent(text), k = encodeURIComponent(key);
+  return provider === 'textmebot'
+    ? `https://api.textmebot.com/send.php?recipient=%2B${to}&apikey=${k}&text=${t}`
+    : `https://api.callmebot.com/whatsapp.php?phone=%2B${to}&text=${t}&apikey=${k}`;
+}
+
+// Never throws, never holds an order hostage: 5 s cap, result is advisory.
+export async function notifyWhatsApp(order, pago, origin) {
+  if (!process.env.WA_APIKEY) return 'off';
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 5000);
+  try {
+    const res = await fetch(waRequestUrl(waOrderText(order, pago, origin)), { signal: ctl.signal });
+    if (!res.ok) {
+      console.error('whatsapp alert failed', res.status, (await res.text()).slice(0, 200));
+      return 'failed';
+    }
+    return 'sent';
+  } catch (e) {
+    console.error('whatsapp alert error', e.name);
+    return 'failed';
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export const STATUSES = ['nuevo', 'pendiente_pago', 'pagado', 'entregado', 'cancelado'];
 
 /* ---------------- stock movement ----------------

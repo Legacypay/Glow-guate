@@ -30,6 +30,11 @@ forwards it to the Netlify form `pedido-gt` so the email alert fires
 directly, so an order is never lost. Orders placed before the admin centre
 existed (e.g. `GT-260918-XW55`) live only in Netlify Forms.
 
+**WhatsApp order alert** — `notifyWhatsApp()` in lib.mjs, called next to the
+email in order.mjs (transfer) and pay-return.mjs (card, on approval). Off until
+`WA_APIKEY` exists; provider via `WA_PROVIDER` (callmebot | textmebot). Never
+blocks an order (5 s cap). Setup: [docs/WHATSAPP.md](docs/WHATSAPP.md).
+
 `/admin/` → password in the `ADMIN_PASSWORD` env var, sessions HMAC-signed with
 `ADMIN_SECRET`; both functions-scoped, neither ever reaches the browser. Tokens
 go in an `Authorization: Bearer` header, not the body. Marking an order
